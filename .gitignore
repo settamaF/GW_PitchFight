@@ -14,6 +14,7 @@ UnityProject/PitchFight/[Bb]uild/
 /UnityProject/PitchFight/*.booproj
 
 /UnityProject/PitchFight/Assets/UnityVS/
+/UnityProject/PitchFight/Assets/UnityVS.meta
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
