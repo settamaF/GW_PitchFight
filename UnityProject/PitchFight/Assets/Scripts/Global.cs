@@ -7,8 +7,7 @@ using UnityEngine;
 public class Global : MonoBehaviour
 {
 #region Static
-		private static 	Global    		mInstance = null;	
-
+		private static 	Global    		mInstance = null;
 		public static 	Global 			Get	{ get { return mInstance; } }
 #endregion
 
