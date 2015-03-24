@@ -11,21 +11,13 @@ public class PersoChoice : MonoBehaviour
 	{
 		public int currentIndex;
 		public bool selected;
+		public bool playing;
 		
-		public sPlayerPersoChoice(int pCurrentIndex, bool pSelected)
+		public sPlayerPersoChoice(int pCurrentIndex, bool pSelected, bool pPlaying)
 		{
 			currentIndex = pCurrentIndex;
 			selected = pSelected;
-		}
-
-		public void SetCurrentIndex(int pCurrentIndex)
-		{
-			this.currentIndex = pCurrentIndex;
-		}
-
-		public void	SetSelectedState(bool pSelected)
-		{
-			this.selected = pSelected;
+			playing = pPlaying;
 		}
 	}
 
@@ -52,10 +44,10 @@ public class PersoChoice : MonoBehaviour
 	private void Start()
 	{
 		__playerMarker = new List<sPlayerPersoChoice>();
-		__playerMarker.Add(new sPlayerPersoChoice(0, false));
-		__playerMarker.Add(new sPlayerPersoChoice(0, false));
-		__playerMarker.Add(new sPlayerPersoChoice(0, false));
-		__playerMarker.Add(new sPlayerPersoChoice(0, false));
+		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
+		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
+		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
+		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
 		__playerHorizontalInputLock = new List<bool>();
 		__playerHorizontalInputLock.Add(false);
 		__playerHorizontalInputLock.Add(false);
@@ -93,7 +85,7 @@ public class PersoChoice : MonoBehaviour
 		for (int i = 0; i < 4; i++)
 		{
 			if (Input.GetButtonDown("J" + (i + 1) + "Jump"))
-				SelectActualPerso(i);
+				UpdateSelectedState(i);
 		}
 	}
 
@@ -103,8 +95,7 @@ public class PersoChoice : MonoBehaviour
 
 	private void	IncPlayerMarkerIndex(int pPlayerIndex, int pValue)
 	{
-		int lNewValue = (int)Mathf.Repeat(__playerMarker[pPlayerIndex].currentIndex + pValue, 4.0f);
-		__playerMarker[pPlayerIndex].SetCurrentIndex(lNewValue);
+		__playerMarker[pPlayerIndex].currentIndex = (int)Mathf.Repeat(__playerMarker[pPlayerIndex].currentIndex + pValue, 4.0f);
 	}
 
 	private void	SetPlayerMarker(int pPlayerIndex, bool pValue)
@@ -114,7 +105,7 @@ public class PersoChoice : MonoBehaviour
 
 	public void	UpdatePlayerMarker(int pPlayerIndex, int pInputValue)
 	{
-		if (!__playerMarker[pPlayerIndex].selected)
+		if (!__playerMarker[pPlayerIndex].selected && __playerMarker[pPlayerIndex].playing)
 		{
 			SetPlayerMarker(pPlayerIndex, false);
 			IncPlayerMarkerIndex(pPlayerIndex, pInputValue);
@@ -127,29 +118,42 @@ public class PersoChoice : MonoBehaviour
 		playerMarkerObject[__playerMarker[pPlayerIndex].currentIndex].transform.GetChild(pPlayerIndex).GetComponent<Image>().color = pColor;
 	}
 
-	public void	SelectActualPerso(int pPlayerIndex)
+	public void	UpdateSelectedState(int pPlayerIndex)
 	{
-		if (!__playerMarker[pPlayerIndex].selected)
+		if (!CheckIfPlayerIsPlaying(pPlayerIndex))
+			return;
+		if (CheckIfPersoHasAlreadyBeenChoose(__playerMarker[pPlayerIndex].currentIndex))
+			return;
+		SelectPerso(pPlayerIndex);
+		if (CheckIfAllPlayerHasPerso())
+			GoToGameState();
+	}
+
+	private bool	CheckIfPlayerIsPlaying(int pPlayerIndex)
+	{
+		if (!__playerMarker[pPlayerIndex].playing)
 		{
-			if (AlreadySelected(__playerMarker[pPlayerIndex].currentIndex))
-				return;
+			__playerMarker[pPlayerIndex].playing = true;
+			UpdatePlayerMarker(pPlayerIndex, 0);
+			return false;
 		}
-		__playerMarker[pPlayerIndex].SetSelectedState(!__playerMarker[pPlayerIndex].selected);
+		return true;
+	}
+
+	private void	SelectPerso(int pPlayerIndex)
+	{
+		__playerMarker[pPlayerIndex].selected = !__playerMarker[pPlayerIndex].selected;
 		if (__playerMarker[pPlayerIndex].selected)
-		{
 			SetPlayerMarkerToColor(pPlayerIndex, new Color(1.0f, 1.0f, 0.0f));
-			if (CheckIfAllPlayerHasPerso())
-				GoToGameState();
-		}
 		else
 			SetPlayerMarkerToColor(pPlayerIndex, new Color(1.0f, 1.0f, 1.0f));
 	}
 
-	private bool	AlreadySelected(int pPersoIndex)
+	private bool	CheckIfPersoHasAlreadyBeenChoose(int pCurrentIndex)
 	{
 		foreach (sPlayerPersoChoice lChoice in __playerMarker)
 		{
-			if (lChoice.currentIndex == pPersoIndex && lChoice.selected)
+			if (lChoice.currentIndex == pCurrentIndex && lChoice.selected)
 				return true;
 		}
 		return false;
@@ -159,6 +163,8 @@ public class PersoChoice : MonoBehaviour
 	{
 		foreach (sPlayerPersoChoice lChoice in __playerMarker)
 		{
+			if (!lChoice.playing)
+				continue;
 			if (!lChoice.selected)
 				return false;
 		}
