@@ -35,6 +35,9 @@ public class PersoChoice : MonoBehaviour
 
 	public List<GameObject> playerMarkerObject;
 
+	public GameObject game8Object;
+	public GameObject menuObject;
+
 	#endregion
 
 	#region Private Parameters
@@ -63,6 +66,7 @@ public class PersoChoice : MonoBehaviour
 	private void	Update()
 	{
 		HorizontalInput();
+		SelectedInput();
 	}
 
 	#endregion
@@ -81,6 +85,15 @@ public class PersoChoice : MonoBehaviour
 			}
 			else if (value == 0)
 				__playerHorizontalInputLock[i] = false;
+		}
+	}
+
+	private void	SelectedInput()
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			if (Input.GetButtonDown("J" + (i + 1) + "Jump"))
+				SelectActualPerso(i);
 		}
 	}
 
@@ -123,7 +136,11 @@ public class PersoChoice : MonoBehaviour
 		}
 		__playerMarker[pPlayerIndex].SetSelectedState(!__playerMarker[pPlayerIndex].selected);
 		if (__playerMarker[pPlayerIndex].selected)
+		{
 			SetPlayerMarkerToColor(pPlayerIndex, new Color(1.0f, 1.0f, 0.0f));
+			if (CheckIfAllPlayerHasPerso())
+				GoToGameState();
+		}
 		else
 			SetPlayerMarkerToColor(pPlayerIndex, new Color(1.0f, 1.0f, 1.0f));
 	}
@@ -136,6 +153,22 @@ public class PersoChoice : MonoBehaviour
 				return true;
 		}
 		return false;
+	}
+
+	private bool	CheckIfAllPlayerHasPerso()
+	{
+		foreach (sPlayerPersoChoice lChoice in __playerMarker)
+		{
+			if (!lChoice.selected)
+				return false;
+		}
+		return true;
+	}
+
+	private void	GoToGameState()
+	{
+		game8Object.SetActive(true);
+		menuObject.SetActive(false);
 	}
 
 	#endregion
