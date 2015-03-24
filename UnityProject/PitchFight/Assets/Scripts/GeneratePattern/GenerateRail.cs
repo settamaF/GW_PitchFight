@@ -82,6 +82,9 @@ public class GenerateRail : MonoBehaviour
 					ret.transform.position = mPatterns[mPatterns.Count - 1].Next.position;
 				}
 				ret.transform.parent = this.transform;
+				Vector3 position = ret.transform.position;
+				position.z = 0;
+				ret.transform.position = position;
 				ret.Use();
 				mPatterns.Add(ret);
 			}
