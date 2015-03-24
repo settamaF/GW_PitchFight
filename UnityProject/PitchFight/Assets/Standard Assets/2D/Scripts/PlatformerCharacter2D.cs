@@ -46,6 +46,9 @@ namespace UnityStandardAssets._2D
 
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
+			if (!m_Grounded)
+				this.transform.Translate(new Vector3(-0.1f, -2.0f, 0.0f) * Time.deltaTime);
+			
         }
 
 

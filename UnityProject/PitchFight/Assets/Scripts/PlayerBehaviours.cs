@@ -19,7 +19,6 @@ public class PlayerBehaviours : MonoBehaviour
 	
 	void Update () 
 	{
-		
 	}
 
 	public void HitByProjectile()
