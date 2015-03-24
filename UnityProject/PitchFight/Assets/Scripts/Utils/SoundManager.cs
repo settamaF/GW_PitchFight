@@ -13,6 +13,13 @@ public enum SoundEvent
 	HIT,
 	DIED,
 	VICTORY,
+	JUMP,
+	HALLELUJAH,
+	PO_UP,
+	COLLECTIBLES,
+	VOICE_M,
+	VOICE_F,
+
 }
 
 public class Sound
