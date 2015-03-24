@@ -22,16 +22,19 @@ public enum SoundEvent
 
 }
 
+[System.Serializable]
 public class Sound
 {
 	public SoundEvent	NameEvent;
-	public GameObject	SoundPrefab;
+	public string		SoundName;
 }
 
 public class SoundManager : MonoBehaviour
 {
 #region Script Parameters
 	public List<Sound> SoundList;
+
+	public List<string> test;
 #endregion
 
 #region Properties
@@ -56,25 +59,23 @@ public class SoundManager : MonoBehaviour
 #region Methods
 	public void Play(SoundEvent soundEvent)
 	{
-		GameObject gameObject = null;
+		string name = "";
 
 		foreach (var sound in SoundList)
 		{
 			if (sound.NameEvent == soundEvent)
 			{
-				gameObject = sound.SoundPrefab;
+				name = sound.SoundName;
 				break;
 			}
 		}
-		if (gameObject)
+		if (!string.IsNullOrEmpty(name))
 		{
-			var instance = Instantiate(gameObject) as GameObject;
-			Destroy(instance);
-			//Play the sound
+			//AkSoundEngine.PostEvent(name, gameObject);
 			return;
 		}
 		else
-			Debug.LogError("Error no sound prefab for event: " + soundEvent);
+			Debug.LogError("Error no sound defined for event: " + soundEvent);
 	}
 #endregion
 
