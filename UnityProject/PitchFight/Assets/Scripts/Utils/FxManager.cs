@@ -26,9 +26,9 @@ public class FxManager : MonoBehaviour
 #region Unity Methods
 	void Awake()
 	{
-		if(mInstance != null && mInstance != this) 
+		if(mInstance != null)
 		{
-			UnityEngine.Debug.Log("FxManager - we were instantiating a second copy of TextManager, so destroying this instance");
+			UnityEngine.Debug.Log("FxManager - we were instantiating a second copy of FxManager, so destroying this instance");
 			DestroyImmediate(this.gameObject, true);
 			return;
 		}
