@@ -4,6 +4,12 @@ using System.Collections.Generic;
 
 public class GameState : MonoBehaviour
 {
+	#region Public Parameters
+
+	public PlayerStateVisu	playersStateVisu;
+
+	#endregion
+
 	#region Private Parameters
 
 	private List<bool> __isAlive;
@@ -30,18 +36,8 @@ public class GameState : MonoBehaviour
 		__isAlive[pPlayerIndex] = pValue;
 		if (!pValue)
 		{
-			int lNbPlayerIsAlive = GetNbPlayerIsAlive();
-			switch (lNbPlayerIsAlive)
-			{
-				case 0:
-					Debug.Log("Match Nul");
-					break;
-				case 1:
-					Debug.Log("GG!");
-					break;
-				default:
-					break;
-			}
+			SetVisu(pPlayerIndex);
+			CheckVictoryCondition();
 		}
 	}
 
@@ -54,6 +50,27 @@ public class GameState : MonoBehaviour
 				lNbPlayerIsAlive += 1;
 		}
 		return lNbPlayerIsAlive;
+	}
+
+	private void	SetVisu(int pPlayerIndex)
+	{
+		playersStateVisu.SetPlayerStateVisu(pPlayerIndex);
+	}
+
+	private void	CheckVictoryCondition()
+	{
+		int lNbPlayerIsAlive = GetNbPlayerIsAlive();
+		switch (lNbPlayerIsAlive)
+		{
+			case 0:
+				Debug.Log("Match Nul");
+				break;
+			case 1:
+				Debug.Log("GG!");
+				break;
+			default:
+				break;
+		}
 	}
 
 	#endregion
