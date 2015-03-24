@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PullBehaviours : MonoBehaviour 
+public class ActionsBehaviours : MonoBehaviour 
 {
 	public GameObject	ProjectilePrefab;
 	public Transform	ProjectileDummy;
 
-	public int 		playerNumber;
+	public int 			playerNumber;
 	public float		pullingForce;
 	public bool 		inArea = false;
 	private GameObject	_playerInArea;
@@ -20,12 +20,10 @@ public class PullBehaviours : MonoBehaviour
 		if (this.inArea && Input.GetButtonDown("J" + playerNumber.ToString() + "Grab"))
 			this.GrabAction();
 		else if (Input.GetButtonDown("J" + playerNumber.ToString() + "Action"))
-		{
 			this.ThrowAction();
-		}
 	}
 	
-	void GrabAction()
+	public void GrabAction()
 	{
 		if (this._playerInArea)
 			this.StartCoroutine(this.PullPlayer());
@@ -34,7 +32,8 @@ public class PullBehaviours : MonoBehaviour
 
 	void ThrowAction()
 	{
-		Instantiate(ProjectilePrefab, this.ProjectileDummy.position, Quaternion.identity);
+		GameObject tmpProjectile = Instantiate(ProjectilePrefab, this.ProjectileDummy.position, Quaternion.identity) as GameObject;
+		tmpProjectile.GetComponent<ProjectileBehaviours>().player = this.transform.parent.gameObject;
 	}
 
 	IEnumerator PullPlayer()
@@ -54,7 +53,6 @@ public class PullBehaviours : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		//Debug.Log("TEST = " + other.gameObject.tag);
 		if (other.gameObject.tag == "Player")
 		{
 			this.inArea = true;
