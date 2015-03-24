@@ -22,13 +22,13 @@ public class GenerateRail : MonoBehaviour
 	private static float	OFFSET_LEFT = 0f;
 	// Private -----------------------------------------------------------------
 	private List<Object>	mPatterns;
-	private float			mSpeed = 0.2f;
 #endregion
 
 #region Unity Methods
 	void Start ()
 	{
 		mPatterns = new List<Object>();
+		GenerateFirstPattern();
 		for (int i = 0; i < DEFAULT_COUNT_PATTERN; i++)
 		{
 			GenerateRandomPattern();
@@ -41,14 +41,6 @@ public class GenerateRail : MonoBehaviour
 		if (mPatterns.Count < DEFAULT_COUNT_PATTERN)
 			GenerateRandomPattern();
 	}
-	
-	void FixedUpdate()
-	{
-		//this.transform.Translate(-mSpeed, 0, 0);
-	}
-#endregion
-
-#region Methods
 
 #endregion
 
@@ -61,6 +53,23 @@ public class GenerateRail : MonoBehaviour
 			Object remove = mPatterns[0];
 			mPatterns.RemoveAt(0);
 			remove.Reset();
+		}
+	}
+
+	private void GenerateFirstPattern()
+	{
+		GameObject gameObject = PoolGenerator.Get.GetObject(ObjectType.GROUND, "Ground");
+
+		if (gameObject)
+		{
+			Object ret = gameObject.GetComponent<Object>();
+			if (ret)
+			{
+				ret.transform.position = Vector3.zero;
+				ret.transform.parent = this.transform;
+				//ret.Use();
+				mPatterns.Add(ret);
+			}
 		}
 	}
 
@@ -82,6 +91,9 @@ public class GenerateRail : MonoBehaviour
 					ret.transform.position = mPatterns[mPatterns.Count - 1].Next.position;
 				}
 				ret.transform.parent = this.transform;
+				Vector3 position = ret.transform.position;
+				position.z = 0;
+				ret.transform.position = position;
 				ret.Use();
 				mPatterns.Add(ret);
 			}

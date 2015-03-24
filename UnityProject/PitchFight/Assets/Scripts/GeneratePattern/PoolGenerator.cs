@@ -12,7 +12,7 @@ using System.Collections.Generic;
 public enum ObjectType
 {
 	OBSTACLE = 0,
-	STORE,
+	BLIND,
 	GROUND,
 	EVENT
 }
@@ -142,6 +142,7 @@ public class PoolGenerator : MonoBehaviour
 					{
 						stack.Objects.Push(gameObject);
 						gameObject.transform.parent = this.transform;
+						gameObject.transform.localPosition = Vector3.zero;
 						break;
 					}
 				}
