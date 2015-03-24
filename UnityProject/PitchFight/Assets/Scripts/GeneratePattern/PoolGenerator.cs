@@ -18,6 +18,19 @@ public enum ObjectType
 }
 
 [System.Serializable]
+public class Stacks
+{
+	public ObjectType Type;
+	public List<ObjectStack> Stack;
+
+	public Stacks(ObjectType type, List<ObjectStack> stack)
+	{
+		Type = type;
+		Stack = stack;
+	}
+}
+
+[System.Serializable]
 public class ObjectStack
 {
 	public ObjectType			Type;
@@ -38,6 +51,10 @@ public class PoolGenerator : MonoBehaviour
 	public List<ObjectPrefab> ObjectPrefabs;
 #endregion
 
+#region Static
+	public static int mMaxEnumType;
+#endregion
+
 #region Properties
 	private static PoolGenerator mInstance;
 	public static PoolGenerator Get {get {return mInstance;}}
@@ -50,8 +67,7 @@ public class PoolGenerator : MonoBehaviour
 	private const int	OFFSETY = -10000;
 
 	// Private -----------------------------------------------------------------
-	private int mMaxEnumType;
-	public List<ObjectStack> mPool; // a mettre en private
+	private List<Stacks> mPool;
 #endregion
 
 #region Unity Methods
@@ -72,18 +88,66 @@ public class PoolGenerator : MonoBehaviour
 #region Methods
 	public GameObject GetRandomObject(ObjectType type)
 	{
-		int rand = Random.Range(0, 1);
+		int range = 0;
+		int rand;
+
+		foreach(var stack in mPool)
+		{
+			if (stack.Type == type)
+			{
+				range = stack.Stack.Count;
+				rand = Random.Range(0, range);
+				return GetObject(type, stack.Stack[rand].Name);
+			}
+		}
 		return null;
 	}
+
 	public GameObject GetObject(ObjectType type, string name)
 	{
-		GameObject ret;
+		int index = GetIndexStack(type);
 
-
+		if (index == -1)
+		{
+			Debug.LogWarning("Warning no object with " + type.ToString());
+			return null;
+		}
+		foreach (var stack in mPool[index].Stack)
+		{
+			if (stack.Name == name)
+			{
+				GameObject ret;
+				if (stack.Objects.Count > 0)
+				{
+					ret = stack.Objects.Pop();
+					if (ret)
+						return ret;
+				}
+				ret = InstantiatePrefab(type, name);
+				return ret;
+			}
+		}
 		return null;
 	}
 
-
+	public void AddToStack(GameObject gameObject, ObjectType type)
+	{
+		foreach (var stacks in mPool)
+		{
+			if (stacks.Type == type)
+			{
+				foreach (var stack in stacks.Stack)
+				{
+					if (stack.Name == gameObject.name)
+					{
+						stack.Objects.Push(gameObject);
+						gameObject.transform.parent = this.transform;
+						break;
+					}
+				}
+			}
+		}
+	}
 #endregion
 
 #region Implementation
@@ -96,21 +160,22 @@ public class PoolGenerator : MonoBehaviour
 	}
 	private void InitPoolGenerator()
 	{
-		mPool = new List<ObjectStack>();
+		mPool = new List<Stacks>();
 		for (int i = 0; i < mMaxEnumType; i++)
 		{
 			int index = GetIndexPrefab((ObjectType)i);
-
 			if (index >= 0)
 			{
+				List<ObjectStack> stack = new List<ObjectStack>();
 				foreach (var prefab in ObjectPrefabs[index].Prefabs)
 				{
-					ObjectStack stack = new ObjectStack();
-					stack.Type = (ObjectType)i;
-					stack.Name = prefab.name;
-					stack.Objects = GeneratePool(prefab);
-					mPool.Add(stack);
+					ObjectStack obj = new ObjectStack();
+					obj.Type = (ObjectType)i;
+					obj.Name = prefab.name;
+					obj.Objects = GeneratePool(prefab);
+					stack.Add(obj);
 				}
+				mPool.Add(new Stacks((ObjectType)i, stack));
 			}
 		}
 	}
@@ -134,6 +199,7 @@ public class PoolGenerator : MonoBehaviour
 		}
 		return -1;
 	}
+
 	private Stack<GameObject> GeneratePool(GameObject prefab)
 	{
 		Stack<GameObject> ret = new Stack<GameObject>();
@@ -155,12 +221,29 @@ public class PoolGenerator : MonoBehaviour
 		return ret;
 	}
 
+	private GameObject InstantiatePrefab(ObjectType type, string name)
+	{
+		int index = GetIndexPrefab(type);
+
+		if (index < 0)
+			return null;
+		foreach(var prefab in ObjectPrefabs[index].Prefabs)
+		{
+			if (prefab.name == name)
+				return InstantiatePrefab(prefab);
+		}
+		return null;
+	}
+
 	private GameObject InstantiatePrefab(GameObject prefab)
 	{
 		GameObject ret;
 
-		ret = Instantiate(prefab, Vector3.zero, Quaternion.identity) as GameObject;
+		ret = Instantiate(prefab) as GameObject;
 		ret.transform.parent = this.transform;
+		ret.transform.localPosition = Vector3.zero;
+		ret.name = prefab.name;
+		ret.GetComponent<Object>().Type = prefab.GetComponent<Object>().Type;
 		return ret;
 	}
 #endregion

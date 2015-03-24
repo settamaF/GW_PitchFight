@@ -1,22 +1,21 @@
 ﻿//******************************************************************************
-// Authors: Frederic SETTAMA  
+// Authors: Frederic SETTAMA
 //******************************************************************************
 
 using UnityEngine;
 using System.Collections;
 
 //******************************************************************************
-public class Pattern : MonoBehaviour 
+public class GenerateDebugCamera : MonoBehaviour
 {
 #region Script Parameters
+	public float Speed = 0.2f;
 #endregion
 
 #region Static
 #endregion
 
 #region Properties
-	public Transform Next { get { return mNext; } }
-	private Transform mNext;
 #endregion
 
 #region Fields
@@ -26,13 +25,13 @@ public class Pattern : MonoBehaviour
 #endregion
 
 #region Unity Methods
-	void Awake()
+	void Start () 
 	{
-		mNext = this.transform.FindChild("Next");
-		if (!mNext)
-		{
-			Debug.LogError("Error no child Next in " + this.name);
-		}
+	}
+	
+	void Update () 
+	{
+		this.transform.Translate(Speed, 0, 0);
 	}
 #endregion
 
