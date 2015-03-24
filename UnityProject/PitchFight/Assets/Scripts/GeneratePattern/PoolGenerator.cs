@@ -12,7 +12,7 @@ using System.Collections.Generic;
 public enum ObjectType
 {
 	OBSTACLE = 0,
-	STORE,
+	BLIND,
 	GROUND,
 	EVENT
 }
