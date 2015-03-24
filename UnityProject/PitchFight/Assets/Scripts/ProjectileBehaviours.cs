@@ -4,6 +4,7 @@ using System.Collections;
 public class ProjectileBehaviours : MonoBehaviour 
 {
 	public float projectileSpeed = 5.0f;
+	public	GameObject	player;
 	void Start ()
 	{
 	
@@ -16,7 +17,10 @@ public class ProjectileBehaviours : MonoBehaviour
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		if (other.tag == "Player")
+		if (other.gameObject != this.player && other.tag == "Player")
+		{
+			other.GetComponent<PlayerBehaviours>().HitByProjectile();
 			Destroy(this.gameObject);
+		}
 	}
 }
