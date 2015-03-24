@@ -54,6 +54,7 @@ public class PoolGenerator : MonoBehaviour
 #region Static
 	public static int mMaxEnumType;
 #endregion
+
 #region Properties
 	private static PoolGenerator mInstance;
 	public static PoolGenerator Get {get {return mInstance;}}
@@ -66,8 +67,7 @@ public class PoolGenerator : MonoBehaviour
 	private const int	OFFSETY = -10000;
 
 	// Private -----------------------------------------------------------------
-
-	public List<Stacks> mPool; // a mettre en private
+	private List<Stacks> mPool;
 #endregion
 
 #region Unity Methods
@@ -141,6 +141,7 @@ public class PoolGenerator : MonoBehaviour
 					if (stack.Name == gameObject.name)
 					{
 						stack.Objects.Push(gameObject);
+						gameObject.transform.parent = this.transform;
 						break;
 					}
 				}

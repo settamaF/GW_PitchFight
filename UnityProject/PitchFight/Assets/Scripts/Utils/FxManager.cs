@@ -14,13 +14,20 @@ public enum FX
 
 public class FxManager : MonoBehaviour
 {
+	[System.Serializable]
+	public class FxEvent
+	{
+		public FX			EventName;
+		public GameObject	FxPrefab;
+	}
+
 #region Static
 	private static FxManager mInstance;
 	public static FxManager Get { get{ return mInstance; } }
 #endregion
 	
 #region Script Parameters
-	public List<GameObject>	FX;
+	public List<FxEvent>	FX;
 #endregion
 	
 #region Unity Methods
@@ -42,7 +49,15 @@ public class FxManager : MonoBehaviour
 #region Methods
 	public void Play(FX fx, Transform target)
 	{
-		var instance = Instantiate(FX[(int)fx]) as GameObject;
+		GameObject instance;
+		var gameObject = GetPrefab(fx);
+		
+		if (!gameObject)
+		{
+			Debug.LogWarning("Not prefab " + fx.ToString() + " defined");
+			return;
+		}
+		instance = Instantiate(gameObject) as GameObject;
 		instance.transform.parent = target;
 		instance.transform.localPosition = Vector3.zero;
 		instance.transform.localRotation = Quaternion.identity;
@@ -56,11 +71,31 @@ public class FxManager : MonoBehaviour
 
 	public void Play(FX fx, Vector3 position, Quaternion rotation)
 	{
-		var instance = Instantiate(FX[(int)fx]) as GameObject;
+		GameObject instance;
+		var gameObject = GetPrefab(fx);
+
+		if (!gameObject)
+		{
+			Debug.LogWarning("Not prefab " + fx.ToString() + " defined");
+			return;
+		}
+		instance = Instantiate(gameObject) as GameObject;
 		instance.transform.parent = transform.parent;
 		instance.transform.localPosition = position;
 		instance.transform.localRotation = rotation;
 		instance.SetActive(true);
+	}
+#endregion
+
+#region Implementation
+	private GameObject GetPrefab(FX fx)
+	{
+		foreach (var prefab in FX)
+		{
+			if (fx == prefab.EventName)
+				return prefab.FxPrefab;
+		}
+		return null;
 	}
 #endregion
 }

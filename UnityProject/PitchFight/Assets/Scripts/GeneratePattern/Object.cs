@@ -69,11 +69,14 @@ public class Object : MonoBehaviour
 		{
 			foreach (Transform child in objectChild.Childs)
 			{
-				GameObject gameObject = PoolGenerator.Get.GetRandomObject(objectChild.Type);
-				if (gameObject)
+				if (child.childCount <= 0)
 				{
-					gameObject.transform.parent = child;
-					gameObject.transform.localPosition = Vector3.zero;
+					GameObject gameObject = PoolGenerator.Get.GetRandomObject(objectChild.Type);
+					if (gameObject)
+					{
+						gameObject.transform.parent = child;
+						gameObject.transform.localPosition = Vector3.zero;
+					}
 				}
 			}
 		}
@@ -94,6 +97,7 @@ public class Object : MonoBehaviour
 				}
 			}
 		}
+		PoolGenerator.Get.AddToStack(this.gameObject, Type);
 	}
 #endregion
 
