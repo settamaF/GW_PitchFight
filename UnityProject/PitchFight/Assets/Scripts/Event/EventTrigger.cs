@@ -35,6 +35,7 @@ public class EventTrigger : MonoBehaviour
 			return;
 		Triggered = true;
 		GameUI.Get.SetEvent("Launch event", Pedago.PEDAGO);
+		GameState.get.currentEvent = this;
 	}
 #endregion
 

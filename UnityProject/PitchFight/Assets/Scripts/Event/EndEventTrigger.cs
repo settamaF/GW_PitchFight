@@ -30,7 +30,9 @@ public class EndEventTrigger : EventTrigger
 		if (Triggered)
 			return;
 		Triggered = true;
-		EndEvent();
+		if (GameState.get.currentEvent)
+			GameState.get.currentEvent.EndEvent();
+		GameState.get.currentEvent = null;
 	}
 #endregion
 

@@ -18,6 +18,23 @@ public class GameState : MonoBehaviour
 
 	#endregion
 
+	#region Propertys
+
+	private EventTrigger __currentEvent;
+	public EventTrigger	currentEvent
+	{
+		get { return __currentEvent; }
+		set { __currentEvent = value; }
+	}
+
+	private static GameState __gameState;
+	public static GameState	get
+	{
+		get { return __gameState; }
+	}
+
+	#endregion
+
 	#region Private Parameters
 
 	private List<bool> __isAlive;
@@ -27,8 +44,10 @@ public class GameState : MonoBehaviour
 
 	#region Unity Callbacks
 
-	private void Start()
+	private void	Awake()
 	{
+		if (__gameState == null)
+			__gameState = this;
 	}
 
 	#endregion
@@ -41,6 +60,7 @@ public class GameState : MonoBehaviour
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
 		InitRails();
+		__currentEvent = null;
 	}
 
 	private void InitAliveStates(int pNumberOfPlayers)
@@ -72,7 +92,7 @@ public class GameState : MonoBehaviour
 
 	private void	InitRails()
 	{
-		generateRailsScript.enabled = true;
+		generateRailsScript.ActivateRail();
 		generateDebugCamera.Speed = railsDefaultSpeed;
 	}
 
@@ -148,9 +168,9 @@ public class GameState : MonoBehaviour
 	private void	ActiveVictoryPanel(string pText)
 	{
 		generateRailsScript.ResetRail();
-		generateRailsScript.enabled = false;
 		generateDebugCamera.Speed = 0.0f;
 		victoryPanel.SetActive(true);
+		ClearGame();
 	}
 
 	#endregion

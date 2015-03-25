@@ -37,15 +37,6 @@ public class GenerateRail : MonoBehaviour
 			GenerateRandomPattern();
 	}
 
-	void OnEnable()
-	{
-		ActivateRail();
-	}
-
-	void OnDisable()
-	{
-		ResetRail();
-	}
 #endregion
 
 #region Methods
@@ -58,6 +49,7 @@ public class GenerateRail : MonoBehaviour
 		{
 			GenerateRandomPattern();
 		}
+		this.enabled = true;
 	}
 
 	public void ResetRail()
