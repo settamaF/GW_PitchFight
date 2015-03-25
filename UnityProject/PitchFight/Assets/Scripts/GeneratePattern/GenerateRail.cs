@@ -44,8 +44,6 @@ public class GenerateRail : MonoBehaviour
 		DeleteLastPattern();
 		if (mPatterns.Count < DEFAULT_COUNT_PATTERN)
 			GenerateRandomPattern();
-		if (Input.GetKey(KeyCode.A))
-			ResetRail();
 	}
 
 
