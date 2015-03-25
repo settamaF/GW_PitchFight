@@ -15,17 +15,27 @@ public class Object : MonoBehaviour
 		public int				ChildCount;
 		public List<Transform>	Childs;
 	}
+
+	[System.Serializable]
+	public class RateObject
+	{
+		public ObjectType		Type;
+		public int				Rate;
+	}
+
 #region Script Parameters
 	public ObjectType Type;
+	public List<RateObject>		ListRate;
 #endregion
 
 #region Static
 #endregion
 
 #region Properties
-	public Transform Next { get { return mNext; } }
 	private Transform mNext;
-#endregion
+	public Transform Next { get { return mNext; } }
+
+#endregion	
 
 #region Fields
 	// Const -------------------------------------------------------------------
@@ -81,7 +91,9 @@ public class Object : MonoBehaviour
 		{
 			foreach (Transform child in objectChild.Childs)
 			{
-				if (child.childCount > 0)
+				if (child.childCount > 0 || !RateGenerate(objectChild.Type))
+					continue;
+				if (!RateGenerate(objectChild.Type))
 					continue;
 				if (objectChild.Type == ObjectType.EVENT && eventActive)
 				{
@@ -178,6 +190,27 @@ public class Object : MonoBehaviour
 				break;
 		}
 		return Color.black;
+	}
+
+	private bool RateGenerate(ObjectType type)
+	{
+		int rand = Random.Range(0, 101);
+		int rate = 0;
+
+		if (ListRate.Count <= 0)
+			return true;
+		foreach (var rates in ListRate)
+		{
+			if (rates.Type == type)
+			{
+				rate = rates.Rate;
+				break;
+			}
+		}
+
+		if (rand >= rate)
+			return true;
+		return false;
 	}
 #endregion
 }

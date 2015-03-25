@@ -21,7 +21,8 @@ public class PlayerDeath : MonoBehaviour
 
 	private void	Start()
 	{
-		__deathBorderRatio = deathBorder.rect.xMax / 1920.0f;
+		if (deathBorder)
+			__deathBorderRatio = deathBorder.rect.xMax / 1920.0f;
 	}
 
 	private void	Update()
@@ -31,7 +32,8 @@ public class PlayerDeath : MonoBehaviour
 		float lYScreenPosPersoRatio = lWorldToScreenPoint.y / Screen.height;
 		if (lXScreenPosPersoRatio < __deathBorderRatio || lYScreenPosPersoRatio < 0.0f)
 		{
-			gameState.SetAliveState(transform.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber - 1, false);
+			if (gameState)
+				gameState.SetAliveState(transform.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber - 1, false);
 			gameObject.SetActive(false);
 		}
 	}

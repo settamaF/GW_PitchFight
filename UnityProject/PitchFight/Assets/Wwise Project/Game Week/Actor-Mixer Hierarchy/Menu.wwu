@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{B2BDC525-0A34-4047-B3B8-645E17668E20}" SchemaVersion="69">
+	<AudioObjects>
+		<WorkUnit Name="Menu" ID="{B2BDC525-0A34-4047-B3B8-645E17668E20}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Sfx_Menu_Start" ID="{39FA337B-7799-4F9F-9797-582F0A0F831C}" ShortID="597562958">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Menu_Start" ID="{632CE387-CD5D-4308-9650-B0139E42F52C}" ShortID="519452731" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Menu_Start" ID="{15358071-9332-469F-A068-37F36ECDEBFA}" ShortID="93008576">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Menu_Start.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="1069438069"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Menu_Start" ID="{15358071-9332-469F-A068-37F36ECDEBFA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Menu_Select" ID="{E687E3CC-BA74-45EF-ACB6-C15F1DCFF324}" ShortID="75101127">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Menu_Select" ID="{97EDBE61-DD34-45F2-B833-F7453E95D4F7}" ShortID="123816881" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Menu_Select" ID="{4F01AFAA-6FD8-4722-8BCA-C5DEA236182B}" ShortID="1006249645">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Menu_Select.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="950674497"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Menu_Select" ID="{4F01AFAA-6FD8-4722-8BCA-C5DEA236182B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>

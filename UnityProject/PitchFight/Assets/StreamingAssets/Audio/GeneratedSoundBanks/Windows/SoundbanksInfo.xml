@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" SchemaVersion="10" SoundbankVersion="112">
+	<RootPaths>
+		<ProjectRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\</ProjectRoot>
+		<SourceFilesRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\SoundBanks\GeneratedSoundBanks\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX">
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="3814076287" Language="SFX">
+			<ShortName>GameWeek</ShortName>
+			<Path>GameWeek.bnk</Path>
+			<IncludedEvents>
+				<Event Id="2486555133" Name="Play_Amb_City_Loop"/>
+			</IncludedEvents>
+			<IncludedMemoryFiles>
+				<File Id="934373687" Language="SFX">
+					<ShortName>Audiosource\Amb_City_Loop.wav</ShortName>
+					<Path>SFX\Audiosource\Amb_City_Loop_DDC98EF4.wem</Path>
+				</File>
+			</IncludedMemoryFiles>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

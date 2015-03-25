@@ -27,7 +27,7 @@ public class EndEventTrigger : EventTrigger
 
 	protected override void OnTriggerEnter2D(Collider2D other)
 	{
-		if (Triggered)
+		if (Triggered || other.tag != "Player")
 			return;
 		Triggered = true;
 		if (GameState.get.currentEvent)

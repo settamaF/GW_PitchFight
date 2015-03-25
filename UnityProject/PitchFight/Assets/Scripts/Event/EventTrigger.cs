@@ -34,7 +34,8 @@ public class EventTrigger : MonoBehaviour
 		if (Triggered)
 			return;
 		Triggered = true;
-		GameState.get.currentEvent = this;
+		if (GameState.get)
+			GameState.get.currentEvent = this;
 	}
 #endregion
 

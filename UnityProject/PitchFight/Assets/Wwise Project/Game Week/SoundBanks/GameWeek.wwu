@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{9A6D2755-B4D2-4E7D-A86A-0CF963557BD3}" SchemaVersion="69">
+	<SoundBanks>
+		<WorkUnit Name="GameWeek" ID="{9A6D2755-B4D2-4E7D-A86A-0CF963557BD3}" PersistMode="Standalone">
+			<ChildrenList>
+				<SoundBank Name="GameWeek" ID="{8A35C70B-1ADB-4BD3-9F32-504EEB1E52B7}">
+					<ObjectInclusionList>
+						<ObjectRef Name="Play_Amb_City_Loop" ID="{30921EDB-21DA-4DC1-B5C5-CB180EEF3D19}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+					</ObjectInclusionList>
+					<ObjectExclusionList/>
+					<GameSyncExclusionList/>
+				</SoundBank>
+			</ChildrenList>
+		</WorkUnit>
+	</SoundBanks>
+</WwiseDocument>

@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 public enum FX
 {
-	FX1,
-	FX2,
-	FX3
+	SECRETSAUCE_PICKUP,
+	HIT_OBSTACLE,
+	HIT_PLAYER,
 }
 
 public class FxManager : MonoBehaviour
@@ -33,7 +33,7 @@ public class FxManager : MonoBehaviour
 #region Unity Methods
 	void Awake()
 	{
-		if(mInstance != null)
+		if (mInstance != null && mInstance != this)
 		{
 			UnityEngine.Debug.Log("FxManager - we were instantiating a second copy of FxManager, so destroying this instance");
 			DestroyImmediate(this.gameObject, true);

@@ -1,0 +1,6 @@
+Event	ID	Name			Wwise Object Path	Notes
+	2486555133	Play_Amb_City_Loop			\GameWeekEvent\Play_Amb_City_Loop	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	934373687	Amb_City_Loop	D:\Game_Project\GameWeek\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Amb_City_Loop_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Amb_City_Loop\Amb_City_Loop		4233664
+
