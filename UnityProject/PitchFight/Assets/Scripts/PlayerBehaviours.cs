@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets._2D;
 
 public class PlayerBehaviours : MonoBehaviour 
 {
@@ -21,6 +22,7 @@ public class PlayerBehaviours : MonoBehaviour
 	{
 		this.rigid = this.GetComponent<Rigidbody2D>();
 		this.boxCollider = this.GetComponent<BoxCollider2D>();
+		this.playerNumber = this.GetComponent<Platformer2DUserControl>().playerNumber;
 	}
 	
 	void Update () 

@@ -22,5 +22,8 @@ public class ProjectileBehaviours : MonoBehaviour
 			other.GetComponent<PlayerBehaviours>().HitByProjectile();
 			Destroy(this.gameObject);
 		}
+		else if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+			Destroy(this.gameObject);
+			
 	}
 }
