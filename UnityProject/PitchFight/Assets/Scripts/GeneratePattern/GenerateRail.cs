@@ -29,15 +29,6 @@ public class GenerateRail : MonoBehaviour
 #endregion
 
 #region Unity Methods
-	void Start ()
-	{
-		mPatterns = new List<Object>();
-		GenerateFirstPattern();
-		for (int i = 0; i < DEFAULT_COUNT_PATTERN; i++)
-		{
-			GenerateRandomPattern();
-		}
-	}
 	
 	void Update ()
 	{
@@ -46,10 +37,28 @@ public class GenerateRail : MonoBehaviour
 			GenerateRandomPattern();
 	}
 
+	void OnEnable()
+	{
+		ActivateRail();
+	}
 
+	void OnDisable()
+	{
+		ResetRail();
+	}
 #endregion
 
 #region Methods
+
+	public void ActivateRail()
+	{
+		mPatterns = new List<Object>();
+		GenerateFirstPattern();
+		for (int i = 0; i < DEFAULT_COUNT_PATTERN; i++)
+		{
+			GenerateRandomPattern();
+		}
+	}
 
 	public void ResetRail()
 	{
