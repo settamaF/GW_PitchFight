@@ -33,7 +33,6 @@ public class PlayerDeath : MonoBehaviour
 		{
 			gameState.SetAliveState(transform.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber - 1, false);
 			gameObject.SetActive(false);
-			Destroy(gameObject);
 		}
 	}
 
