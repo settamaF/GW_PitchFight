@@ -233,6 +233,8 @@ public class PersoChoice : MonoBehaviour
 
 	private void	ValidGame()
 	{
+		if (GetNumberOfPlayers() <= 0)
+			return;
 		if (CheckIfAllPlayerHasPerso())
 			GoToGameState();
 	}
