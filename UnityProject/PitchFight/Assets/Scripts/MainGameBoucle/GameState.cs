@@ -12,6 +12,7 @@ public class GameState : MonoBehaviour
 	public RectTransform deathBorder;
 
 	public GameObject victoryPanel;
+	public GenerateRail generateRailsScript;
 	public GenerateDebugCamera generateDebugCamera;
 	public float railsDefaultSpeed;
 
@@ -71,6 +72,7 @@ public class GameState : MonoBehaviour
 
 	private void	InitRails()
 	{
+		generateRailsScript.enabled = true;
 		generateDebugCamera.Speed = railsDefaultSpeed;
 	}
 
@@ -145,6 +147,7 @@ public class GameState : MonoBehaviour
 
 	private void	ActiveVictoryPanel(string pText)
 	{
+		generateRailsScript.enabled = false;
 		generateDebugCamera.Speed = 0.0f;
 		victoryPanel.SetActive(true);
 	}
