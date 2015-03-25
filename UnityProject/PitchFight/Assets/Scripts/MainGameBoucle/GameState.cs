@@ -27,6 +27,12 @@ public class GameState : MonoBehaviour
 		set { __currentEvent = value; }
 	}
 
+	private List<GameObject> __players;
+	public List<GameObject> players
+	{
+		get { return __players; }
+	}
+
 	private static GameState __gameState;
 	public static GameState	get
 	{
@@ -38,7 +44,6 @@ public class GameState : MonoBehaviour
 	#region Private Parameters
 
 	private List<bool> __isAlive;
-	private List<GameObject> __players;
 
 	#endregion
 

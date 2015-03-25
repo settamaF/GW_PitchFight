@@ -34,7 +34,6 @@ public class EventTrigger : MonoBehaviour
 		if (Triggered)
 			return;
 		Triggered = true;
-		GameUI.Get.SetEvent("Launch event", Pedago.PEDAGO);
 		GameState.get.currentEvent = this;
 	}
 #endregion
@@ -50,6 +49,12 @@ public class EventTrigger : MonoBehaviour
 		if (GameUI.Get)
 			GameUI.Get.DisableEvent();
 	}
+
+	public virtual void Reset()
+	{
+		Triggered = false;
+	}
+
 #endregion
 
 #region Implementation
