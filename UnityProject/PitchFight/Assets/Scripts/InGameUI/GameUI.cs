@@ -66,6 +66,15 @@ public class GameUI : MonoBehaviour
 			return;
 		}
 		mActivePedago = null;
+		foreach (var image in Portrait)
+		{
+			if (image)
+			{
+				Color tmp = image.color;
+				tmp.a = DEFAULT_ALPHA;
+				image.color = tmp;
+			}
+		}
 	}
 #endregion
 
