@@ -6,9 +6,10 @@ using UnityEngine;
 using System.Collections;
 
 //******************************************************************************
-public class EndEventTrigger : EventTrigger 
+public class EventGodTrigger : EventTrigger 
 {
 #region Script Parameters
+	public GameObject SecretSauce;
 #endregion
 
 #region Static
@@ -24,21 +25,27 @@ public class EndEventTrigger : EventTrigger
 #endregion
 
 #region Unity Methods
-
 	protected override void OnTriggerEnter2D(Collider2D other)
 	{
 		if (Triggered || other.tag != "Player")
 			return;
-		Triggered = true;
-		if (GameState.get.currentEvent)
-			GameState.get.currentEvent.EndEvent();
-		GameState.get.currentEvent = null;
+		base.OnTriggerEnter2D(other);
+		GameUI.Get.SetEvent("Elle est où la secréte sauce??", Pedago.GOD);
+		ExecuteEvent();
 	}
+
 #endregion
 
-#region Methods
-#endregion
+	#region Methods
+	public override void ExecuteEvent()
+	{
 
-#region Implementation
-#endregion
+	}
+
+	public override void EndEvent()
+	{
+		base.EndEvent();
+	
+	}
+	#endregion
 }

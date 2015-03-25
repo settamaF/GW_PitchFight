@@ -1,10 +1,14 @@
 using System;
 using UnityEngine;
+using System.Collections;
 
 namespace UnityStandardAssets._2D
 {
     public class PlatformerCharacter2D : MonoBehaviour
     {
+		public float jumpTimer;
+		public float jumpSpeed;
+
         [SerializeField] private float m_MaxSpeed = 10f;                    // The fastest the player can travel in the x axis.
         [SerializeField] private float m_JumpForce = 400f;                  // Amount of force added when the player jumps.
         [Range(0, 1)] [SerializeField] private float m_CrouchSpeed = .36f;  // Amount of maxSpeed applied to crouching movement. 1 = 100%
@@ -98,10 +102,23 @@ namespace UnityStandardAssets._2D
                 // Add a vertical force to the player.
                 m_Grounded = false;
                 m_Anim.SetBool("Ground", false)	;
-                m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				this.StartCoroutine(this.JumpAction());
+                //m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
             }
         }
 
+		IEnumerator JumpAction()
+		{
+			float timer = 15.0f;
+			float currentTime = 0.0f;
+			while (currentTime < this.jumpTimer)
+			{
+				this.transform.Translate(new Vector3(0.0f, 1.0f, 0.0f) * Time.deltaTime * this.jumpSpeed);
+				currentTime++;
+				yield return null;
+			}
+			yield break;
+		}
 
         private void Flip()
         {
