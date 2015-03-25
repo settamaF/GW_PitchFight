@@ -9,8 +9,7 @@ using System.Collections.Generic;
 //******************************************************************************
 public class GenerateRail : MonoBehaviour 
 {
-
-#region Static
+#region Script parameters
 #endregion
 
 #region Properties
