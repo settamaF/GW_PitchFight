@@ -5,9 +5,9 @@
 			<ChildrenList>
 				<Event Name="Play_Amb_City_Loop" ID="{30921EDB-21DA-4DC1-B5C5-CB180EEF3D19}">
 					<ChildrenList>
-						<Action Name="Play" ID="{F1877A0E-1D65-452D-A25B-34CECC7B3EF3}" ShortID="639107265" Type="Play" Scope="One" Global="false">
+						<Action Name="Play" ID="{C334447B-F8C1-4F1D-9C9E-0EADABF359A3}" ShortID="1025751745" Type="Play" Scope="One" Global="false">
 							<ElementList>
-								<Element ID="{1E810574-4E34-4B5A-8E4F-92DB0BE5EFFF}" Global="false">
+								<Element ID="{FEB710E1-9A05-465E-B551-F160D1F4F05C}" Global="false">
 									<ObjectRef Name="Amb_City_Loop" ID="{763CE6A3-E08A-4694-8C5A-CC0D10F2CBB9}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
 								</Element>
 							</ElementList>
