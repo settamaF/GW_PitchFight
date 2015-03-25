@@ -25,6 +25,8 @@ public class PersoChoice : MonoBehaviour
 
 	#region Public Parameters
 
+	public GameState gameState;
+
 	public List<GameObject> playerMarkerObject;
 
 	public GameObject game8Object;
@@ -174,7 +176,19 @@ public class PersoChoice : MonoBehaviour
 	private void	GoToGameState()
 	{
 		game8Object.SetActive(true);
+		gameState.InitGame(GetNumberOfPlayers());
 		menuObject.SetActive(false);
+	}
+
+	private int	GetNumberOfPlayers()
+	{
+		int lNb = 0;
+		foreach (sPlayerPersoChoice lChoice in __playerMarker)
+		{
+			if (lChoice.selected)
+				lNb += 1;
+		}
+		return lNb;
 	}
 
 	#endregion

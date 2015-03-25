@@ -8,6 +8,9 @@ public class GameState : MonoBehaviour
 
 	public PlayerStateVisu	playersStateVisu;
 
+	public GameObject playerPrefab;
+	public RectTransform deathBorder;
+
 	#endregion
 
 	#region Private Parameters
@@ -25,6 +28,38 @@ public class GameState : MonoBehaviour
 		__isAlive.Add(true);
 		__isAlive.Add(true);
 		__isAlive.Add(true);
+	}
+
+	#endregion
+
+	#region Initialization
+
+	public void InitGame(int pNumberOfPlayers)
+	{
+		InitAliveStates(pNumberOfPlayers);
+		InitAllPersos(pNumberOfPlayers);
+	}
+
+	private void InitAliveStates(int pNumberOfPlayers)
+	{
+		if (__isAlive == null)
+			__isAlive = new List<bool>();
+		if (__isAlive != null && __isAlive.Count > 0)
+			__isAlive.Clear();
+		for (int i = 0; i < pNumberOfPlayers; i++)
+			__isAlive.Add(true);
+	}
+
+	private void	InitAllPersos(int pNumberOfPlayers)
+	{
+		for (int i = 0; i < pNumberOfPlayers; i++)
+		{
+			GameObject lPlayer = Instantiate(playerPrefab);
+			lPlayer.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber = i + 1;
+			PlayerDeath lPlayerDeathScript = lPlayer.GetComponent<PlayerDeath>();
+			lPlayerDeathScript.deathBorder = deathBorder;
+			lPlayerDeathScript.gameState = this;
+		}
 	}
 
 	#endregion
