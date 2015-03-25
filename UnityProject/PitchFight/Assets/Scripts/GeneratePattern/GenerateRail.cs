@@ -13,6 +13,11 @@ public class GenerateRail : MonoBehaviour
 #endregion
 
 #region Properties
+	private static GenerateRail mInstance;
+	public static GenerateRail Get { get { return mInstance; } }
+
+	private List<Object> mPatterns;
+	public List<Object> Patterns { get { return mPatterns; } }
 #endregion
 
 #region Fields
@@ -21,7 +26,7 @@ public class GenerateRail : MonoBehaviour
 	private static float	OFFSET_LEFT = 0f;
 
 	// Private -----------------------------------------------------------------
-	private List<Object>	mPatterns;
+
 	private bool			mEvent = false;
 	private int				mEventDuration = 0;
 	private bool			mSetEventEnd = false;
@@ -29,6 +34,12 @@ public class GenerateRail : MonoBehaviour
 
 #region Unity Methods
 	
+	void Awake()
+	{
+		if (mInstance == null)
+			mInstance = this;
+	}
+
 	void Update ()
 	{
 		DeleteLastPattern();

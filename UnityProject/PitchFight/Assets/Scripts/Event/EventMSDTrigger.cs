@@ -6,7 +6,7 @@ using UnityEngine;
 using System.Collections;
 
 //******************************************************************************
-public class EndEventTrigger : EventTrigger 
+public class EventMSDTrigger : EventTrigger 
 {
 #region Script Parameters
 #endregion
@@ -24,21 +24,27 @@ public class EndEventTrigger : EventTrigger
 #endregion
 
 #region Unity Methods
-
 	protected override void OnTriggerEnter2D(Collider2D other)
 	{
 		if (Triggered || other.tag != "Player")
 			return;
-		Triggered = true;
-		if (GameState.get.currentEvent)
-			GameState.get.currentEvent.EndEvent();
-		GameState.get.currentEvent = null;
+		base.OnTriggerEnter2D(other);
+		GameUI.Get.SetEvent("Un peu de larcen pour le flow", Pedago.MSD);
+		ExecuteEvent();
 	}
+
 #endregion
 
-#region Methods
-#endregion
+	#region Methods
+	public override void ExecuteEvent()
+	{
 
-#region Implementation
-#endregion
+	}
+
+	public override void EndEvent()
+	{
+		base.EndEvent();
+
+	}
+	#endregion
 }

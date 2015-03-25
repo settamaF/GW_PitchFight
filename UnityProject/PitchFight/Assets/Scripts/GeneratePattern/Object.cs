@@ -23,9 +23,10 @@ public class Object : MonoBehaviour
 #endregion
 
 #region Properties
-	public Transform Next { get { return mNext; } }
 	private Transform mNext;
-#endregion
+	public Transform Next { get { return mNext; } }
+
+#endregion	
 
 #region Fields
 	// Const -------------------------------------------------------------------
