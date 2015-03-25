@@ -54,6 +54,7 @@ public class PersoChoice : MonoBehaviour
 	{
 		HorizontalInput();
 		SelectedInput();
+		ValidatingInput();
 	}
 
 	#endregion
@@ -82,6 +83,12 @@ public class PersoChoice : MonoBehaviour
 			if (Input.GetButtonDown("J" + (i + 1) + "Jump"))
 				UpdateSelectedState(i);
 		}
+	}
+
+	private void	ValidatingInput()
+	{
+		if (Input.GetButtonDown("J1Start"))
+			ValidGame();
 	}
 
 	#endregion
@@ -159,8 +166,6 @@ public class PersoChoice : MonoBehaviour
 		if (!__playerMarker[pPlayerIndex].selected && CheckIfPersoHasAlreadyBeenChoose(__playerMarker[pPlayerIndex].currentIndex))
 			return;
 		SelectPerso(pPlayerIndex);
-		if (CheckIfAllPlayerHasPerso())
-			GoToGameState();
 	}
 
 	private bool	CheckIfPlayerIsPlaying(int pPlayerIndex)
@@ -224,6 +229,12 @@ public class PersoChoice : MonoBehaviour
 				lNb += 1;
 		}
 		return lNb;
+	}
+
+	private void	ValidGame()
+	{
+		if (CheckIfAllPlayerHasPerso())
+			GoToGameState();
 	}
 
 	#endregion
