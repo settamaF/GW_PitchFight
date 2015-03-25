@@ -6,7 +6,6 @@ public class PlayerDeath : MonoBehaviour
 {
 	#region Public Parameters
 
-	public Camera referenceCamera;
 	public RectTransform deathBorder;
 	public GameState gameState;
 
@@ -27,14 +26,13 @@ public class PlayerDeath : MonoBehaviour
 
 	private void	Update()
 	{
-		Vector3 lWorldToScreenPoint = referenceCamera.WorldToScreenPoint(transform.position);
+		Vector3 lWorldToScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 		float lXScreenPosPersoRatio = lWorldToScreenPoint.x / Screen.width;
 		float lYScreenPosPersoRatio = lWorldToScreenPoint.y / Screen.height;
 		if (lXScreenPosPersoRatio < __deathBorderRatio || lYScreenPosPersoRatio < 0.0f)
 		{
 			gameState.SetAliveState(transform.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber - 1, false);
 			gameObject.SetActive(false);
-			Destroy(gameObject);
 		}
 	}
 
