@@ -156,7 +156,7 @@ public class PersoChoice : MonoBehaviour
 	{
 		if (!CheckIfPlayerIsPlaying(pPlayerIndex))
 			return;
-		if (CheckIfPersoHasAlreadyBeenChoose(__playerMarker[pPlayerIndex].currentIndex))
+		if (!__playerMarker[pPlayerIndex].selected && CheckIfPersoHasAlreadyBeenChoose(__playerMarker[pPlayerIndex].currentIndex))
 			return;
 		SelectPerso(pPlayerIndex);
 		if (CheckIfAllPlayerHasPerso())
