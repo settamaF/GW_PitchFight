@@ -19,7 +19,6 @@ namespace UnityStandardAssets._2D
         private Animator m_Anim;            // Reference to the player's animator component.
         private Rigidbody2D m_Rigidbody2D;
         private bool m_FacingRight = true;  // For determining which way the player is currently facing.
-
         private void Awake()
         {
             // Setting up references.
@@ -32,6 +31,7 @@ namespace UnityStandardAssets._2D
 
         private void FixedUpdate()
         {
+
             m_Grounded = false;
 
             // The player is grounded if a circlecast to the groundcheck position hits anything designated as ground
@@ -47,7 +47,7 @@ namespace UnityStandardAssets._2D
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
 			if (!m_Grounded)
-				this.transform.Translate(new Vector3(-0.1f, -2.0f, 0.0f) * Time.deltaTime);
+				this.transform.Translate(new Vector3(-2.0f, -2.0f, 0.0f) * Time.deltaTime);
 			
         }
 
@@ -77,7 +77,7 @@ namespace UnityStandardAssets._2D
                 m_Anim.SetFloat("Speed", Mathf.Abs(move));
 
                 // Move the character
-                m_Rigidbody2D.velocity = new Vector2(move*m_MaxSpeed, m_Rigidbody2D.velocity.y);
+                m_Rigidbody2D.velocity = new Vector2(move * m_MaxSpeed, m_Rigidbody2D.velocity.y);
 
                 // If the input is moving the player right and the player is facing left...
                 if (move > 0 && !m_FacingRight)
@@ -113,5 +113,17 @@ namespace UnityStandardAssets._2D
             theScale.x *= -1;
             transform.localScale = theScale;
         }
+
+		void OnTriggerEnter2D(Collider2D other)
+		{
+			if (!m_Grounded && other.tag == "Obstacle")
+				this.m_AirControl = false;
+		}
+
+		void OnTriggerExit2D(Collider2D other)
+		{
+			if (other.tag == "Obstacle")
+				this.m_AirControl = true;
+		}
     }
 }

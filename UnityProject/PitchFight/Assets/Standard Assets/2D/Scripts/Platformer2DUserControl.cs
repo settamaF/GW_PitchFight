@@ -7,11 +7,32 @@ namespace UnityStandardAssets._2D
     [RequireComponent(typeof (PlatformerCharacter2D))]
     public class Platformer2DUserControl : MonoBehaviour
     {
+		private bool _GDEvent;
+		private PlatformerCharacter2D m_Character;
+		private bool m_Jump;
+		private int _GDEventValue = 1;
 		public int playerNumber;
+		public bool GDEvent
+		{
+			get
+			{
+				return _GDEvent; 
+			}
+			set
+			{
+				this._GDEvent = value;
+				this.SwitchControls(value);
+			}
+		}
 
-        private PlatformerCharacter2D m_Character;
-        private bool m_Jump;
 
+		public void SwitchControls(bool b)
+		{
+			if (b)
+				this._GDEventValue = -1;
+			else
+				this._GDEventValue = 1;
+		}
 
         private void Awake()
         {
@@ -26,6 +47,8 @@ namespace UnityStandardAssets._2D
                 // Read the jump input in Update so button presses aren't missed.
                 m_Jump = CrossPlatformInputManager.GetButtonDown("J" + playerNumber.ToString() + "Jump");
             }
+			if (Input.GetKeyDown(KeyCode.Z))
+				this.GDEvent = !this.GDEvent;
         }
 
 
@@ -33,8 +56,7 @@ namespace UnityStandardAssets._2D
         {
             // Read the inputs.
             bool crouch = Input.GetKey(KeyCode.LeftControl);
-			float h = Input.GetAxis("J" + playerNumber.ToString() + "Horizontal");
-			//Debug.Log("player number = " + playerNumber);
+			float h = Input.GetAxis("J" + playerNumber.ToString() + "Horizontal") * this._GDEventValue;
             // Pass all parameters to the character control script.
             m_Character.Move(h, crouch, m_Jump);
             m_Jump = false;
