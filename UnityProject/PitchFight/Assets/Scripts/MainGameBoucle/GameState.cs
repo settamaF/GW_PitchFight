@@ -88,6 +88,7 @@ public class GameState : MonoBehaviour
 		{
 			GameObject lPlayer = Instantiate(playerPrefab);
 			lPlayer.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber = i + 1;
+			lPlayer.transform.FindChild("PlayerInfo").GetComponentInChildren<TextMesh>().text = "J" + (i + 1);
 			PlayerDeath lPlayerDeathScript = lPlayer.GetComponent<PlayerDeath>();
 			lPlayerDeathScript.deathBorder = deathBorder;
 			lPlayerDeathScript.gameState = this;
