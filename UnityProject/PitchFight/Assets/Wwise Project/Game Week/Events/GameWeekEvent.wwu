@@ -6,9 +6,78 @@
 				<Event Name="Play_Amb_City_Loop" ID="{30921EDB-21DA-4DC1-B5C5-CB180EEF3D19}">
 					<ChildrenList>
 						<Action Name="Play" ID="{C334447B-F8C1-4F1D-9C9E-0EADABF359A3}" ShortID="1025751745" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
 							<ElementList>
 								<Element ID="{FEB710E1-9A05-465E-B551-F160D1F4F05C}" Global="false">
 									<ObjectRef Name="Amb_City_Loop" ID="{763CE6A3-E08A-4694-8C5A-CC0D10F2CBB9}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Collectible" ID="{12A009FF-48C2-4AD5-8E46-AA210E71F65E}">
+					<ChildrenList>
+						<Action Name="Play" ID="{5A1FAB44-0690-4FAC-83FF-51E7EE8E073B}" ShortID="880139349" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{4F2E3855-493F-4053-9DCB-5CC1C1BBB9CD}" Global="false">
+									<ObjectRef Name="Sfx_Collectible" ID="{8B805F40-A8AD-46B7-B35D-5F1F6507D613}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Death_All" ID="{F83F45D5-E0FC-40F4-B47C-8B3161748E3A}">
+					<ChildrenList>
+						<Action Name="Play" ID="{FEEC6E9E-0882-44FA-A2D8-183CFCDB2487}" ShortID="788391144" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{2574DEAA-C8F5-46CD-B820-49F39FD347FE}" Global="false">
+									<ObjectRef Name="Sfx_Death_All" ID="{1051C4ED-7CB0-4754-923E-7863B2AB68B6}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Pop_Up" ID="{4CF5FA3D-FDCE-42F3-94E2-82DBC849C265}">
+					<ChildrenList>
+						<Action Name="Play" ID="{AF4703E2-4211-481C-A138-3D3DE4FCDD29}" ShortID="658220871" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{FF63D211-C90C-4EE4-9484-0D1ABD197611}" Global="false">
+									<ObjectRef Name="Sfx_Pop_Up" ID="{1D04AA0C-A3D6-49CC-8146-D0E951988EAC}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Power_Up" ID="{860E9DAE-7671-469A-9F09-8115BB8376D6}">
+					<ChildrenList>
+						<Action Name="Play" ID="{8F79FF3D-FD78-45D2-B26A-795F0E79B55A}" ShortID="985419168" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{757EEBB5-BA45-4162-B05C-A6F9686B0A05}" Global="false">
+									<ObjectRef Name="Sfx_Power_Up" ID="{8F0A0541-736A-4031-B755-5983FDE9806D}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Skill_GA" ID="{30C4E7A6-C35A-484B-8AC6-25614B0FAF9E}">
+					<ChildrenList>
+						<Action Name="Play" ID="{8975C1A4-0957-49D8-B393-BBFAA4D05734}" ShortID="990665609" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{68BF64F2-10E9-48A1-A2A3-9E398068D299}" Global="false">
+									<ObjectRef Name="Sfx_Skill_GA" ID="{AABE50E0-8FE7-42E3-9A2F-F425C7CD93C6}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Hit" ID="{E16D5D5D-C728-4E34-83C5-9871A647D268}">
+					<ChildrenList>
+						<Action Name="Play" ID="{6F6CC995-D899-4695-BBCC-487F94C31847}" ShortID="948315249" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{DB74AB02-616B-4354-9241-CA2D3745D4E1}" Global="false">
+									<ObjectRef Name="Sfx_Hit" ID="{111764B9-7404-48FF-832F-898D13417A9F}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
 								</Element>
 							</ElementList>
 						</Action>

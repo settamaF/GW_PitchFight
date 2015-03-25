@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" SchemaVersion="10" SoundbankVersion="112">
 	<RootPaths>
-		<ProjectRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\</ProjectRoot>
-		<SourceFilesRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\SoundBanks\GeneratedSoundBanks\</SoundBanksRoot>
+		<ProjectRoot>D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\</ProjectRoot>
+		<SourceFilesRoot>D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\StreamingAssets\Audio\GeneratedSoundBanks\Windows\</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>D:\Game_Project\GameWeek\Wwise Project\Game Week\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
 	<StreamedFiles/>
@@ -19,11 +19,53 @@
 			<Path>GameWeek.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2486555133" Name="Play_Amb_City_Loop"/>
+				<Event Id="2653618220" Name="Play_Sfx_Collectible"/>
+				<Event Id="1783193172" Name="Play_Sfx_Death_All"/>
+				<Event Id="1376640657" Name="Play_Sfx_Hit"/>
+				<Event Id="1091716557" Name="Play_Sfx_Pop_Up"/>
+				<Event Id="802598819" Name="Play_Sfx_Power_Up"/>
+				<Event Id="1939947640" Name="Play_Sfx_Skill_GA"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="139867223" Language="SFX">
+					<ShortName>Audiosource\Sfx_Death_All.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Death_All_DDC98EF4.wem</Path>
+				</File>
+				<File Id="232865724" Language="SFX">
+					<ShortName>Audiosource\Sfx_hit_01.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_hit_01_DDC98EF4.wem</Path>
+				</File>
+				<File Id="323840584" Language="SFX">
+					<ShortName>Audiosource\Sfx_hit_03.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_hit_03_DDC98EF4.wem</Path>
+				</File>
+				<File Id="344892017" Language="SFX">
+					<ShortName>Audiosource\Sfx_Skill_GA.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Skill_GA_DDC98EF4.wem</Path>
+				</File>
+				<File Id="364164776" Language="SFX">
+					<ShortName>Audiosource\Sfx_hit_02.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_hit_02_DDC98EF4.wem</Path>
+				</File>
+				<File Id="494394166" Language="SFX">
+					<ShortName>Audiosource\Sfx_hit_04.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_hit_04_DDC98EF4.wem</Path>
+				</File>
+				<File Id="537381801" Language="SFX">
+					<ShortName>Audiosource\Sfx_Power_Up.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Power_Up_DDC98EF4.wem</Path>
+				</File>
+				<File Id="595430506" Language="SFX">
+					<ShortName>Audiosource\Sfx_Pop_Up.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Pop_Up_DDC98EF4.wem</Path>
+				</File>
 				<File Id="934373687" Language="SFX">
 					<ShortName>Audiosource\Amb_City_Loop.wav</ShortName>
 					<Path>SFX\Audiosource\Amb_City_Loop_DDC98EF4.wem</Path>
+				</File>
+				<File Id="1045584503" Language="SFX">
+					<ShortName>Audiosource\Sfx_Collectible.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Collectible_DDC98EF4.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
