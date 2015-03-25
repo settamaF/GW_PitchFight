@@ -4,33 +4,45 @@
 
 using UnityEngine;
 using System.Collections;
-using System.Collections.Generic;
 
 //******************************************************************************
-public class WwiseEventDebug : MonoBehaviour 
+public class TestScript : MonoBehaviour
 {
 #region Script Parameters
-	public SoundEvent	SoundEventDebug;
-	public KeyCode		KeyInputDebug = KeyCode.Space;
+#endregion
+
+#region Static
+#endregion
+
+#region Properties
+#endregion
+
+#region Fields
+	// Const -------------------------------------------------------------------
+
+	// Private -----------------------------------------------------------------
 #endregion
 
 #region Unity Methods
 	void Start ()
 	{
-		if (!SoundManager.Get)
-		{
-			Debug.LogError("No sound Manager in the scene");
-			DestroyImmediate(this);
-		}
 	}
-
+	
 	void Update ()
 	{
-		if (Input.GetKeyUp(KeyInputDebug))
-		{
-			Debug.Log("the sound event " + SoundEventDebug + " is playing");
-			SoundManager.Get.Play(SoundEventDebug);
-		}
+
 	}
+
+	void OnTriggerEnter2D(Collider2D other)
+	{
+		Debug.Log(other.name);
+	}
+
+#endregion
+
+#region Methods
+#endregion
+
+#region Implementation
 #endregion
 }

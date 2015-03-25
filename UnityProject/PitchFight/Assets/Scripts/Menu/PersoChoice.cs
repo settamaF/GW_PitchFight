@@ -25,9 +25,12 @@ public class PersoChoice : MonoBehaviour
 
 	#region Public Parameters
 
+	public GameState gameState;
+
 	public List<GameObject> playerMarkerObject;
 
-	public GameObject game8Object;
+	public GameObject mainGameObject;
+	public GameObject mainMenuObject;
 	public GameObject menuObject;
 
 	#endregion
@@ -43,16 +46,8 @@ public class PersoChoice : MonoBehaviour
 
 	private void Start()
 	{
-		__playerMarker = new List<sPlayerPersoChoice>();
-		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
-		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
-		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
-		__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
-		__playerHorizontalInputLock = new List<bool>();
-		__playerHorizontalInputLock.Add(false);
-		__playerHorizontalInputLock.Add(false);
-		__playerHorizontalInputLock.Add(false);
-		__playerHorizontalInputLock.Add(false);
+		InitPlayerListChoice();
+		InitPlayerInputLock();
 	}
 
 	private void	Update()
@@ -87,6 +82,45 @@ public class PersoChoice : MonoBehaviour
 			if (Input.GetButtonDown("J" + (i + 1) + "Jump"))
 				UpdateSelectedState(i);
 		}
+	}
+
+	#endregion
+
+	#region Initialization
+
+	private void	InitPlayerListChoice()
+	{
+		if (__playerMarker == null)
+			__playerMarker = new List<sPlayerPersoChoice>();
+		if (__playerMarker.Count > 0)
+			__playerMarker.Clear();
+		for (int i = 0; i < 4; i++)
+			__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
+	}
+
+	private void	InitPlayerInputLock()
+	{
+		if (__playerHorizontalInputLock == null)
+			__playerHorizontalInputLock = new List<bool>();
+		if (__playerHorizontalInputLock.Count > 0)
+			__playerHorizontalInputLock.Clear();
+		for (int i = 0; i < 4; i++)
+			__playerHorizontalInputLock.Add(false);
+	}
+
+	#endregion
+
+	#region Clear
+
+	private void	ResetUI()
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			SetPlayerMarker(i, false);
+			SetPlayerMarkerToColor(i, Color.white);
+		}
+		InitPlayerListChoice();
+		InitPlayerInputLock();
 	}
 
 	#endregion
@@ -173,8 +207,23 @@ public class PersoChoice : MonoBehaviour
 
 	private void	GoToGameState()
 	{
-		game8Object.SetActive(true);
-		menuObject.SetActive(false);
+		mainGameObject.SetActive(true);
+		gameState.InitGame(GetNumberOfPlayers());
+		ResetUI();
+		gameObject.SetActive(false);
+		menuObject.SetActive(true);
+		mainMenuObject.SetActive(false);
+	}
+
+	private int	GetNumberOfPlayers()
+	{
+		int lNb = 0;
+		foreach (sPlayerPersoChoice lChoice in __playerMarker)
+		{
+			if (lChoice.selected)
+				lNb += 1;
+		}
+		return lNb;
 	}
 
 	#endregion

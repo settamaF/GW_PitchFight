@@ -20,20 +20,15 @@ public class GenerateRail : MonoBehaviour
 	// Const -------------------------------------------------------------------
 	private static int		DEFAULT_COUNT_PATTERN = 5;
 	private static float	OFFSET_LEFT = 0f;
+
 	// Private -----------------------------------------------------------------
 	private List<Object>	mPatterns;
+	private bool			mEvent = false;
+	private int				mEventDuration = 0;
+	private bool			mSetEventEnd = false;
 #endregion
 
 #region Unity Methods
-	void Start ()
-	{
-		mPatterns = new List<Object>();
-		GenerateFirstPattern();
-		for (int i = 0; i < DEFAULT_COUNT_PATTERN; i++)
-		{
-			GenerateRandomPattern();
-		}
-	}
 	
 	void Update ()
 	{
@@ -42,6 +37,36 @@ public class GenerateRail : MonoBehaviour
 			GenerateRandomPattern();
 	}
 
+#endregion
+
+#region Methods
+
+	public void ActivateRail()
+	{
+		mPatterns = new List<Object>();
+		GenerateFirstPattern();
+		for (int i = 0; i < DEFAULT_COUNT_PATTERN; i++)
+		{
+			GenerateRandomPattern();
+		}
+		this.enabled = true;
+	}
+
+	public void ResetRail()
+	{
+		if (mEvent)
+			GameUI.Get.DisableEvent();
+		mEvent = false;
+		mSetEventEnd = false;
+		mEventDuration = 0;
+		while (mPatterns.Count > 0)
+		{
+			Object remove = mPatterns[0];
+			mPatterns.RemoveAt(0);
+			remove.Reset();
+		}
+		this.enabled = false;
+	}
 #endregion
 
 #region Implementation
@@ -93,7 +118,7 @@ public class GenerateRail : MonoBehaviour
 				Vector3 position = ret.transform.position;
 				position.z = 0;
 				ret.transform.position = position;
-				ret.Use();
+				ret.Use(ref mEvent, ref mEventDuration, ref mSetEventEnd);
 				mPatterns.Add(ret);
 			}
 		}

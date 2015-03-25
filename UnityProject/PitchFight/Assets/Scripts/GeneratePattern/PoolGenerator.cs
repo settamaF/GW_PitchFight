@@ -96,6 +96,8 @@ public class PoolGenerator : MonoBehaviour
 			if (stack.Type == type)
 			{
 				range = stack.Stack.Count;
+				if (type == ObjectType.EVENT)
+					range--;
 				rand = Random.Range(0, range);
 				return GetObject(type, stack.Stack[rand].Name);
 			}
@@ -114,7 +116,7 @@ public class PoolGenerator : MonoBehaviour
 		}
 		foreach (var stack in mPool[index].Stack)
 		{
-			if (stack.Name == name)
+			if (stack.Name.ToLower() == name.ToLower())
 			{
 				GameObject ret;
 				if (stack.Objects.Count > 0)
@@ -162,7 +164,7 @@ public class PoolGenerator : MonoBehaviour
 	private void InitPoolGenerator()
 	{
 		mPool = new List<Stacks>();
-		for (int i = 0; i < mMaxEnumType; i++)
+		for (int i = 0; i <= mMaxEnumType; i++)
 		{
 			int index = GetIndexPrefab((ObjectType)i);
 			if (index >= 0)

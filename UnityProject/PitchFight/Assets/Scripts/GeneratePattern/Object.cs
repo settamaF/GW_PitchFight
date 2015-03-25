@@ -11,8 +11,9 @@ public class Object : MonoBehaviour
 {
 	public class ObjectChild
 	{
-		public ObjectType Type;
-		public List<Transform> Childs;
+		public ObjectType		Type;
+		public int				ChildCount;
+		public List<Transform>	Childs;
 	}
 #region Script Parameters
 	public ObjectType Type;
@@ -47,35 +48,77 @@ public class Object : MonoBehaviour
 			Initialize();
 		}
 	}
+
+	void OnDrawGizmos()
+	{
+		foreach (Transform child in transform)
+		{
+			Gizmos.color = GetDebugColor(child.name.ToUpper());
+			if (Gizmos.color != Color.black)
+				Gizmos.DrawSphere(child.position, 0.5f);
+		}
+	}
 #endregion
 
 #region Methods
 	public void Initialize()
 	{
 		mObjectChild = new List<ObjectChild>();
-		for (int i = 0; i < PoolGenerator.mMaxEnumType; i++)
+		for (int i = 0; i <= PoolGenerator.mMaxEnumType; i++)
 		{
 			ObjectChild objectChild = new ObjectChild();
 
 			objectChild.Type = (ObjectType)i;
 			objectChild.Childs = Initialize((ObjectType)i);
+			objectChild.ChildCount = objectChild.Childs.Count;
 			mObjectChild.Add(objectChild);
 		}
 	}
 
-	public void Use()
+	public void Use(ref bool eventActive, ref int eventDuration, ref bool setEventEnd)
 	{
 		foreach (var objectChild in mObjectChild)
 		{
 			foreach (Transform child in objectChild.Childs)
 			{
-				if (child.childCount <= 0)
+				if (child.childCount > 0)
+					continue;
+				if (objectChild.Type == ObjectType.EVENT && eventActive)
 				{
-					GameObject gameObject = PoolGenerator.Get.GetRandomObject(objectChild.Type);
+					if (eventDuration <= 0)
+					{
+						eventActive = false;
+						setEventEnd = true;
+					}
+					else
+					{
+						eventDuration--;
+						continue;
+					}
+				}
+				GameObject gameObject;
+				if (objectChild.Type == ObjectType.EVENT && setEventEnd)
+				{
+					setEventEnd = false;
+					gameObject = PoolGenerator.Get.GetObject(ObjectType.EVENT, "End Event");
 					if (gameObject)
 					{
 						gameObject.transform.parent = child;
 						gameObject.transform.localPosition = Vector3.zero;
+					}
+				}
+				else
+				{
+					gameObject = PoolGenerator.Get.GetRandomObject(objectChild.Type);
+					if (gameObject)
+					{
+						gameObject.transform.parent = child;
+						gameObject.transform.localPosition = Vector3.zero;
+						if (objectChild.Type == ObjectType.EVENT)
+						{
+							eventActive = true;
+							eventDuration = gameObject.GetComponent<EventTrigger>().Duration;
+						}
 					}
 				}
 			}
@@ -117,5 +160,22 @@ public class Object : MonoBehaviour
 		return ret;
 	}
 
+	private Color GetDebugColor(string type)
+	{
+		switch (type)
+		{
+			case "BLIND":
+				return Color.red;
+			case "EVENT":
+				return Color.green;
+			case "GROUND":
+				return Color.blue;
+			case "OBSTACLE":
+				return Color.white;
+			default:
+				break;
+		}
+		return Color.black;
+	}
 #endregion
 }

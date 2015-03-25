@@ -8,23 +8,110 @@ public class GameState : MonoBehaviour
 
 	public PlayerStateVisu	playersStateVisu;
 
+	public GameObject playerPrefab;
+	public RectTransform deathBorder;
+
+	public GameObject victoryPanel;
+	public GenerateRail generateRailsScript;
+	public GenerateDebugCamera generateDebugCamera;
+	public float railsDefaultSpeed;
+
+	#endregion
+
+	#region Propertys
+
+	private EventTrigger __currentEvent;
+	public EventTrigger	currentEvent
+	{
+		get { return __currentEvent; }
+		set { __currentEvent = value; }
+	}
+
+	private static GameState __gameState;
+	public static GameState	get
+	{
+		get { return __gameState; }
+	}
+
 	#endregion
 
 	#region Private Parameters
 
 	private List<bool> __isAlive;
+	private List<GameObject> __players;
 
 	#endregion
 
 	#region Unity Callbacks
 
-	private void Start()
+	private void	Awake()
 	{
-		__isAlive = new List<bool>();
-		__isAlive.Add(true);
-		__isAlive.Add(true);
-		__isAlive.Add(true);
-		__isAlive.Add(true);
+		if (__gameState == null)
+			__gameState = this;
+	}
+
+	#endregion
+
+	#region Initialization
+
+	public void InitGame(int pNumberOfPlayers)
+	{
+		InitAliveStates(pNumberOfPlayers);
+		InitAllPersos(pNumberOfPlayers);
+		victoryPanel.SetActive(false);
+		InitRails();
+		__currentEvent = null;
+	}
+
+	private void InitAliveStates(int pNumberOfPlayers)
+	{
+		if (__isAlive == null)
+			__isAlive = new List<bool>();
+		if (__isAlive != null && __isAlive.Count > 0)
+			__isAlive.Clear();
+		for (int i = 0; i < pNumberOfPlayers; i++)
+			__isAlive.Add(true);
+	}
+
+	private void	InitAllPersos(int pNumberOfPlayers)
+	{
+		if (__players == null)
+			__players = new List<GameObject>();
+		if (__players.Count > 0)
+			__players.Clear();
+		for (int i = 0; i < pNumberOfPlayers; i++)
+		{
+			GameObject lPlayer = Instantiate(playerPrefab);
+			lPlayer.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber = i + 1;
+			PlayerDeath lPlayerDeathScript = lPlayer.GetComponent<PlayerDeath>();
+			lPlayerDeathScript.deathBorder = deathBorder;
+			lPlayerDeathScript.gameState = this;
+			__players.Add(lPlayer);
+		}
+	}
+
+	private void	InitRails()
+	{
+		generateRailsScript.ActivateRail();
+		generateDebugCamera.Speed = railsDefaultSpeed;
+	}
+
+	#endregion
+
+	#region Clear
+
+	private void	ClearGame()
+	{
+		__isAlive.Clear();
+		foreach (GameObject lObject in __players)
+		{
+			if (lObject != null)
+			{
+				lObject.SetActive(false);
+				Destroy(lObject);
+			}
+		}
+		__players.Clear();
 	}
 
 	#endregion
@@ -60,17 +147,30 @@ public class GameState : MonoBehaviour
 	private void	CheckVictoryCondition()
 	{
 		int lNbPlayerIsAlive = GetNbPlayerIsAlive();
-		switch (lNbPlayerIsAlive)
+		if (lNbPlayerIsAlive == 0 && __players.Count == 1)
+			ActiveVictoryPanel("");
+		else if (lNbPlayerIsAlive == 0 && __players.Count > 1)
+			ActiveVictoryPanel("Match Nul");
+		else if (lNbPlayerIsAlive == 1 && __players.Count > 1)
+			ActiveVictoryPanel("Player " + GetWinnerIndex() + " win !");
+	}
+
+	private int	GetWinnerIndex()
+	{
+		for (int i = 0; i < __isAlive.Count; i++)
 		{
-			case 0:
-				Debug.Log("Match Nul");
-				break;
-			case 1:
-				Debug.Log("GG!");
-				break;
-			default:
-				break;
+			if (__isAlive[i])
+				return i;
 		}
+		return -1;
+	}
+
+	private void	ActiveVictoryPanel(string pText)
+	{
+		generateRailsScript.ResetRail();
+		generateDebugCamera.Speed = 0.0f;
+		victoryPanel.SetActive(true);
+		ClearGame();
 	}
 
 	#endregion
