@@ -11,10 +11,10 @@ using System.Collections.Generic;
 
 public enum Pedago
 {
-	PEDAGO = 0,
-	PEDAGO2,
-	PEDAGO3,
-	PEDAGO4,
+	GD = 0,
+	GP,
+	GA,
+	MSD,
 	GOD,
 	NONE
 }
