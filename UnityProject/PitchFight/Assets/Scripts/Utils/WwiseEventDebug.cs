@@ -14,18 +14,10 @@ public class WwiseEventDebug : MonoBehaviour
 	public KeyCode		KeyInputDebug = KeyCode.Space;
 #endregion
 
-#region Fields
-	// Const -------------------------------------------------------------------
-
-	// Private -----------------------------------------------------------------
-	private SoundManager mSoundManager;
-#endregion
-
 #region Unity Methods
 	void Start ()
 	{
-		mSoundManager = SoundManager.Get;
-		if (!mSoundManager)
+		if (!SoundManager.Get)
 		{
 			Debug.LogError("No sound Manager in the scene");
 			DestroyImmediate(this);
@@ -37,7 +29,7 @@ public class WwiseEventDebug : MonoBehaviour
 		if (Input.GetKeyUp(KeyInputDebug))
 		{
 			Debug.Log("the sound event " + SoundEventDebug + " is playing");
-			mSoundManager.Play(SoundEventDebug);
+			SoundManager.Get.Play(SoundEventDebug);
 		}
 	}
 #endregion

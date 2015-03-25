@@ -45,7 +45,7 @@ public class SoundManager : MonoBehaviour
 #region Unity Methods
 	void Awake ()
 	{
-		if (mInstance != this)
+		if (mInstance != null)
 		{
 			Debug.LogWarning("SoundManager - we were instantiating a second copy of SoundManager, so destroying this instance");
 			DestroyImmediate(this.gameObject, true);
