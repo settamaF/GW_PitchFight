@@ -23,11 +23,6 @@ public class GameState : MonoBehaviour
 
 	private void Start()
 	{
-		__isAlive = new List<bool>();
-		__isAlive.Add(true);
-		__isAlive.Add(true);
-		__isAlive.Add(true);
-		__isAlive.Add(true);
 	}
 
 	#endregion
