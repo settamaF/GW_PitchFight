@@ -46,7 +46,6 @@ public class PersoChoice : MonoBehaviour
 
 	private void Start()
 	{
-		Debug.Log("Start Choice");
 		InitPlayerListChoice();
 		InitPlayerInputLock();
 	}
