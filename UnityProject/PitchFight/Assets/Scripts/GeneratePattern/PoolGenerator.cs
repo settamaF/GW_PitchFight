@@ -73,7 +73,7 @@ public class PoolGenerator : MonoBehaviour
 #region Unity Methods
 	void Awake()
 	{
-		if (mInstance != null)
+		if (mInstance != null && mInstance != this)
 		{
 			Debug.LogWarning("PoolGenerator - we were instantiating a second copy of PoolGenerator, so destroying this instance");
 			DestroyImmediate(this.gameObject, true);

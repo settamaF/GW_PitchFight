@@ -36,12 +36,20 @@ public class GenerateRail : MonoBehaviour
 	
 	void Awake()
 	{
-		if (mInstance == null)
-			mInstance = this;
+		if (mInstance != null && mInstance != this)
+		{
+			UnityEngine.Debug.Log("GenerateRail - we were instantiating a second copy of GenerateRail, so destroying this instance");
+			DestroyImmediate(this.gameObject, true);
+			return;
+		}
+		DontDestroyOnLoad(this);
+		mInstance = this;
 	}
 
 	void Update ()
 	{
+		if (mPatterns == null || mPatterns.Count <= 0)
+			return;
 		DeleteLastPattern();
 		if (mPatterns.Count < DEFAULT_COUNT_PATTERN)
 			GenerateRandomPattern();

@@ -39,13 +39,16 @@ public class EventGodTrigger : EventTrigger
 	#region Methods
 	public override void ExecuteEvent()
 	{
-
+		if (SecretSauce)
+		{
+			GameObject secretSauce = Instantiate(SecretSauce) as GameObject;
+			secretSauce.GetComponent<SecretSauce>().Trigger = this;
+		}
 	}
 
 	public override void EndEvent()
 	{
 		base.EndEvent();
-	
 	}
 	#endregion
 }

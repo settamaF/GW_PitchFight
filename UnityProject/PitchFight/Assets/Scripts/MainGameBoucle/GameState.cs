@@ -13,7 +13,7 @@ public class GameState : MonoBehaviour
 
 	public GameObject victoryPanel;
 	public GenerateRail generateRailsScript;
-	public GenerateDebugCamera generateDebugCamera;
+	public MovingRail generateDebugCamera;
 	public float railsDefaultSpeed;
 
 	#endregion
