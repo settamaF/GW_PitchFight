@@ -27,7 +27,7 @@ public class EventGDTrigger : EventTrigger
 #region Unity Methods
 	protected override void OnTriggerEnter2D(Collider2D other)
 	{
-		if (Triggered)
+		if (Triggered || other.tag != "Player")
 			return;
 		base.OnTriggerEnter2D(other);
 		GameUI.Get.SetEvent("Les control sont bien mais ...", Pedago.GD);
