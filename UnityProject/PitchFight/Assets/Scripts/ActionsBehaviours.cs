@@ -1,10 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityStandardAssets._2D;
+
 
 public class ActionsBehaviours : MonoBehaviour 
 {
 	public GameObject	ProjectilePrefab;
 	public Transform	ProjectileDummy;
+	public float 		currentCoolDownTime;
+	public float 		coolDownTimer;
+	public bool			ActionDone = false;
 
 	public int 			playerNumber;
 	public float		pullingForce;
@@ -12,15 +17,27 @@ public class ActionsBehaviours : MonoBehaviour
 	private GameObject	_playerInArea;
 	void Start () 
 	{
-	
+		this.playerNumber = this.transform.parent.gameObject.transform.GetComponent<Platformer2DUserControl>().playerNumber;
 	}
 	
 	void Update () 
 	{
+		if (this.ActionDone)
+		{
+			this.currentCoolDownTime++;
+			if (currentCoolDownTime > this.coolDownTimer)
+			{
+				this.currentCoolDownTime = 0.0f;
+				this.ActionDone = false;
+			}
+		}
 		if (this.inArea && Input.GetButtonDown("J" + playerNumber.ToString() + "Grab"))
 			this.GrabAction();
-		else if (Input.GetButtonDown("J" + playerNumber.ToString() + "Action"))
+		else if (Input.GetButtonDown("J" + playerNumber.ToString() + "Action") && !this.ActionDone)
+		{
+			this.ActionDone = true;
 			this.ThrowAction();
+		}
 	}
 	
 	public void GrabAction()
