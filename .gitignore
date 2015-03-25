@@ -16,5 +16,7 @@ UnityProject/PitchFight/[Bb]uild/
 /UnityProject/PitchFight/Assets/UnityVS/
 /UnityProject/PitchFight/Assets/UnityVS.meta
 
+/UnityProject/PitchFight/Assets/Wwise/Deployment/Plugins/
+/UnityProject/PitchFight/Assets/Wwise/Deployment/Plugins.meta
 #Unity3D Generated File On Crash Reports
 sysinfo.txt

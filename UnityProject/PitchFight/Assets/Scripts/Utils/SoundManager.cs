@@ -19,7 +19,7 @@ public enum SoundEvent
 	COLLECTIBLES,
 	VOICE_M,
 	VOICE_F,
-
+	AMB_CITY_LOOP
 }
 
 [System.Serializable]
@@ -69,7 +69,7 @@ public class SoundManager : MonoBehaviour
 		}
 		if (!string.IsNullOrEmpty(name))
 		{
-			//AkSoundEngine.PostEvent(name, gameObject);
+			AkSoundEngine.PostEvent(name, gameObject);
 			return;
 		}
 		else
