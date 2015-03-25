@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{8E652927-D516-4635-876B-900E473C687C}" SchemaVersion="69">
+	<AudioObjects>
+		<WorkUnit Name="InGame" ID="{8E652927-D516-4635-876B-900E473C687C}" PersistMode="Standalone">
+			<ChildrenList>
+				<ActorMixer Name="Amb_City_Loop" ID="{7E55241F-DB33-4065-81C1-E083A1C836A6}" ShortID="66408968">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Amb_City_Loop" ID="{763CE6A3-E08A-4694-8C5A-CC0D10F2CBB9}" ShortID="970403281" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Amb_City_Loop" ID="{B10425C9-3C78-45DD-B4D7-460FF0C12D70}" ShortID="767729452">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Amb_City_Loop.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="934373687"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Amb_City_Loop" ID="{B10425C9-3C78-45DD-B4D7-460FF0C12D70}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+			</ChildrenList>
+		</WorkUnit>
+	</AudioObjects>
+</WwiseDocument>
