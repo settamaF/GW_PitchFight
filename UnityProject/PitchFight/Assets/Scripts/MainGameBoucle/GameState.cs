@@ -147,6 +147,7 @@ public class GameState : MonoBehaviour
 
 	private void	ActiveVictoryPanel(string pText)
 	{
+		generateRailsScript.ResetRail();
 		generateRailsScript.enabled = false;
 		generateDebugCamera.Speed = 0.0f;
 		victoryPanel.SetActive(true);
