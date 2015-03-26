@@ -20,13 +20,21 @@
 			<IncludedEvents>
 				<Event Id="2486555133" Name="Play_Amb_City_Loop"/>
 				<Event Id="2653618220" Name="Play_Sfx_Collectible"/>
-				<Event Id="1783193172" Name="Play_Sfx_Death_All"/>
+				<Event Id="3616729151" Name="Play_Sfx_Death_GA"/>
+				<Event Id="3616729146" Name="Play_Sfx_Death_GD"/>
+				<Event Id="3616729134" Name="Play_Sfx_Death_GP"/>
+				<Event Id="1898665037" Name="Play_Sfx_Death_MSD"/>
 				<Event Id="1376640657" Name="Play_Sfx_Hit"/>
 				<Event Id="1091716557" Name="Play_Sfx_Pop_Up"/>
 				<Event Id="802598819" Name="Play_Sfx_Power_Up"/>
 				<Event Id="1939947640" Name="Play_Sfx_Skill_GA"/>
+				<Event Id="1939947625" Name="Play_Sfx_Skill_GP"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="52057784" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_GA_Death.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_GA_Death_DDC98EF4.wem</Path>
+				</File>
 				<File Id="139867223" Language="SFX">
 					<ShortName>Audiosource\Sfx_Death_All.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Death_All_DDC98EF4.wem</Path>
@@ -35,6 +43,10 @@
 					<ShortName>Audiosource\Sfx_hit_01.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_hit_01_DDC98EF4.wem</Path>
 				</File>
+				<File Id="285461640" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_MSD_Death.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_MSD_Death_DDC98EF4.wem</Path>
+				</File>
 				<File Id="323840584" Language="SFX">
 					<ShortName>Audiosource\Sfx_hit_03.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_hit_03_DDC98EF4.wem</Path>
@@ -42,6 +54,10 @@
 				<File Id="344892017" Language="SFX">
 					<ShortName>Audiosource\Sfx_Skill_GA.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Skill_GA_DDC98EF4.wem</Path>
+				</File>
+				<File Id="359531079" Language="SFX">
+					<ShortName>Audiosource\Sfx_Skill_GP_Start.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Skill_GP_Start_DDC98EF4.wem</Path>
 				</File>
 				<File Id="364164776" Language="SFX">
 					<ShortName>Audiosource\Sfx_hit_02.wav</ShortName>
@@ -58,6 +74,22 @@
 				<File Id="595430506" Language="SFX">
 					<ShortName>Audiosource\Sfx_Pop_Up.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Pop_Up_DDC98EF4.wem</Path>
+				</File>
+				<File Id="672550198" Language="SFX">
+					<ShortName>Audiosource\Sfx_Skill_GP_End.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Skill_GP_End_DDC98EF4.wem</Path>
+				</File>
+				<File Id="795519610" Language="SFX">
+					<ShortName>Audiosource\Sfx_Skill_GP_Loop.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Skill_GP_Loop_9ED9C06E.wem</Path>
+				</File>
+				<File Id="861466350" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_GD_Death.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_GD_Death_DDC98EF4.wem</Path>
+				</File>
+				<File Id="924694371" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_GP_Death.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_GP_Death_DDC98EF4.wem</Path>
 				</File>
 				<File Id="934373687" Language="SFX">
 					<ShortName>Audiosource\Amb_City_Loop.wav</ShortName>
