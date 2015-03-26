@@ -28,6 +28,11 @@ public class EventTrigger : MonoBehaviour
 	{
 		Triggered = false;
 	}
+
+	protected virtual void	Start()
+	{
+
+	}
 	
 	protected virtual void OnTriggerEnter2D(Collider2D other)
 	{

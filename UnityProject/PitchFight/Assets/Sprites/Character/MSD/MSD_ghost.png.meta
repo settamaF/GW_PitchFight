@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 9bda40be6135f9b4484658338c0071b4
-timeCreated: 1427369007
+guid: 3eef418950f521e4b89df19771310fb0
+timeCreated: 1427376672
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GP_death_0
-    21300002: GP_death_1
+    21300000: MSD_ghost_0
+    21300002: MSD_ghost_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -51,7 +51,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: GP_death_0
+    - name: MSD_ghost_0
       rect:
         serializedVersion: 2
         x: 0
@@ -61,7 +61,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GP_death_1
+    - name: MSD_ghost_1
       rect:
         serializedVersion: 2
         x: 400

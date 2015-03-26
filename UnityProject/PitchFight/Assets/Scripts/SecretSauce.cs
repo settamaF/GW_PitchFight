@@ -51,7 +51,7 @@ public class SecretSauce : MonoBehaviour
 		var control = other.gameObject.GetComponent<PlayerBehaviours>();
 		if (control)
 		{
-			control.superSayajin = true;
+			control.TookTheSecretSauce();
 		}
 		FxManager.Get.Play(FX.SECRETSAUCE_PICKUP, transform.position, Quaternion.identity);
 		Trigger.EndEvent();

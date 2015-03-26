@@ -192,6 +192,7 @@ public class GameState : MonoBehaviour
 		movingRail.ResetMoving();
 		victoryPanel.SetActive(true);
 		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
+		playersStateVisu.ResetPlayerStateVisu();
 		ClearGame();
 	}
 

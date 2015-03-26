@@ -9,6 +9,7 @@ using System.Collections;
 public class EventGPTrigger : EventTrigger 
 {
 #region Script Parameters
+	private GPErrorEventUIHandler __gpErrorEventUIHandlerScript;
 #endregion
 
 #region Static
@@ -24,6 +25,13 @@ public class EventGPTrigger : EventTrigger
 #endregion
 
 #region Unity Methods
+
+	protected override void	Start()
+	{
+		base.Start();
+		__gpErrorEventUIHandlerScript = GameObject.Find("GPErrorEvent").GetComponent<GPErrorEventUIHandler>();
+	}
+
 	protected override void OnTriggerEnter2D(Collider2D other)
 	{
 		if (Triggered || other.tag != "Player")
@@ -38,13 +46,13 @@ public class EventGPTrigger : EventTrigger
 	#region Methods
 	public override void ExecuteEvent()
 	{
-
+		__gpErrorEventUIHandlerScript.StartUI();
 	}
 
 	public override void EndEvent()
 	{
 		base.EndEvent();
-
+		__gpErrorEventUIHandlerScript.ResetUI();
 	}
 	#endregion
 }
