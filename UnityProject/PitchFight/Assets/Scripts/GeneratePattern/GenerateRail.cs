@@ -59,10 +59,10 @@ public class GenerateRail : MonoBehaviour
 
 #region Methods
 
-	public void ActivateRail()
+	public void ActivateRail(List<GameObject> Players)
 	{
 		mPatterns = new List<Object>();
-		GenerateFirstPattern();
+		GenerateFirstPattern(Players);
 		for (int i = 0; i < DEFAULT_COUNT_PATTERN; i++)
 		{
 			GenerateRandomPattern();
@@ -100,19 +100,22 @@ public class GenerateRail : MonoBehaviour
 		}
 	}
 
-	private void GenerateFirstPattern()
+	private void GenerateFirstPattern(List<GameObject> players)
 	{
-		GameObject gameObject = PoolGenerator.Get.GetObject(ObjectType.GROUND, "Ground");
+		GameObject gameObject = PoolGenerator.Get.GetObject(ObjectType.GROUND, "FirstGround");
 
 		if (gameObject)
 		{
-			Object ret = gameObject.GetComponent<Object>();
+			var ret = gameObject.GetComponent<Object>();
 			if (ret)
 			{
 				ret.transform.position = Vector3.zero;
 				ret.transform.parent = this.transform;
 				mPatterns.Add(ret);
 			}
+			var startPosition = gameObject.GetComponent<FirstPattern>();
+			if (startPosition)
+				startPosition.SetStartPosition(players);
 		}
 	}
 
