@@ -45,6 +45,7 @@ public class GameState : MonoBehaviour
 
 	private List<bool> __isAlive;
 	private List<PersoChoice.ePlayerClass> __playerClassList;
+	private VictoryPanelHandler __victoryPanelHandler;
 
 	#endregion
 
@@ -54,6 +55,11 @@ public class GameState : MonoBehaviour
 	{
 		if (__gameState == null)
 			__gameState = this;
+	}
+
+	private void	Start()
+	{
+		__victoryPanelHandler = victoryPanel.GetComponent<VictoryPanelHandler>();
 	}
 
 	#endregion
@@ -179,6 +185,7 @@ public class GameState : MonoBehaviour
 		generateRailsScript.ResetRail();
 		generateDebugCamera.Speed = 0.0f;
 		victoryPanel.SetActive(true);
+		__victoryPanelHandler.ActiveUI(pText);
 		ClearGame();
 	}
 
