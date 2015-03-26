@@ -47,7 +47,7 @@ public class EventGPTrigger : EventTrigger
 	public override void ExecuteEvent()
 	{
 		__gpErrorEventUIHandlerScript.StartUI();
-		DeathBorderUIHandler.LaunchAnimation("Pedago1");
+		DeathBorderUIHandler.LaunchAnimation("Pedago4");
 	}
 
 	public override void EndEvent()

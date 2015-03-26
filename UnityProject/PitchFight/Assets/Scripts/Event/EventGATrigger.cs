@@ -40,7 +40,7 @@ public class EventGATrigger : EventTrigger
 	public override void ExecuteEvent()
 	{
 		Camera.main.SetReplacementShader(greyScale, "");
-		DeathBorderUIHandler.LaunchAnimation("Pedago1");
+		DeathBorderUIHandler.LaunchAnimation("Pedago3");
 	}
 
 	public override void EndEvent()
