@@ -216,6 +216,63 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Sfx_Menu_Start" ID="{1B99D290-EFA1-4FDD-B93C-4DFA8F5C0D72}">
+					<ChildrenList>
+						<Action Name="Play" ID="{E48E120E-BCCD-4067-9DD3-0C7E8B1028A3}" ShortID="7963424" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{360637EB-BCDA-4A63-8758-C18FAE0F02BC}" Global="false">
+									<ObjectRef Name="Sfx_Menu_Start" ID="{96F686FC-FC51-40FC-945D-FD10A4785801}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Menu_Select" ID="{7031BEFB-0DED-4876-995D-BD2A26EEAA50}">
+					<ChildrenList>
+						<Action Name="Play" ID="{C78162A0-E289-4FD6-AF84-846D361FA450}" ShortID="348858734" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{413FA51E-5099-418A-A8C7-3A1A09F9E8CF}" Global="false">
+									<ObjectRef Name="Sfx_Menu_Select" ID="{F525367C-C94A-4472-AA8C-998341A5524E}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Skill_GD" ID="{3C28F069-1558-4F64-8F7B-26ADAA67AC5C}">
+					<ChildrenList>
+						<Action Name="Play" ID="{332EFD63-9170-48E0-BBD4-15E7E9294E4F}" ShortID="446940189" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{6C351D04-46F2-436C-864A-1DEE88598070}" Global="false">
+									<ObjectRef Name="Sfx_Skill_GD" ID="{B09C4E91-1814-4CFB-BEF3-90DF0CE565ED}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_M_Ingame" ID="{9701C2B7-CD83-4491-82D8-F82C9A5ACC26}">
+					<ChildrenList>
+						<Action Name="Play" ID="{3908F578-0DF0-46AB-A279-04454D76B695}" ShortID="201212195" Type="Play" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{E68885C3-0A8E-4C1B-8A6E-41C449DE9965}" Global="false">
+									<ObjectRef Name="Music_Ingame" ID="{8D3128B2-335E-4121-9645-2BBED8E6EA37}" WorkUnitID="{7AA9938F-D946-44B5-A9FF-126949CC78FC}"/>
+								</Element>
+							</ElementList>
+						</Action>
+						<Action Name="Stop" ID="{0A08C0DF-647F-4C9E-ABB9-EE8B8246969A}" ShortID="1072954338" Type="Stop" Scope="One" Global="false">
+							<PropertyList>
+								<Property Name="FadeTime" Type="Real64" Value="5"/>
+							</PropertyList>
+							<ElementList>
+								<Element ID="{6353D47A-E33D-430B-94FC-9C8BD31649F9}" Global="false">
+									<ObjectRef Name="Amb_City_Loop" ID="{7E55241F-DB33-4065-81C1-E083A1C836A6}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

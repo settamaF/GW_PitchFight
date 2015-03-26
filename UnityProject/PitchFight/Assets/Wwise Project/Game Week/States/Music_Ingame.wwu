@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{35AC931C-D6B1-482D-81D3-173D6CB87E8C}" SchemaVersion="69">
+	<States>
+		<WorkUnit Name="Music_Ingame" ID="{35AC931C-D6B1-482D-81D3-173D6CB87E8C}" PersistMode="Standalone">
+			<ChildrenList>
+				<StateGroup Name="Music_Ingame" ID="{A2234CAA-1972-4C9F-B60A-CDF2384D199E}">
+					<ChildrenList>
+						<State Name="None" ID="{00485274-11E9-4ACF-AAEC-19940A796951}"/>
+						<State Name="Start_Music" ID="{5D133067-7EA5-4611-98A7-D4B6CCB92B68}"/>
+						<State Name="Loop_Music" ID="{00403370-C7FE-45E4-89D6-122E1E8BBD66}"/>
+						<State Name="End_Music" ID="{05CBEDA8-9ED8-4C79-B3F0-C895FB3FCFEE}"/>
+					</ChildrenList>
+				</StateGroup>
+			</ChildrenList>
+		</WorkUnit>
+	</States>
+</WwiseDocument>
