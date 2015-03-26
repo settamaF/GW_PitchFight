@@ -19,6 +19,7 @@
 			<Path>GameWeek.bnk</Path>
 			<IncludedEvents>
 				<Event Id="2486555133" Name="Play_Amb_City_Loop"/>
+				<Event Id="3985450877" Name="Play_M_Ingame"/>
 				<Event Id="2653618220" Name="Play_Sfx_Collectible"/>
 				<Event Id="3616729151" Name="Play_Sfx_Death_GA"/>
 				<Event Id="3616729146" Name="Play_Sfx_Death_GD"/>
@@ -33,9 +34,14 @@
 				<Event Id="3124574416" Name="Play_Sfx_Secret_GP"/>
 				<Event Id="427335347" Name="Play_Sfx_Secret_MSD"/>
 				<Event Id="1939947640" Name="Play_Sfx_Skill_GA"/>
+				<Event Id="1939947645" Name="Play_Sfx_Skill_GD"/>
 				<Event Id="1939947625" Name="Play_Sfx_Skill_GP"/>
 			</IncludedEvents>
 			<IncludedMemoryFiles>
+				<File Id="780186" Language="SFX">
+					<ShortName>Audiosource\M_InGame_End.wav</ShortName>
+					<Path>SFX\Audiosource\M_InGame_End_A57AE9F9.wem</Path>
+				</File>
 				<File Id="52057784" Language="SFX">
 					<ShortName>Audiosource\Sfx_Voice_GA_Death.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Voice_GA_Death_DDC98EF4.wem</Path>
@@ -72,6 +78,10 @@
 					<ShortName>Audiosource\Sfx_Voice_MSD_Secret.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Voice_MSD_Secret_DDC98EF4.wem</Path>
 				</File>
+				<File Id="392777200" Language="SFX">
+					<ShortName>Audiosource\Sfx_Skill_GD.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Skill_GD_DDC98EF4.wem</Path>
+				</File>
 				<File Id="455920525" Language="SFX">
 					<ShortName>Audiosource\Sfx_Voice_GP_Secret.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Voice_GP_Secret_DDC98EF4.wem</Path>
@@ -87,6 +97,10 @@
 				<File Id="537381801" Language="SFX">
 					<ShortName>Audiosource\Sfx_Power_Up.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Power_Up_DDC98EF4.wem</Path>
+				</File>
+				<File Id="565271884" Language="SFX">
+					<ShortName>Audiosource\M_InGame_Start.wav</ShortName>
+					<Path>SFX\Audiosource\M_InGame_Start_3DCBE93F.wem</Path>
 				</File>
 				<File Id="595430506" Language="SFX">
 					<ShortName>Audiosource\Sfx_Pop_Up.wav</ShortName>
@@ -111,6 +125,10 @@
 				<File Id="924694371" Language="SFX">
 					<ShortName>Audiosource\Sfx_Voice_GP_Death.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Voice_GP_Death_DDC98EF4.wem</Path>
+				</File>
+				<File Id="928734527" Language="SFX">
+					<ShortName>Audiosource\M_InGame_Loop.wav</ShortName>
+					<Path>SFX\Audiosource\M_InGame_Loop_4F732371.wem</Path>
 				</File>
 				<File Id="934373687" Language="SFX">
 					<ShortName>Audiosource\Amb_City_Loop.wav</ShortName>

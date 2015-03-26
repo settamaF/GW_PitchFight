@@ -13,11 +13,15 @@
 						<ObjectRef Name="Play_Sfx_Pop_Up" ID="{4CF5FA3D-FDCE-42F3-94E2-82DBC849C265}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Hit" ID="{E16D5D5D-C728-4E34-83C5-9871A647D268}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Secret_GA" ID="{430BEE63-91D0-4FB4-ABE9-5C283DE8101A}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Skill_GD" ID="{3C28F069-1558-4F64-8F7B-26ADAA67AC5C}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Menu_Start" ID="{1B99D290-EFA1-4FDD-B93C-4DFA8F5C0D72}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Skill_GA" ID="{30C4E7A6-C35A-484B-8AC6-25614B0FAF9E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_M_Ingame" ID="{9701C2B7-CD83-4491-82D8-F82C9A5ACC26}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Secret_MSD" ID="{B52433B9-D433-4587-9A85-82ECA0CA41E4}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Secret_GP" ID="{C1AE79D1-5E4C-45CE-851B-6E0DE4D5C20C}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Death_GA" ID="{F83F45D5-E0FC-40F4-B47C-8B3161748E3A}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Amb_City_Loop" ID="{30921EDB-21DA-4DC1-B5C5-CB180EEF3D19}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Menu_Select" ID="{7031BEFB-0DED-4876-995D-BD2A26EEAA50}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Collectible" ID="{12A009FF-48C2-4AD5-8E46-AA210E71F65E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>

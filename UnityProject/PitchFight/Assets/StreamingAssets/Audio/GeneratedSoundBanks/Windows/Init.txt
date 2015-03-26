@@ -1,3 +1,12 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	2186578306	Music_Ingame			\Music_Ingame\Music_Ingame	
+
+State	ID	Name	State Group			Notes
+	540993415	Start_Music	Music_Ingame			
+	748895195	None	Music_Ingame			
+	1428057472	End_Music	Music_Ingame			
+	3748028359	Loop_Music	Music_Ingame			
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	805203703	Master Secondary Bus			\Default Work Unit\Master Secondary Bus	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
