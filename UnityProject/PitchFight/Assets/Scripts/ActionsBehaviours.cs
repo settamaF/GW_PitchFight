@@ -5,6 +5,7 @@ using UnityStandardAssets._2D;
 
 public class ActionsBehaviours : MonoBehaviour 
 {
+	public Animator		currentAnimator;
 	public GameObject	ProjectilePrefab;
 	public Transform	ProjectileDummy;
 	public float 		currentCoolDownTime;
@@ -15,8 +16,9 @@ public class ActionsBehaviours : MonoBehaviour
 	public float		pullingForce;
 	public bool 		inArea = false;
 	private GameObject	_playerInArea;
-	void Start () 
+	void Start ()
 	{
+
 		this.playerNumber = this.transform.parent.gameObject.transform.GetComponent<Platformer2DUserControl>().playerNumber;
 	}
 	
@@ -31,10 +33,15 @@ public class ActionsBehaviours : MonoBehaviour
 				this.ActionDone = false;
 			}
 		}
-		if (this.inArea && Input.GetButtonDown("J" + playerNumber.ToString() + "Grab"))
-			this.GrabAction();
+		if (Input.GetButtonDown("J" + playerNumber.ToString() + "Grab"))
+		{
+			this.currentAnimator.SetTrigger("Attack");
+			if (this.inArea)
+				this.GrabAction();
+		}
 		else if (Input.GetButtonDown("J" + playerNumber.ToString() + "Action") && !this.ActionDone)
 		{
+			this.currentAnimator.SetTrigger("Throw");
 			this.ActionDone = true;
 			this.ThrowAction();
 		}
