@@ -133,6 +133,7 @@ public class GameState : MonoBehaviour
 			__players[i].GetComponent<PlayerBehaviours>().SetControls(false);
 		__currentDelay = 0.0f;
 		__controleAlreadyActivate = false;
+		TimerUIHandler.StartTimer(delayBeforeStartControle, "PITCHEZ");
 	}
 
 	private void	ActiveControle()
