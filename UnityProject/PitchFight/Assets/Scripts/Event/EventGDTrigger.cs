@@ -31,7 +31,7 @@ public class EventGDTrigger : EventTrigger
 			return;
 		base.OnTriggerEnter2D(other);
 		GameUI.Get.SetEvent("Les control sont bien mais ...", Pedago.GD);
-		ExecuteEvent();
+		TimerUIHandler.StartTimer(Timer, "Attention");
 	}
 
 #endregion
