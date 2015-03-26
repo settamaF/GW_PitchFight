@@ -26,7 +26,10 @@
 				<Event Id="1898665037" Name="Play_Sfx_Death_MSD"/>
 				<Event Id="1376640657" Name="Play_Sfx_Hit"/>
 				<Event Id="1091716557" Name="Play_Sfx_Pop_Up"/>
-				<Event Id="802598819" Name="Play_Sfx_Power_Up"/>
+				<Event Id="3124574401" Name="Play_Sfx_Secret_GA"/>
+				<Event Id="3124574404" Name="Play_Sfx_Secret_GD"/>
+				<Event Id="3124574416" Name="Play_Sfx_Secret_GP"/>
+				<Event Id="427335347" Name="Play_Sfx_Secret_MSD"/>
 				<Event Id="1939947640" Name="Play_Sfx_Skill_GA"/>
 				<Event Id="1939947625" Name="Play_Sfx_Skill_GP"/>
 			</IncludedEvents>
@@ -63,9 +66,21 @@
 					<ShortName>Audiosource\Sfx_hit_02.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_hit_02_DDC98EF4.wem</Path>
 				</File>
+				<File Id="382429675" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_MSD_Secret.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_MSD_Secret_DDC98EF4.wem</Path>
+				</File>
+				<File Id="455920525" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_GP_Secret.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_GP_Secret_DDC98EF4.wem</Path>
+				</File>
 				<File Id="494394166" Language="SFX">
 					<ShortName>Audiosource\Sfx_hit_04.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_hit_04_DDC98EF4.wem</Path>
+				</File>
+				<File Id="509987132" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_GD_Secret.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_GD_Secret_DDC98EF4.wem</Path>
 				</File>
 				<File Id="537381801" Language="SFX">
 					<ShortName>Audiosource\Sfx_Power_Up.wav</ShortName>
@@ -78,6 +93,10 @@
 				<File Id="672550198" Language="SFX">
 					<ShortName>Audiosource\Sfx_Skill_GP_End.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Skill_GP_End_DDC98EF4.wem</Path>
+				</File>
+				<File Id="793945030" Language="SFX">
+					<ShortName>Audiosource\Sfx_Voice_GA_Secret.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Voice_GA_Secret_DDC98EF4.wem</Path>
 				</File>
 				<File Id="795519610" Language="SFX">
 					<ShortName>Audiosource\Sfx_Skill_GP_Loop.wav</ShortName>
