@@ -16,7 +16,7 @@ namespace UnityStandardAssets._2D
         [SerializeField] private LayerMask m_WhatIsGround;                  // A mask determining what is ground to the character
 
         private Transform m_GroundCheck;    // A position marking where to check if the player is grounded.
-        const float k_GroundedRadius = .1f; // Radius of the overlap circle to determine if grounded
+        const float k_GroundedRadius = .2f; // Radius of the overlap circle to determine if grounded
         private bool m_Grounded;            // Whether or not the player is grounded.
         private Transform m_CeilingCheck;   // A position marking where to check for ceilings
         const float k_CeilingRadius = .01f; // Radius of the overlap circle to determine if the player can stand up
@@ -46,8 +46,9 @@ namespace UnityStandardAssets._2D
                 if (colliders[i].gameObject != gameObject)
                     m_Grounded = true;
             }
-            m_Anim.SetBool("Ground", m_Grounded);
+            //m_Anim.SetBool("Ground", m_Grounded);
 
+			m_Anim.SetBool("Ground", m_Grounded);
             // Set the vertical animation
             m_Anim.SetFloat("vSpeed", m_Rigidbody2D.velocity.y);
 			if (!m_Grounded)
@@ -101,6 +102,7 @@ namespace UnityStandardAssets._2D
             {
                 // Add a vertical force to the player.
                 m_Grounded = false;
+				m_Anim.SetTrigger("Jumped");
                 m_Anim.SetBool("Ground", false)	;
 				//this.StartCoroutine(this.JumpAction());
                 m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
