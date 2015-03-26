@@ -36,7 +36,7 @@ public class EventGATrigger : EventTrigger
 
 #endregion
 
-	#region Methods
+#region Methods
 	public override void ExecuteEvent()
 	{
 		Camera.main.SetReplacementShader(greyScale, "");
@@ -47,5 +47,5 @@ public class EventGATrigger : EventTrigger
 		base.EndEvent();
 		Camera.main.ResetReplacementShader();
 	}
-	#endregion
+#endregion
 }
