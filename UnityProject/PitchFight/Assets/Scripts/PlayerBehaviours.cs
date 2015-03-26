@@ -8,8 +8,10 @@ public class PlayerBehaviours : MonoBehaviour
 	public MonoBehaviour 	InputComponent;
 	public MonoBehaviour 	ActionsComponent;
 	public float			stunedByProjectileTimer;
+	public float			dyingTimer;
 	public float			superSayajinTimer;
 	public float			stunedSlowSpeed = 10.0f;
+	public float			dyingSpeed;
 	public int 				playerNumber;
 	public float 			supaSayaSpeed;
 	public bool				superSayajin = false;
@@ -112,5 +114,26 @@ public class PlayerBehaviours : MonoBehaviour
 		if ((lXScreenPosPersoRatio > 0.0f && lXScreenPosPersoRatio < 0.95f ) && (lYScreenPosPersoRatio > 0.0f && lYScreenPosPersoRatio < 0.95f))
 			return true;
 		return false;
+	}
+
+	public void IsDead()
+	{
+		this.currentAnimator.SetTrigger("DeathPedago");
+		this.StartCoroutine(this.Dying());
+	}
+
+
+	IEnumerator Dying()
+	{
+		this.SetControls(false);
+		float currentTime = 0.0f;
+		while (currentTime < this.dyingTimer)
+		{
+			this.transform.Translate(new Vector3(-1.0f, 0.0f, 0.0f) * Time.deltaTime * this.dyingSpeed);
+			currentTime++;
+			yield return null;
+		}
+		this.gameObject.SetActive(false);
+		yield break;
 	}
 }
