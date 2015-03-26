@@ -41,6 +41,10 @@ public class EventGPTrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected virtual void Update()
+	{
+
+	}
 #endregion
 
 #region Methods
