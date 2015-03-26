@@ -13,6 +13,8 @@ public class ProjectileBehaviours : MonoBehaviour
 	void Update () 
 	{
 		this.transform.Translate(new Vector3(1.0f, 0.0f, 0.0f) * Time.deltaTime * this.projectileSpeed);
+		if (this.CheckProjectilePosition())
+			Destroy(this.gameObject);
 	}
 
 	void OnTriggerEnter2D(Collider2D other)
@@ -25,5 +27,15 @@ public class ProjectileBehaviours : MonoBehaviour
 		else if (other.gameObject.layer == LayerMask.NameToLayer("Ground"))
 			Destroy(this.gameObject);
 			
+	}
+
+	public bool CheckProjectilePosition()
+	{
+		Vector3 lWorldToScreenPoint = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
+		float lXScreenPosPersoRatio = lWorldToScreenPoint.x / Screen.width;
+		Debug.Log("x = " + lXScreenPosPersoRatio);
+		if ((lXScreenPosPersoRatio < 0.0f || lXScreenPosPersoRatio > 1.0f ))
+			return true;
+		return false;
 	}
 }
