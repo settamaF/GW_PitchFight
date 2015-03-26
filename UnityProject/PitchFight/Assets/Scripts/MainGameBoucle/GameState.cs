@@ -8,7 +8,7 @@ public class GameState : MonoBehaviour
 
 	public PlayerStateVisu	playersStateVisu;
 
-	public GameObject playerPrefab;
+	public List<GameObject>	playerPrefabList;
 	public RectTransform deathBorder;
 
 	public GameObject victoryPanel;
@@ -44,6 +44,7 @@ public class GameState : MonoBehaviour
 	#region Private Parameters
 
 	private List<bool> __isAlive;
+	private List<PersoChoice.ePlayerClass> __playerClassList;
 
 	#endregion
 
@@ -59,8 +60,9 @@ public class GameState : MonoBehaviour
 
 	#region Initialization
 
-	public void InitGame(int pNumberOfPlayers)
+	public void InitGame(int pNumberOfPlayers, List<PersoChoice.ePlayerClass> lPlayerClassList)
 	{
+		__playerClassList = lPlayerClassList;
 		InitAliveStates(pNumberOfPlayers);
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
@@ -86,7 +88,7 @@ public class GameState : MonoBehaviour
 			__players.Clear();
 		for (int i = 0; i < pNumberOfPlayers; i++)
 		{
-			GameObject lPlayer = Instantiate(playerPrefab);
+			GameObject lPlayer = Instantiate(playerPrefabList[(int)__playerClassList[i]]);
 			lPlayer.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber = i + 1;
 			lPlayer.transform.FindChild("PlayerInfo").GetComponentInChildren<TextMesh>().text = "J" + (i + 1);
 			PlayerDeath lPlayerDeathScript = lPlayer.GetComponent<PlayerDeath>();
@@ -118,6 +120,7 @@ public class GameState : MonoBehaviour
 			}
 		}
 		__players.Clear();
+		__playerClassList.Clear();
 	}
 
 	#endregion
