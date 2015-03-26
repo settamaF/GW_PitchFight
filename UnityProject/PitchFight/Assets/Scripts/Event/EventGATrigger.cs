@@ -9,6 +9,7 @@ using System.Collections;
 public class EventGATrigger : EventTrigger 
 {
 #region Script Parameters
+	public Shader greyScale;
 #endregion
 
 #region Static
@@ -35,16 +36,16 @@ public class EventGATrigger : EventTrigger
 
 #endregion
 
-	#region Methods
+#region Methods
 	public override void ExecuteEvent()
 	{
-
+		Camera.main.SetReplacementShader(greyScale, "");
 	}
 
 	public override void EndEvent()
 	{
 		base.EndEvent();
-		
+		Camera.main.ResetReplacementShader();
 	}
-	#endregion
+#endregion
 }

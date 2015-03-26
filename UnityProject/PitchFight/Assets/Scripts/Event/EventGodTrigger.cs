@@ -22,6 +22,7 @@ public class EventGodTrigger : EventTrigger
 	// Const -------------------------------------------------------------------
 
 	// Private -----------------------------------------------------------------
+	private GameObject mSecretSauce;
 #endregion
 
 #region Unity Methods
@@ -34,6 +35,9 @@ public class EventGodTrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected override void Update()
+	{
+	}
 #endregion
 
 	#region Methods
@@ -41,13 +45,14 @@ public class EventGodTrigger : EventTrigger
 	{
 		if (SecretSauce)
 		{
-			GameObject secretSauce = Instantiate(SecretSauce) as GameObject;
-			secretSauce.GetComponent<SecretSauce>().Trigger = this;
+			mSecretSauce = Instantiate(SecretSauce) as GameObject;
+			mSecretSauce.GetComponent<SecretSauce>().Trigger = this;
 		}
 	}
 
 	public override void EndEvent()
 	{
+		Destroy(mSecretSauce);
 		base.EndEvent();
 	}
 	#endregion

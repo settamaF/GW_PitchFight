@@ -5,15 +5,28 @@ using System.Collections.Generic;
 
 public class PersoChoice : MonoBehaviour
 {
+	#region Public Enum
+
+	public enum ePlayerClass
+	{
+		__NONE__ = -1,
+		__GD__ = 0,
+		__MSD__,
+		__GA__,
+		__GP__
+	}
+
+	#endregion
+
 	#region Public Struct
 
-	public class sPlayerPersoChoice
+	public class cPlayerPersoChoice
 	{
-		public int currentIndex;
+		public ePlayerClass currentIndex;
 		public bool selected;
 		public bool playing;
 		
-		public sPlayerPersoChoice(int pCurrentIndex, bool pSelected, bool pPlaying)
+		public cPlayerPersoChoice(ePlayerClass pCurrentIndex, bool pSelected, bool pPlaying)
 		{
 			currentIndex = pCurrentIndex;
 			selected = pSelected;
@@ -37,7 +50,7 @@ public class PersoChoice : MonoBehaviour
 
 	#region Private Parameters
 
-	private List<sPlayerPersoChoice> __playerMarker;
+	private List<cPlayerPersoChoice> __playerMarker;
 	private List<bool> __playerHorizontalInputLock;
 
 	#endregion
@@ -98,11 +111,11 @@ public class PersoChoice : MonoBehaviour
 	private void	InitPlayerListChoice()
 	{
 		if (__playerMarker == null)
-			__playerMarker = new List<sPlayerPersoChoice>();
+			__playerMarker = new List<cPlayerPersoChoice>();
 		if (__playerMarker.Count > 0)
 			__playerMarker.Clear();
 		for (int i = 0; i < 4; i++)
-			__playerMarker.Add(new sPlayerPersoChoice(0, false, false));
+			__playerMarker.Add(new cPlayerPersoChoice(0, false, false));
 	}
 
 	private void	InitPlayerInputLock()
@@ -136,12 +149,12 @@ public class PersoChoice : MonoBehaviour
 
 	private void	IncPlayerMarkerIndex(int pPlayerIndex, int pValue)
 	{
-		__playerMarker[pPlayerIndex].currentIndex = (int)Mathf.Repeat(__playerMarker[pPlayerIndex].currentIndex + pValue, 4.0f);
+		__playerMarker[pPlayerIndex].currentIndex = (ePlayerClass)Mathf.Repeat(((int)__playerMarker[pPlayerIndex].currentIndex) + pValue, 4.0f);
 	}
 
 	private void	SetPlayerMarker(int pPlayerIndex, bool pValue)
 	{
-		playerMarkerObject[__playerMarker[pPlayerIndex].currentIndex].transform.GetChild(pPlayerIndex).GetComponentInChildren<Text>().enabled = pValue;
+		playerMarkerObject[((int)__playerMarker[pPlayerIndex].currentIndex)].transform.GetChild(pPlayerIndex).GetComponentInChildren<Text>().enabled = pValue;
 	}
 
 	public void	UpdatePlayerMarker(int pPlayerIndex, int pInputValue)
@@ -156,7 +169,7 @@ public class PersoChoice : MonoBehaviour
 
 	private void	SetPlayerMarkerToColor(int pPlayerIndex, Color pColor)
 	{
-		playerMarkerObject[__playerMarker[pPlayerIndex].currentIndex].transform.GetChild(pPlayerIndex).GetComponent<Image>().color = pColor;
+		playerMarkerObject[((int)__playerMarker[pPlayerIndex].currentIndex)].transform.GetChild(pPlayerIndex).GetComponent<Image>().color = pColor;
 	}
 
 	public void	UpdateSelectedState(int pPlayerIndex)
@@ -188,9 +201,9 @@ public class PersoChoice : MonoBehaviour
 			SetPlayerMarkerToColor(pPlayerIndex, new Color(1.0f, 1.0f, 1.0f));
 	}
 
-	private bool	CheckIfPersoHasAlreadyBeenChoose(int pCurrentIndex)
+	private bool	CheckIfPersoHasAlreadyBeenChoose(ePlayerClass pCurrentIndex)
 	{
-		foreach (sPlayerPersoChoice lChoice in __playerMarker)
+		foreach (cPlayerPersoChoice lChoice in __playerMarker)
 		{
 			if (lChoice.currentIndex == pCurrentIndex && lChoice.selected)
 				return true;
@@ -200,7 +213,7 @@ public class PersoChoice : MonoBehaviour
 
 	private bool	CheckIfAllPlayerHasPerso()
 	{
-		foreach (sPlayerPersoChoice lChoice in __playerMarker)
+		foreach (cPlayerPersoChoice lChoice in __playerMarker)
 		{
 			if (!lChoice.playing)
 				continue;
@@ -213,7 +226,7 @@ public class PersoChoice : MonoBehaviour
 	private void	GoToGameState()
 	{
 		mainGameObject.SetActive(true);
-		gameState.InitGame(GetNumberOfPlayers());
+		gameState.InitGame(GetNumberOfPlayers(), GetPlayerClassList());
 		ResetUI();
 		gameObject.SetActive(false);
 		menuObject.SetActive(true);
@@ -223,7 +236,7 @@ public class PersoChoice : MonoBehaviour
 	private int	GetNumberOfPlayers()
 	{
 		int lNb = 0;
-		foreach (sPlayerPersoChoice lChoice in __playerMarker)
+		foreach (cPlayerPersoChoice lChoice in __playerMarker)
 		{
 			if (lChoice.selected)
 				lNb += 1;
@@ -237,6 +250,21 @@ public class PersoChoice : MonoBehaviour
 			return;
 		if (CheckIfAllPlayerHasPerso())
 			GoToGameState();
+	}
+
+	private List<ePlayerClass>	GetPlayerClassList()
+	{
+		List<ePlayerClass> lPlayerClassList = new List<ePlayerClass>();
+
+		foreach (cPlayerPersoChoice lChoice in __playerMarker)
+		{
+			if (!lChoice.playing)
+				lPlayerClassList.Add(ePlayerClass.__NONE__);
+			else if (lChoice.selected)
+				lPlayerClassList.Add(lChoice.currentIndex);
+		}
+
+		return lPlayerClassList;
 	}
 
 	#endregion

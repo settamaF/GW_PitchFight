@@ -8,13 +8,16 @@ public class GameState : MonoBehaviour
 
 	public PlayerStateVisu	playersStateVisu;
 
-	public GameObject playerPrefab;
+	public List<GameObject>	playerPrefabList;
 	public RectTransform deathBorder;
 
 	public GameObject victoryPanel;
 	public GenerateRail generateRailsScript;
-	public MovingRail generateDebugCamera;
+	public MovingRail movingRail;
 	public float railsDefaultSpeed;
+	public float railsMaxSpeed;
+
+	public float delayBeforeStartControle;
 
 	#endregion
 
@@ -44,6 +47,10 @@ public class GameState : MonoBehaviour
 	#region Private Parameters
 
 	private List<bool> __isAlive;
+	private List<PersoChoice.ePlayerClass> __playerClassList;
+	private VictoryPanelHandler __victoryPanelHandler;
+	private float __currentDelay;
+	private bool __controleAlreadyActivate;
 
 	#endregion
 
@@ -55,16 +62,35 @@ public class GameState : MonoBehaviour
 			__gameState = this;
 	}
 
+	private void	Start()
+	{
+		__victoryPanelHandler = victoryPanel.GetComponent<VictoryPanelHandler>();
+	}
+
+	private void	Update()
+	{
+		__currentDelay += Time.deltaTime;
+		if (__currentDelay > delayBeforeStartControle && !__controleAlreadyActivate)
+		{
+			ActiveControle();
+			__controleAlreadyActivate = true;
+		}
+	}
+
 	#endregion
 
 	#region Initialization
 
-	public void InitGame(int pNumberOfPlayers)
+	public void InitGame(int pNumberOfPlayers, List<PersoChoice.ePlayerClass> lPlayerClassList)
 	{
+		__playerClassList = lPlayerClassList;
 		InitAliveStates(pNumberOfPlayers);
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
 		InitRails();
+		DeactiveControle();
+		if (__currentEvent)
+			__currentEvent.EndEvent();
 		__currentEvent = null;
 	}
 
@@ -86,7 +112,7 @@ public class GameState : MonoBehaviour
 			__players.Clear();
 		for (int i = 0; i < pNumberOfPlayers; i++)
 		{
-			GameObject lPlayer = Instantiate(playerPrefab);
+			GameObject lPlayer = Instantiate(playerPrefabList[(int)__playerClassList[i]]);
 			lPlayer.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber = i + 1;
 			lPlayer.transform.FindChild("PlayerInfo").GetComponentInChildren<TextMesh>().text = "J" + (i + 1);
 			PlayerDeath lPlayerDeathScript = lPlayer.GetComponent<PlayerDeath>();
@@ -96,10 +122,25 @@ public class GameState : MonoBehaviour
 		}
 	}
 
-	private void	InitRails()
+	private void InitRails()
 	{
 		generateRailsScript.ActivateRail();
-		generateDebugCamera.Speed = railsDefaultSpeed;
+	}
+
+	private void	DeactiveControle()
+	{
+		for (int i = 0; i < __players.Count; i++)
+			__players[i].GetComponent<PlayerBehaviours>().SetControls(false);
+		__currentDelay = 0.0f;
+		__controleAlreadyActivate = false;
+		TimerUIHandler.StartTimer(delayBeforeStartControle, "PITCHEZ");
+	}
+
+	private void	ActiveControle()
+	{
+		for (int i = 0; i < __players.Count; i++)
+			__players[i].GetComponent<PlayerBehaviours>().SetControls(true);
+		movingRail.PlayMoving(railsDefaultSpeed, railsMaxSpeed);
 	}
 
 	#endregion
@@ -118,6 +159,7 @@ public class GameState : MonoBehaviour
 			}
 		}
 		__players.Clear();
+		__playerClassList.Clear();
 	}
 
 	#endregion
@@ -134,7 +176,7 @@ public class GameState : MonoBehaviour
 		}
 	}
 
-	private int	GetNbPlayerIsAlive()
+	public int	GetNbPlayerIsAlive()
 	{
 		int lNbPlayerIsAlive = 0;
 		foreach (bool lAliveState in __isAlive)
@@ -154,11 +196,14 @@ public class GameState : MonoBehaviour
 	{
 		int lNbPlayerIsAlive = GetNbPlayerIsAlive();
 		if (lNbPlayerIsAlive == 0 && __players.Count == 1)
-			ActiveVictoryPanel("");
+			ActiveVictoryPanel("", PersoChoice.ePlayerClass.__NONE__);
 		else if (lNbPlayerIsAlive == 0 && __players.Count > 1)
-			ActiveVictoryPanel("Match Nul");
+			ActiveVictoryPanel("Match Nul", PersoChoice.ePlayerClass.__NONE__);
 		else if (lNbPlayerIsAlive == 1 && __players.Count > 1)
-			ActiveVictoryPanel("Player " + GetWinnerIndex() + " win !");
+		{
+			int lWinnerIndex = GetWinnerIndex();
+			ActiveVictoryPanel("Player " + (lWinnerIndex + 1) + " win !", __playerClassList[lWinnerIndex]);
+		}
 	}
 
 	private int	GetWinnerIndex()
@@ -171,11 +216,14 @@ public class GameState : MonoBehaviour
 		return -1;
 	}
 
-	private void	ActiveVictoryPanel(string pText)
+	private void	ActiveVictoryPanel(string pText, PersoChoice.ePlayerClass pPlayerClass)
 	{
 		generateRailsScript.ResetRail();
-		generateDebugCamera.Speed = 0.0f;
+		movingRail.ResetMoving();
 		victoryPanel.SetActive(true);
+		victoryPanel.GetComponentInChildren<BackMenuButtonHandler>().ActiveUI();
+		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
+		playersStateVisu.ResetPlayerStateVisu();
 		ClearGame();
 	}
 

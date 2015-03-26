@@ -9,7 +9,7 @@ using System.Collections;
 public class BackgroundScrolling : MonoBehaviour 
 {
 #region Script Parameters
-	public float Width = 14.22f;
+	public float Width;
 
 #endregion
 

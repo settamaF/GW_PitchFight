@@ -8,38 +8,47 @@ public class PlayerBehaviours : MonoBehaviour
 	public MonoBehaviour 	InputComponent;
 	public MonoBehaviour 	ActionsComponent;
 	public float			stunedByProjectileTimer;
+	public float			dyingTimer;
 	public float			superSayajinTimer;
 	public float			stunedSlowSpeed = 10.0f;
+	public float			dyingSpeed;
 	public int 				playerNumber;
 	public float 			supaSayaSpeed;
 	public bool				superSayajin = false;
+
 	
 
 	private Rigidbody2D		rigid;
 	private BoxCollider2D 	boxCollider;
-
+	private Animator		currentAnimator;
 	void Start () 
 	{
 		this.rigid = this.GetComponent<Rigidbody2D>();
 		this.boxCollider = this.GetComponent<BoxCollider2D>();
 		this.playerNumber = this.GetComponent<Platformer2DUserControl>().playerNumber;
+		this.currentAnimator = this.GetComponent<Animator>();
 	}
 	
 	void Update () 
 	{
-		if (Input.GetKeyDown(KeyCode.A))
-			this.TookTheSecretSauce();
+		//if (Input.GetKeyDown(KeyCode.A))
+		//	this.TookTheSecretSauce();
 	}
 
 	public void HitByProjectile()
 	{	
 		if (!this.superSayajin)
+		{
 			this.StartCoroutine(this.Stuned());
+			this.currentAnimator.SetTrigger("Stunned");
+			FxManager.Get.Play(FX.HIT_PLAYER, this.transform);
+		}
 	}
 
 	public void TookTheSecretSauce()
 	{
 		this.StartCoroutine(this.SuperSayajinMode());
+		this.currentAnimator.SetTrigger("Super");
 	}
 
 	public void SetControls(bool b)
@@ -67,6 +76,7 @@ public class PlayerBehaviours : MonoBehaviour
 	IEnumerator SuperSayajinMode()
 	{
 		this.superSayajin = true;
+		this.currentAnimator.SetBool("SuperState", this.superSayajin);
 		this.SetControls(false);
 		float currentTime = 0.0f;
 		this.rigid.gravityScale = 0;
@@ -85,6 +95,7 @@ public class PlayerBehaviours : MonoBehaviour
 		this.rigid.gravityScale = 3;
 		this.superSayajin = false;
 		this.SetControls(true);
+		this.currentAnimator.SetBool("SuperState", this.superSayajin);
 		yield break;
 
 	}
@@ -101,8 +112,29 @@ public class PlayerBehaviours : MonoBehaviour
 		Vector3 lWorldToScreenPoint = Camera.main.WorldToScreenPoint(nextPlayerPosition);
 		float lXScreenPosPersoRatio = lWorldToScreenPoint.x / Screen.width;
 		float lYScreenPosPersoRatio = lWorldToScreenPoint.y / Screen.height;
-		if ((lXScreenPosPersoRatio > 0.0f && lXScreenPosPersoRatio < 1.0f ) && (lYScreenPosPersoRatio > 0.0f && lYScreenPosPersoRatio < 1.0f))
+		if ((lXScreenPosPersoRatio > 0.0f && lXScreenPosPersoRatio < 0.95f ) && (lYScreenPosPersoRatio > 0.0f && lYScreenPosPersoRatio < 0.95f))
 			return true;
 		return false;
+	}
+
+	public void IsDead()
+	{
+		this.currentAnimator.SetTrigger("DeathPedago");
+		this.StartCoroutine(this.Dying());
+	}
+
+
+	IEnumerator Dying()
+	{
+		this.SetControls(false);
+		float currentTime = 0.0f;
+		while (currentTime < this.dyingTimer)
+		{
+			this.transform.Translate(new Vector3(-1.0f, 0.0f, 0.0f) * Time.deltaTime * this.dyingSpeed);
+			currentTime++;
+			yield return null;
+		}
+		this.gameObject.SetActive(false);
+		yield break;
 	}
 }

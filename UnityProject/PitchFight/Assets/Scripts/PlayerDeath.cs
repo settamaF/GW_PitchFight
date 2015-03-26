@@ -8,6 +8,7 @@ public class PlayerDeath : MonoBehaviour
 
 	public RectTransform deathBorder;
 	public GameState gameState;
+	public float distanceOfPedagoArms = 0.05f;
 
 	#endregion
 
@@ -29,12 +30,13 @@ public class PlayerDeath : MonoBehaviour
 	{
 		Vector3 lWorldToScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 		float lXScreenPosPersoRatio = lWorldToScreenPoint.x / Screen.width;
-		float lYScreenPosPersoRatio = lWorldToScreenPoint.y / Screen.height;
-		if (lXScreenPosPersoRatio < __deathBorderRatio || lYScreenPosPersoRatio < 0.0f)
+		//float lYScreenPosPersoRatio = lWorldToScreenPoint.y / Screen.height;
+		if (lXScreenPosPersoRatio < __deathBorderRatio + this.distanceOfPedagoArms)
 		{
 			if (gameState)
 				gameState.SetAliveState(transform.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber - 1, false);
-			gameObject.SetActive(false);
+			if(gameState.GetNbPlayerIsAlive() > 1)
+				gameObject.GetComponent<PlayerBehaviours>().IsDead();
 		}
 	}
 
