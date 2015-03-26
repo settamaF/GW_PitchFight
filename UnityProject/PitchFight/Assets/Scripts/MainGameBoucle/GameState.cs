@@ -146,7 +146,7 @@ public class GameState : MonoBehaviour
 		}
 	}
 
-	private int	GetNbPlayerIsAlive()
+	public int	GetNbPlayerIsAlive()
 	{
 		int lNbPlayerIsAlive = 0;
 		foreach (bool lAliveState in __isAlive)
