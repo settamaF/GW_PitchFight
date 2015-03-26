@@ -4,6 +4,13 @@
 		<WorkUnit Name="InGame" ID="{8E652927-D516-4635-876B-900E473C687C}" PersistMode="Standalone">
 			<ChildrenList>
 				<ActorMixer Name="Amb_City_Loop" ID="{7E55241F-DB33-4065-81C1-E083A1C836A6}" ShortID="66408968">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-30</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
@@ -148,6 +155,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Sfx_Collectible" ID="{8B805F40-A8AD-46B7-B35D-5F1F6507D613}" ShortID="36701460" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>6</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
@@ -180,6 +194,27 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GD_Death" ID="{72278036-090D-4C9C-BB7F-587160AD05B2}" ShortID="176533725" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GD_Death" ID="{7A9C688F-78E6-4CB2-AA10-D29471404D13}" ShortID="861466350">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GD_Death.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GD_Death" ID="{7A9C688F-78E6-4CB2-AA10-D29471404D13}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Sfx_Death_GA" ID="{E477406D-3A0F-4EE6-B4E1-5482A3930BF9}" ShortID="736759667">
 					<ReferenceList>
@@ -190,6 +225,27 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GA_Death" ID="{A5E8213A-84DD-4B2D-B979-D4F88EF60A23}" ShortID="705676520" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GA_Death" ID="{8FB88D8A-D738-468B-9531-C5237A1C222A}" ShortID="52057784">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GA_Death.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GA_Death" ID="{8FB88D8A-D738-468B-9531-C5237A1C222A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Sfx_Death_GP" ID="{0FBC0618-11C6-427C-8A85-4B7347883763}" ShortID="748654727">
 					<ReferenceList>
@@ -200,6 +256,27 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GP_Death" ID="{BC992492-CE04-4362-99BC-A352FCCD5359}" ShortID="1006263651" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GP_Death" ID="{975F9FE3-1604-4D95-A4C2-8D9B68F76D67}" ShortID="924694371">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GP_Death.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GP_Death" ID="{975F9FE3-1604-4D95-A4C2-8D9B68F76D67}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Sfx_Death_MSD" ID="{92567CCF-B89E-43AE-A0CD-8E94646ADB6D}" ShortID="568299067">
 					<ReferenceList>
@@ -210,8 +287,36 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_MSD_Death" ID="{9CADEAC0-FDAC-46D5-8B10-48AAE38D7BCF}" ShortID="897806386" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_MSD_Death" ID="{41155CB8-9E91-44BF-B2E2-168796BDFD16}" ShortID="285461640">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_MSD_Death.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_MSD_Death" ID="{41155CB8-9E91-44BF-B2E2-168796BDFD16}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</ActorMixer>
 				<ActorMixer Name="Sfx_Death_All" ID="{AC67BB4E-AF20-43CB-BB8F-2E681C6350C2}" ShortID="391736466">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-9</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
@@ -334,6 +439,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Sfx_Power_Up" ID="{8F0A0541-736A-4031-B755-5983FDE9806D}" ShortID="222065468" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>5</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
@@ -368,6 +480,13 @@
 					</ReferenceList>
 					<ChildrenList>
 						<Sound Name="Sfx_Pop_Up" ID="{1D04AA0C-A3D6-49CC-8146-D0E951988EAC}" ShortID="231882809" Type="SoundFX">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>3</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
@@ -425,6 +544,374 @@
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
+				<ActorMixer Name="Sfx_Victory_GA" ID="{4DDB3681-470E-4269-9B83-FC911B397950}" ShortID="476152993">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GA_Victory" ID="{536E4F9D-60B6-4AD2-8834-F7516C2A6F08}" ShortID="1020151084" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GA_Victory" ID="{247988EF-7734-4620-BB5C-19EAD868EB2D}" ShortID="470491803">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GA_Victory.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GA_Victory" ID="{247988EF-7734-4620-BB5C-19EAD868EB2D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Victory_GD" ID="{DB8B2C1F-68BA-42A7-AC00-1EFD05956D9C}" ShortID="684496165">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GD_Victory" ID="{DB101053-3F63-4CD8-BB80-C45AA751ABCF}" ShortID="908296030" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GD_Victory" ID="{477BC177-5F70-43E1-8C96-11869DEE822A}" ShortID="422102788">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GD_Victory.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GD_Victory" ID="{477BC177-5F70-43E1-8C96-11869DEE822A}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Victory_GP" ID="{AC7A06A7-A924-4D83-BA72-BC037E6E6A8B}" ShortID="1035629747">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GP_Victory" ID="{C0C2407D-7FDF-4086-94F8-B192A697013C}" ShortID="285454099" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GP_Victory" ID="{8E1B8D63-C3CD-4E7F-86E9-29E880D2463B}" ShortID="489349453">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GP_Victory.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GP_Victory" ID="{8E1B8D63-C3CD-4E7F-86E9-29E880D2463B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Victory_MSD" ID="{97AEE54B-2AEB-4826-ADBB-9A0C0D89F049}" ShortID="150644189">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_MSD_Victory" ID="{3307383B-5FAC-4BBB-BDE9-9720A6D0FCB8}" ShortID="860074221" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_MSD_Victory" ID="{32BA7DDF-48AF-4193-A79B-21CD3DAB9B2C}" ShortID="690675534">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_MSD_Victory.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_MSD_Victory" ID="{32BA7DDF-48AF-4193-A79B-21CD3DAB9B2C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Secret_GA" ID="{6BD9B054-339D-4C69-9A3E-F0B48DB131BB}" ShortID="119327537">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GA_Secret" ID="{E5BA6895-9949-4DB1-80A6-C2EC3FDB59DC}" ShortID="678440900" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GA_Secret" ID="{7B35EA79-4B73-4033-B446-93B3EAC3285D}" ShortID="793945030">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GA_Secret.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GA_Secret" ID="{7B35EA79-4B73-4033-B446-93B3EAC3285D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Secret_GD" ID="{2ACA124C-3F94-4883-B529-DCCCAC419422}" ShortID="515461328">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GD_Secret" ID="{2EBE6DB4-4A36-4CCB-914B-3F644974B43C}" ShortID="1036751351" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GD_Secret" ID="{35CBE398-8C1E-45B4-BEC4-E6851372001C}" ShortID="509987132">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GD_Secret.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GD_Secret" ID="{35CBE398-8C1E-45B4-BEC4-E6851372001C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Secret_GP" ID="{DE541800-FAF0-4382-BE44-FBCDE2F4932D}" ShortID="408457484">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_GP_Secret" ID="{F26E2927-C4F6-469C-AAFB-70A1FFECF037}" ShortID="714555400" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_GP_Secret" ID="{8B3168CB-77C4-491D-81F8-B9BDCDAD7CAC}" ShortID="455920525">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_GP_Secret.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_GP_Secret" ID="{8B3168CB-77C4-491D-81F8-B9BDCDAD7CAC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Secret_MSD" ID="{76E9AF44-CB30-4E4D-98B2-ED3B5FBA2927}" ShortID="883576678">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Voice_MSD_Secret" ID="{920FDFAE-434B-424A-95AE-137DDDFC67E2}" ShortID="233050695" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Voice_MSD_Secret" ID="{04447413-7357-4052-AD63-8CD226ECAB3D}" ShortID="382429675">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Voice_MSD_Secret.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Voice_MSD_Secret" ID="{04447413-7357-4052-AD63-8CD226ECAB3D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<ActorMixer Name="Sfx_Skill_MSD" ID="{415B5556-7B2F-4005-8725-9A96C57A3BF3}" ShortID="330250381">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Skill_MSD" ID="{A692ACBB-F696-4AA4-90F4-2F4029ABDF77}" ShortID="1064089905" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Skill_MSD" ID="{07D1CCE2-06E5-433C-A17C-E9CB7731A35B}" ShortID="259887041">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Skill_MSD.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="142374872"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Skill_MSD" ID="{07D1CCE2-06E5-433C-A17C-E9CB7731A35B}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</ActorMixer>
+				<RandomSequenceContainer Name="Sfx_Skill_GP" ID="{4E07020C-35BC-40D0-BDCD-E8FFC49C881C}" ShortID="204417794">
+					<PropertyList>
+						<Property Name="RandomOrSequence" Type="int16" Value="0"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Skill_GP_Start" ID="{6451C7ED-5428-42E0-A66A-23D8300084D5}" ShortID="554384085" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Skill_GP_Start" ID="{E4F0A561-E480-4DB6-8B28-0E32EB282A47}" ShortID="767029018">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Skill_GP_Start.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="359531079"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Skill_GP_Start" ID="{E4F0A561-E480-4DB6-8B28-0E32EB282A47}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sfx_Skill_GP_Loop" ID="{3C43524D-6F78-44C5-A988-740A08CE7D88}" ShortID="682289685" Type="SoundFX">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Skill_GP_Loop" ID="{DADC1A1F-AA7E-4001-BB24-BB992C31A7EC}" ShortID="795519610">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Skill_GP_Loop.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Skill_GP_Loop" ID="{DADC1A1F-AA7E-4001-BB24-BB992C31A7EC}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sfx_Skill_GP_End" ID="{7C98F5B0-BBED-4905-B3BE-46F5817D4008}" ShortID="879798685" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Skill_GP_End" ID="{CE616340-BCE3-412E-BE2E-E5171896E11F}" ShortID="63930915">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Skill_GP_End.wav</AudioFile>
+									<ConvertedFileIDList>
+										<File ID="672550198"/>
+									</ConvertedFileIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Skill_GP_End" ID="{CE616340-BCE3-412E-BE2E-E5171896E11F}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+					<Playlist>
+						<ItemRef Name="Sfx_Skill_GP_Start" ID="{6451C7ED-5428-42E0-A66A-23D8300084D5}"/>
+						<ItemRef Name="Sfx_Skill_GP_Loop" ID="{3C43524D-6F78-44C5-A988-740A08CE7D88}"/>
+						<ItemRef Name="Sfx_Skill_GP_End" ID="{7C98F5B0-BBED-4905-B3BE-46F5817D4008}"/>
+					</Playlist>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>

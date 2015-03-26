@@ -1,6 +1,32 @@
 Event	ID	Name			Wwise Object Path	Notes
+	802598819	Play_Sfx_Power_Up			\GameWeekEvent\Play_Sfx_Power_Up	
+	1091716557	Play_Sfx_Pop_Up			\GameWeekEvent\Play_Sfx_Pop_Up	
+	1376640657	Play_Sfx_Hit			\GameWeekEvent\Play_Sfx_Hit	
+	1898665037	Play_Sfx_Death_MSD			\GameWeekEvent\Play_Sfx_Death_MSD	
+	1939947625	Play_Sfx_Skill_GP			\GameWeekEvent\Play_Sfx_Skill_GP	
+	1939947640	Play_Sfx_Skill_GA			\GameWeekEvent\Play_Sfx_Skill_GA	
 	2486555133	Play_Amb_City_Loop			\GameWeekEvent\Play_Amb_City_Loop	
+	2653618220	Play_Sfx_Collectible			\GameWeekEvent\Play_Sfx_Collectible	
+	3616729134	Play_Sfx_Death_GP			\GameWeekEvent\Play_Sfx_Death_GP	
+	3616729146	Play_Sfx_Death_GD			\GameWeekEvent\Play_Sfx_Death_GD	
+	3616729151	Play_Sfx_Death_GA			\GameWeekEvent\Play_Sfx_Death_GA	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	934373687	Amb_City_Loop	D:\Game_Project\GameWeek\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Amb_City_Loop_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Amb_City_Loop\Amb_City_Loop		4233664
+	52057784	Sfx_Voice_GA_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GA_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_GA\Sfx_Voice_GA_Death		136654
+	139867223	Sfx_Death_All	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Death_All_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_All\Sfx_Death_All		176464
+	232865724	Sfx_hit_01	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_01_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_01		65972
+	285461640	Sfx_Voice_MSD_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_MSD_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_MSD\Sfx_Voice_MSD_Death		155452
+	323840584	Sfx_hit_03	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_03_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_03		70632
+	344892017	Sfx_Skill_GA	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Skill_GA_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Skill_GA\Sfx_Skill_GA		217016
+	359531079	Sfx_Skill_GP_Start	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Skill_GP_Start_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Skill_GP\Sfx_Skill_GP_Start		44164
+	364164776	Sfx_hit_02	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_02_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_02		70826
+	494394166	Sfx_hit_04	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_04_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_04		75116
+	537381801	Sfx_Power_Up	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Power_Up_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Power_Up\Sfx_Power_Up		131322
+	595430506	Sfx_Pop_Up	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Pop_Up_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Pop_Up\Sfx_Pop_Up		138242
+	672550198	Sfx_Skill_GP_End	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Skill_GP_End_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Skill_GP\Sfx_Skill_GP_End		133128
+	795519610	Sfx_Skill_GP_Loop	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Skill_GP_Loop_9ED9C06E.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Skill_GP\Sfx_Skill_GP_Loop		352864
+	861466350	Sfx_Voice_GD_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GD_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_GD\Sfx_Voice_GD_Death		119162
+	924694371	Sfx_Voice_GP_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GP_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_GP\Sfx_Voice_GP_Death		87784
+	934373687	Amb_City_Loop	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Amb_City_Loop_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Amb_City_Loop\Amb_City_Loop		4233664
+	1045584503	Sfx_Collectible	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Collectible_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Collectible\Sfx_Collectible		176464
 

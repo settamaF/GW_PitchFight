@@ -5,7 +5,17 @@
 			<ChildrenList>
 				<SoundBank Name="GameWeek" ID="{8A35C70B-1ADB-4BD3-9F32-504EEB1E52B7}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_Sfx_Death_MSD" ID="{BA723C04-5467-4695-8BA4-FB1D1CB80C6B}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Death_GP" ID="{4E72300F-7959-4BEB-BC46-FB7C0B55CBBF}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Skill_GP" ID="{A187BD11-7AB4-494E-8E69-D5C082BEBF4E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Death_GD" ID="{35D8B139-C604-4911-8FE4-97FBC68E1B7B}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Pop_Up" ID="{4CF5FA3D-FDCE-42F3-94E2-82DBC849C265}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Hit" ID="{E16D5D5D-C728-4E34-83C5-9871A647D268}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Skill_GA" ID="{30C4E7A6-C35A-484B-8AC6-25614B0FAF9E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Power_Up" ID="{860E9DAE-7671-469A-9F09-8115BB8376D6}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Death_GA" ID="{F83F45D5-E0FC-40F4-B47C-8B3161748E3A}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Amb_City_Loop" ID="{30921EDB-21DA-4DC1-B5C5-CB180EEF3D19}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Collectible" ID="{12A009FF-48C2-4AD5-8E46-AA210E71F65E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 					</ObjectInclusionList>
 					<ObjectExclusionList/>
 					<GameSyncExclusionList/>
