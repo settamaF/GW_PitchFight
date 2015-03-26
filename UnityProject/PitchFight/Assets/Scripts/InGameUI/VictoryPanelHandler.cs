@@ -21,6 +21,8 @@ public class VictoryPanelHandler : MonoBehaviour
 		textObject.text = pTxt;
 		if (playerClass != PersoChoice.ePlayerClass.__NONE__)
 			persoPicture.sprite = playerPicturesList[(int)playerClass];
+		else
+			persoPicture.sprite = null;
 	}
 
 	#endregion
