@@ -163,11 +163,14 @@ public class GameState : MonoBehaviour
 	{
 		int lNbPlayerIsAlive = GetNbPlayerIsAlive();
 		if (lNbPlayerIsAlive == 0 && __players.Count == 1)
-			ActiveVictoryPanel("");
+			ActiveVictoryPanel("", PersoChoice.ePlayerClass.__NONE__);
 		else if (lNbPlayerIsAlive == 0 && __players.Count > 1)
-			ActiveVictoryPanel("Match Nul");
+			ActiveVictoryPanel("Match Nul", PersoChoice.ePlayerClass.__NONE__);
 		else if (lNbPlayerIsAlive == 1 && __players.Count > 1)
-			ActiveVictoryPanel("Player " + GetWinnerIndex() + " win !");
+		{
+			int lWinnerIndex = GetWinnerIndex();
+			ActiveVictoryPanel("Player " + (lWinnerIndex + 1) + " win !", __playerClassList[lWinnerIndex]);
+		}
 	}
 
 	private int	GetWinnerIndex()
@@ -180,12 +183,12 @@ public class GameState : MonoBehaviour
 		return -1;
 	}
 
-	private void	ActiveVictoryPanel(string pText)
+	private void	ActiveVictoryPanel(string pText, PersoChoice.ePlayerClass pPlayerClass)
 	{
 		generateRailsScript.ResetRail();
 		generateDebugCamera.Speed = 0.0f;
 		victoryPanel.SetActive(true);
-		__victoryPanelHandler.ActiveUI(pText);
+		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
 		ClearGame();
 	}
 
