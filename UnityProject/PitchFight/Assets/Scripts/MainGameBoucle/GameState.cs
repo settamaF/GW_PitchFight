@@ -191,6 +191,7 @@ public class GameState : MonoBehaviour
 		generateDebugCamera.Speed = 0.0f;
 		victoryPanel.SetActive(true);
 		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
+		playersStateVisu.ResetPlayerStateVisu();
 		ClearGame();
 	}
 
