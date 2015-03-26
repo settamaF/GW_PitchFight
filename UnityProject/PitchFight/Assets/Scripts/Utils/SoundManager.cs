@@ -33,7 +33,8 @@ public enum SoundEvent
 	POP_UP,
 	POWER_UP,
 	COLLECTIBLES,
-
+	MENU_START,
+	MENU_SELECT,
 	VOICE_M,
 	VOICE_F,
 	AMB_CITY_LOOP

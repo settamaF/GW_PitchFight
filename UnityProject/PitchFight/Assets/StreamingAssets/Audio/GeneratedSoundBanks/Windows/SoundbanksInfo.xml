@@ -25,6 +25,8 @@
 				<Event Id="3616729134" Name="Play_Sfx_Death_GP"/>
 				<Event Id="1898665037" Name="Play_Sfx_Death_MSD"/>
 				<Event Id="1376640657" Name="Play_Sfx_Hit"/>
+				<Event Id="3759090466" Name="Play_Sfx_Menu_Select"/>
+				<Event Id="2360129722" Name="Play_Sfx_Menu_Start"/>
 				<Event Id="1091716557" Name="Play_Sfx_Pop_Up"/>
 				<Event Id="3124574401" Name="Play_Sfx_Secret_GA"/>
 				<Event Id="3124574404" Name="Play_Sfx_Secret_GD"/>
@@ -114,9 +116,17 @@
 					<ShortName>Audiosource\Amb_City_Loop.wav</ShortName>
 					<Path>SFX\Audiosource\Amb_City_Loop_DDC98EF4.wem</Path>
 				</File>
+				<File Id="950674497" Language="SFX">
+					<ShortName>Audiosource\Sfx_Menu_Select.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Menu_Select_DDC98EF4.wem</Path>
+				</File>
 				<File Id="1045584503" Language="SFX">
 					<ShortName>Audiosource\Sfx_Collectible.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Collectible_DDC98EF4.wem</Path>
+				</File>
+				<File Id="1069438069" Language="SFX">
+					<ShortName>Audiosource\Sfx_Menu_Start.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Menu_Start_DDC98EF4.wem</Path>
 				</File>
 			</IncludedMemoryFiles>
 		</SoundBank>
