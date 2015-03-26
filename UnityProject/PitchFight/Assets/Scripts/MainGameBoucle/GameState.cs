@@ -73,6 +73,8 @@ public class GameState : MonoBehaviour
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
 		InitRails();
+		if (__currentEvent)
+			__currentEvent.EndEvent();
 		__currentEvent = null;
 	}
 
