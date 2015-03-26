@@ -1,15 +1,15 @@
 fileFormatVersion: 2
-guid: fda2c4e95c3ddb047a856ef70643f2c8
-timeCreated: 1427387709
+guid: 2667f24fd74664540a18f9e7bf6401aa
+timeCreated: 1427388235
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: cd_0
-    21300002: cd_1
-    21300004: cd_2
-    21300006: cd_3
-    21300008: cd_4
-    21300010: cd_5
+    21300000: stylet_0
+    21300002: stylet_1
+    21300004: stylet_2
+    21300006: stylet_3
+    21300008: stylet_4
+    21300010: stylet_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -55,7 +55,7 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: cd_0
+    - name: stylet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -65,7 +65,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cd_1
+    - name: stylet_1
       rect:
         serializedVersion: 2
         x: 200
@@ -75,7 +75,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cd_2
+    - name: stylet_2
       rect:
         serializedVersion: 2
         x: 400
@@ -85,7 +85,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cd_3
+    - name: stylet_3
       rect:
         serializedVersion: 2
         x: 600
@@ -95,7 +95,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cd_4
+    - name: stylet_4
       rect:
         serializedVersion: 2
         x: 800
@@ -105,7 +105,7 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: cd_5
+    - name: stylet_5
       rect:
         serializedVersion: 2
         x: 1000
