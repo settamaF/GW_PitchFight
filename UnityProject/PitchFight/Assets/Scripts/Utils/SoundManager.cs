@@ -38,7 +38,8 @@ public enum SoundEvent
 	VOICE_M,
 	VOICE_F,
 	M_INGAME,
-	AMB_CITY_LOOP
+	AMB_CITY_LOOP,
+	NOTHING,
 }
 
 [System.Serializable]
@@ -78,6 +79,8 @@ public class SoundManager : MonoBehaviour
 	{
 		string name = "";
 
+		if (soundEvent == SoundEvent.NOTHING)
+			return;
 		foreach (var sound in SoundList)
 		{
 			if (sound.NameEvent == soundEvent)
@@ -93,6 +96,11 @@ public class SoundManager : MonoBehaviour
 		}
 		else
 			Debug.LogError("Error no sound defined for event: " + soundEvent);
+	}
+
+	public void SetState(string groupeState, string state)
+	{
+		AkSoundEngine.SetState(groupeState, state);
 	}
 #endregion
 
