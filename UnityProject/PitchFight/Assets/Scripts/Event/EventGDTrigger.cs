@@ -31,6 +31,7 @@ public class EventGDTrigger : EventTrigger
 			return;
 		base.OnTriggerEnter2D(other);
 		GameUI.Get.SetEvent("Les control sont bien mais ...", Pedago.GD);
+		DeathBorderUIHandler.LaunchAnimation("Pedago1");
 		TimerUIHandler.StartTimer(Timer, "Attention");
 	}
 
@@ -40,7 +41,6 @@ public class EventGDTrigger : EventTrigger
 	public override void ExecuteEvent()
 	{
 		Platformer2DUserControl user;
-		DeathBorderUIHandler.LaunchAnimation("Pedago1");
 		foreach (var gameObject in GameState.get.players)
 		{
 			user = gameObject.GetComponent<Platformer2DUserControl>();
