@@ -30,11 +30,11 @@ public class PlayerDeath : MonoBehaviour
 		Vector3 lWorldToScreenPoint = Camera.main.WorldToScreenPoint(transform.position);
 		float lXScreenPosPersoRatio = lWorldToScreenPoint.x / Screen.width;
 		float lYScreenPosPersoRatio = lWorldToScreenPoint.y / Screen.height;
-		if (lXScreenPosPersoRatio < __deathBorderRatio || lYScreenPosPersoRatio < 0.0f)
+		if (lXScreenPosPersoRatio < __deathBorderRatio + 0.05f)
 		{
 			if (gameState)
 				gameState.SetAliveState(transform.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber - 1, false);
-			gameObject.SetActive(false);
+			gameObject.GetComponent<PlayerBehaviours>().IsDead();
 		}
 	}
 

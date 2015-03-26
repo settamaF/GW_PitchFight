@@ -191,6 +191,7 @@ public class GameState : MonoBehaviour
 		generateRailsScript.ResetRail();
 		movingRail.ResetMoving();
 		victoryPanel.SetActive(true);
+		victoryPanel.GetComponentInChildren<BackMenuButtonHandler>().ActiveUI();
 		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
 		playersStateVisu.ResetPlayerStateVisu();
 		ClearGame();
