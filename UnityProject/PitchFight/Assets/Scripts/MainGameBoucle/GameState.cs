@@ -13,8 +13,9 @@ public class GameState : MonoBehaviour
 
 	public GameObject victoryPanel;
 	public GenerateRail generateRailsScript;
-	public MovingRail generateDebugCamera;
+	public MovingRail movingRail;
 	public float railsDefaultSpeed;
+	public float railsMaxSpeed;
 
 	#endregion
 
@@ -73,6 +74,8 @@ public class GameState : MonoBehaviour
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
 		InitRails();
+		if (__currentEvent)
+			__currentEvent.EndEvent();
 		__currentEvent = null;
 	}
 
@@ -107,7 +110,7 @@ public class GameState : MonoBehaviour
 	private void	InitRails()
 	{
 		generateRailsScript.ActivateRail();
-		generateDebugCamera.Speed = railsDefaultSpeed;
+		movingRail.PlayMoving(railsDefaultSpeed, railsMaxSpeed);
 	}
 
 	#endregion
@@ -163,11 +166,14 @@ public class GameState : MonoBehaviour
 	{
 		int lNbPlayerIsAlive = GetNbPlayerIsAlive();
 		if (lNbPlayerIsAlive == 0 && __players.Count == 1)
-			ActiveVictoryPanel("");
+			ActiveVictoryPanel("", PersoChoice.ePlayerClass.__NONE__);
 		else if (lNbPlayerIsAlive == 0 && __players.Count > 1)
-			ActiveVictoryPanel("Match Nul");
+			ActiveVictoryPanel("Match Nul", PersoChoice.ePlayerClass.__NONE__);
 		else if (lNbPlayerIsAlive == 1 && __players.Count > 1)
-			ActiveVictoryPanel("Player " + GetWinnerIndex() + " win !");
+		{
+			int lWinnerIndex = GetWinnerIndex();
+			ActiveVictoryPanel("Player " + (lWinnerIndex + 1) + " win !", __playerClassList[lWinnerIndex]);
+		}
 	}
 
 	private int	GetWinnerIndex()
@@ -180,12 +186,13 @@ public class GameState : MonoBehaviour
 		return -1;
 	}
 
-	private void	ActiveVictoryPanel(string pText)
+	private void	ActiveVictoryPanel(string pText, PersoChoice.ePlayerClass pPlayerClass)
 	{
 		generateRailsScript.ResetRail();
-		generateDebugCamera.Speed = 0.0f;
+		movingRail.ResetMoving();
 		victoryPanel.SetActive(true);
-		__victoryPanelHandler.ActiveUI(pText);
+		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
+		playersStateVisu.ResetPlayerStateVisu();
 		ClearGame();
 	}
 
