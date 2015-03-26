@@ -124,7 +124,7 @@ public class GameState : MonoBehaviour
 
 	private void InitRails()
 	{
-		generateRailsScript.ActivateRail();
+		generateRailsScript.ActivateRail(__players);
 	}
 
 	private void	DeactiveControle()

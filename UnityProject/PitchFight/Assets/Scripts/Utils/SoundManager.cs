@@ -37,6 +37,7 @@ public enum SoundEvent
 	MENU_SELECT,
 	VOICE_M,
 	VOICE_F,
+	M_INGAME,
 	AMB_CITY_LOOP
 }
 

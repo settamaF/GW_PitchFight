@@ -96,7 +96,7 @@ public class PoolGenerator : MonoBehaviour
 			if (stack.Type == type)
 			{
 				range = stack.Stack.Count;
-				if (type == ObjectType.EVENT)
+				if (type == ObjectType.EVENT || type == ObjectType.GROUND)
 					range--;
 				rand = Random.Range(0, range);
 				return GetObject(type, stack.Stack[rand].Name);
