@@ -33,7 +33,6 @@ public class ProjectileBehaviours : MonoBehaviour
 	{
 		Vector3 lWorldToScreenPoint = Camera.main.WorldToScreenPoint(this.gameObject.transform.position);
 		float lXScreenPosPersoRatio = lWorldToScreenPoint.x / Screen.width;
-		Debug.Log("x = " + lXScreenPosPersoRatio);
 		if ((lXScreenPosPersoRatio < 0.0f || lXScreenPosPersoRatio > 1.0f ))
 			return true;
 		return false;
