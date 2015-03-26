@@ -34,6 +34,10 @@ public class EventGATrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected virtual void Update()
+	{
+
+	}
 #endregion
 
 #region Methods

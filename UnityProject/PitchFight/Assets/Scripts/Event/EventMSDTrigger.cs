@@ -33,6 +33,10 @@ public class EventMSDTrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected virtual void Update()
+	{
+
+	}
 #endregion
 
 	#region Methods
