@@ -1018,6 +1018,16 @@
 						</Sound>
 					</ChildrenList>
 				</ActorMixer>
+				<RandomSequenceContainer Name="Sfx_Gosth_Rnd" ID="{C9B8BCF2-195D-4546-8906-C9F527F0C5AB}" ShortID="635208486">
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+						</Reference>
+					</ReferenceList>
+				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>
 	</AudioObjects>
