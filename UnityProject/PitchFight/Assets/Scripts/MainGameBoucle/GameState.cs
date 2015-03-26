@@ -13,8 +13,9 @@ public class GameState : MonoBehaviour
 
 	public GameObject victoryPanel;
 	public GenerateRail generateRailsScript;
-	public MovingRail generateDebugCamera;
+	public MovingRail movingRail;
 	public float railsDefaultSpeed;
+	public float railsMaxSpeed;
 
 	#endregion
 
@@ -109,7 +110,7 @@ public class GameState : MonoBehaviour
 	private void	InitRails()
 	{
 		generateRailsScript.ActivateRail();
-		generateDebugCamera.Speed = railsDefaultSpeed;
+		movingRail.PlayMoving(railsDefaultSpeed, railsMaxSpeed);
 	}
 
 	#endregion
@@ -185,7 +186,7 @@ public class GameState : MonoBehaviour
 	private void	ActiveVictoryPanel(string pText)
 	{
 		generateRailsScript.ResetRail();
-		generateDebugCamera.Speed = 0.0f;
+		movingRail.ResetMoving();
 		victoryPanel.SetActive(true);
 		__victoryPanelHandler.ActiveUI(pText);
 		ClearGame();
