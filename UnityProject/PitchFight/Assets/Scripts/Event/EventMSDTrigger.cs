@@ -38,7 +38,7 @@ public class EventMSDTrigger : EventTrigger
 	#region Methods
 	public override void ExecuteEvent()
 	{
-
+		DeathBorderUIHandler.LaunchAnimation("Pedago1");
 	}
 
 	public override void EndEvent()
