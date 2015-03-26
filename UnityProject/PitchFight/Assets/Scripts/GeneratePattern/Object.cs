@@ -24,7 +24,8 @@ public class Object : MonoBehaviour
 	}
 
 #region Script Parameters
-	public ObjectType Type;
+	public ObjectType			Type;
+	public bool					Static;
 	public List<RateObject>		ListRate;
 #endregion
 
@@ -93,8 +94,6 @@ public class Object : MonoBehaviour
 			{
 				if (child.childCount > 0 || !RateGenerate(objectChild.Type))
 					continue;
-				if (!RateGenerate(objectChild.Type))
-					continue;
 				if (objectChild.Type == ObjectType.EVENT && eventActive)
 				{
 					if (eventDuration <= 0)
@@ -149,7 +148,8 @@ public class Object : MonoBehaviour
 				{
 					for (int i = 0; i < child.childCount; i++)
 					{
-						PoolGenerator.Get.AddToStack(child.GetChild(i).gameObject, objectChild.Type);
+						if (!child.GetChild(i).GetComponent<Object>().Static)
+							PoolGenerator.Get.AddToStack(child.GetChild(i).gameObject, objectChild.Type);
 					}
 				}
 			}

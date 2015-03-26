@@ -37,7 +37,6 @@ public class MovingRail : MonoBehaviour
 		{
 			this.transform.Translate(-Speed, 0, 0);
 			UpdateSpeed();
-			Debug.Log(Speed);
 		}
 	}
 #endregion
