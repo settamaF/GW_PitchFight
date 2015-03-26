@@ -43,7 +43,7 @@ public class EventGPTrigger : EventTrigger
 
 #endregion
 
-	#region Methods
+#region Methods
 	public override void ExecuteEvent()
 	{
 		__gpErrorEventUIHandlerScript.StartUI();
@@ -54,5 +54,5 @@ public class EventGPTrigger : EventTrigger
 		base.EndEvent();
 		__gpErrorEventUIHandlerScript.ResetUI();
 	}
-	#endregion
+#endregion
 }
