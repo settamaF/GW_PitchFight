@@ -1019,6 +1019,10 @@
 					</ChildrenList>
 				</ActorMixer>
 				<RandomSequenceContainer Name="Sfx_Gosth_Rnd" ID="{C9B8BCF2-195D-4546-8906-C9F527F0C5AB}" ShortID="635208486">
+					<PropertyList>
+						<Property Name="NormalOrShuffle" Type="int16" Value="0"/>
+						<Property Name="RandomAvoidRepeatingCount" Type="int32" Value="3"/>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
@@ -1027,6 +1031,103 @@
 							<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Sound Name="Sfx_Gosth_Rnd_01" ID="{23825BEF-C7FE-406E-AC64-80336233B9C4}" ShortID="309436297" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Gosth_Rnd_01" ID="{7E39B8B9-4840-43D5-842B-B97015D56630}" ShortID="25845975">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Gosth_Rnd_01.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Gosth_Rnd_01" ID="{7E39B8B9-4840-43D5-842B-B97015D56630}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sfx_Gosth_Rnd_02" ID="{71006254-F7E8-461B-886B-46F3AC0F3A87}" ShortID="829502656" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Gosth_Rnd_02" ID="{04F589C1-996A-4FE1-8B29-8EDA7EB2A98C}" ShortID="579672488">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Gosth_Rnd_02.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Gosth_Rnd_02" ID="{04F589C1-996A-4FE1-8B29-8EDA7EB2A98C}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sfx_Gosth_Rnd_03" ID="{C052DA93-2076-4721-8946-23AF80EC9472}" ShortID="355732193" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Gosth_Rnd_03" ID="{57869689-D26B-445C-BB5E-A954A553A3F6}" ShortID="152155209">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Gosth_Rnd_03.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Gosth_Rnd_03" ID="{57869689-D26B-445C-BB5E-A954A553A3F6}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sfx_Gosth_Rnd_04" ID="{0F27DCC7-542F-4169-AD9F-C03F9F609CFF}" ShortID="133283217" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Gosth_Rnd_04" ID="{6EE337FB-19BF-4354-BABC-A2F001CDCA3D}" ShortID="818813686">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Gosth_Rnd_04.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Gosth_Rnd_04" ID="{6EE337FB-19BF-4354-BABC-A2F001CDCA3D}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Sfx_Gosth_Rnd_05" ID="{CC5CF335-ED68-4569-900B-59DC7FFDF843}" ShortID="402136025" Type="SoundFX">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{E9E36AED-6AF1-4436-ADAC-5867F24E8EE2}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{0FD5F52B-7151-4BDA-ABF5-8F0675F13F42}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="Sfx_Gosth_Rnd_05" ID="{F4D0727E-D1F8-49CB-91EC-F76086295458}" ShortID="549197334">
+									<Language>SFX</Language>
+									<AudioFile>Audiosource\Sfx_Gosth_Rnd_05.wav</AudioFile>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="Sfx_Gosth_Rnd_05" ID="{F4D0727E-D1F8-49CB-91EC-F76086295458}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
 				</RandomSequenceContainer>
 			</ChildrenList>
 		</WorkUnit>

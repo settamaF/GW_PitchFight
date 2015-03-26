@@ -25,6 +25,7 @@
 				<Event Id="3616729146" Name="Play_Sfx_Death_GD"/>
 				<Event Id="3616729134" Name="Play_Sfx_Death_GP"/>
 				<Event Id="1898665037" Name="Play_Sfx_Death_MSD"/>
+				<Event Id="1040261522" Name="Play_Sfx_Gosth_Rnd"/>
 				<Event Id="1376640657" Name="Play_Sfx_Hit"/>
 				<Event Id="3759090466" Name="Play_Sfx_Menu_Select"/>
 				<Event Id="2360129722" Name="Play_Sfx_Menu_Start"/>
@@ -42,6 +43,10 @@
 					<ShortName>Audiosource\M_InGame_End.wav</ShortName>
 					<Path>SFX\Audiosource\M_InGame_End_A57AE9F9.wem</Path>
 				</File>
+				<File Id="25845975" Language="SFX">
+					<ShortName>Audiosource\Sfx_Gosth_Rnd_01.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Gosth_Rnd_01_DDC98EF4.wem</Path>
+				</File>
 				<File Id="52057784" Language="SFX">
 					<ShortName>Audiosource\Sfx_Voice_GA_Death.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Voice_GA_Death_DDC98EF4.wem</Path>
@@ -49,6 +54,10 @@
 				<File Id="139867223" Language="SFX">
 					<ShortName>Audiosource\Sfx_Death_All.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Death_All_DDC98EF4.wem</Path>
+				</File>
+				<File Id="152155209" Language="SFX">
+					<ShortName>Audiosource\Sfx_Gosth_Rnd_03.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Gosth_Rnd_03_DDC98EF4.wem</Path>
 				</File>
 				<File Id="232865724" Language="SFX">
 					<ShortName>Audiosource\Sfx_hit_01.wav</ShortName>
@@ -98,9 +107,17 @@
 					<ShortName>Audiosource\Sfx_Power_Up.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Power_Up_DDC98EF4.wem</Path>
 				</File>
+				<File Id="549197334" Language="SFX">
+					<ShortName>Audiosource\Sfx_Gosth_Rnd_05.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Gosth_Rnd_05_DDC98EF4.wem</Path>
+				</File>
 				<File Id="565271884" Language="SFX">
 					<ShortName>Audiosource\M_InGame_Start.wav</ShortName>
 					<Path>SFX\Audiosource\M_InGame_Start_3DCBE93F.wem</Path>
+				</File>
+				<File Id="579672488" Language="SFX">
+					<ShortName>Audiosource\Sfx_Gosth_Rnd_02.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Gosth_Rnd_02_DDC98EF4.wem</Path>
 				</File>
 				<File Id="595430506" Language="SFX">
 					<ShortName>Audiosource\Sfx_Pop_Up.wav</ShortName>
@@ -117,6 +134,10 @@
 				<File Id="795519610" Language="SFX">
 					<ShortName>Audiosource\Sfx_Skill_GP_Loop.wav</ShortName>
 					<Path>SFX\Audiosource\Sfx_Skill_GP_Loop_9ED9C06E.wem</Path>
+				</File>
+				<File Id="818813686" Language="SFX">
+					<ShortName>Audiosource\Sfx_Gosth_Rnd_04.wav</ShortName>
+					<Path>SFX\Audiosource\Sfx_Gosth_Rnd_04_DDC98EF4.wem</Path>
 				</File>
 				<File Id="861466350" Language="SFX">
 					<ShortName>Audiosource\Sfx_Voice_GD_Death.wav</ShortName>

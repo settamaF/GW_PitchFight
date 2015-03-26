@@ -342,7 +342,6 @@
 								<MusicTransition Name="Transition" ID="{5C1DEB63-AB55-4D0A-A14F-867489F2DE2A}">
 									<PropertyList>
 										<Property Name="DestinationContextType" Type="int16" Value="2"/>
-										<Property Name="ExitSourceAt" Type="int16" Value="2"/>
 										<Property Name="PlayDestinationPreEntry" Type="bool" Value="False"/>
 										<Property Name="PlaySourcePostExit" Type="bool" Value="False"/>
 										<Property Name="SourceContextType" Type="int16" Value="2"/>
@@ -371,6 +370,18 @@
 										</Reference>
 										<Reference Name="SourceContextObject">
 											<ObjectRef Name="M_Ingame_Loop" ID="{A339D82D-356B-4F2E-9472-214B4B453159}" WorkUnitID="{7AA9938F-D946-44B5-A9FF-126949CC78FC}"/>
+										</Reference>
+									</ReferenceList>
+									<TransitionInfo/>
+								</MusicTransition>
+								<MusicTransition Name="Transition" ID="{17A49E4A-6960-4671-A6A2-E1FFCE9FA3BF}">
+									<PropertyList>
+										<Property Name="DestinationContextType" Type="int16" Value="1"/>
+										<Property Name="SourceContextType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="SourceContextObject">
+											<ObjectRef Name="End_Music" ID="{80E1AE1E-23DE-4C8A-AAB8-FED7E8029EDF}" WorkUnitID="{7AA9938F-D946-44B5-A9FF-126949CC78FC}"/>
 										</Reference>
 									</ReferenceList>
 									<TransitionInfo/>

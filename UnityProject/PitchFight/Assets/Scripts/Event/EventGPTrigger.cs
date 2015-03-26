@@ -41,12 +41,17 @@ public class EventGPTrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected virtual void Update()
+	{
+
+	}
 #endregion
 
 #region Methods
 	public override void ExecuteEvent()
 	{
 		__gpErrorEventUIHandlerScript.StartUI();
+		DeathBorderUIHandler.LaunchAnimation("Pedago4");
 	}
 
 	public override void EndEvent()

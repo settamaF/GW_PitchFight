@@ -33,12 +33,16 @@ public class EventMSDTrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected virtual void Update()
+	{
+
+	}
 #endregion
 
 	#region Methods
 	public override void ExecuteEvent()
 	{
-
+		DeathBorderUIHandler.LaunchAnimation("Pedago2");
 	}
 
 	public override void EndEvent()

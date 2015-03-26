@@ -67,7 +67,6 @@ public class GenerateRail : MonoBehaviour
 		{
 			GenerateRandomPattern();
 		}
-		SoundManager.Get.Play(SoundEvent.AMB_CITY_LOOP);
 		this.enabled = true;
 	}
 

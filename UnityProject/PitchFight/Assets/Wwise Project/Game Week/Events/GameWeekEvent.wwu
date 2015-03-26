@@ -15,6 +15,13 @@
 								</Element>
 							</ElementList>
 						</Action>
+						<Action Name="Stop" ID="{CFE8B690-6740-41E1-9644-74328B1733C1}" ShortID="761086294" Type="Stop" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{15085A18-9888-4F2D-84FE-1DA5A26C6672}" Global="false">
+									<ObjectRef Name="Music_Ingame" ID="{8D3128B2-335E-4121-9645-2BBED8E6EA37}" WorkUnitID="{7AA9938F-D946-44B5-A9FF-126949CC78FC}"/>
+								</Element>
+							</ElementList>
+						</Action>
 					</ChildrenList>
 				</Event>
 				<Event Name="Play_Sfx_Collectible" ID="{12A009FF-48C2-4AD5-8E46-AA210E71F65E}">
@@ -268,6 +275,17 @@
 							<ElementList>
 								<Element ID="{6353D47A-E33D-430B-94FC-9C8BD31649F9}" Global="false">
 									<ObjectRef Name="Amb_City_Loop" ID="{7E55241F-DB33-4065-81C1-E083A1C836A6}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
+								</Element>
+							</ElementList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Sfx_Gosth_Rnd" ID="{093ACF39-4644-4198-9E3F-66978A9EE08E}">
+					<ChildrenList>
+						<Action Name="Play" ID="{44A442FE-EF40-47BE-A506-2F68FFA2E1B0}" ShortID="889694306" Type="Play" Scope="One" Global="false">
+							<ElementList>
+								<Element ID="{EBFD09AA-238D-4070-85C0-AEEB94BC8A6C}" Global="false">
+									<ObjectRef Name="Sfx_Gosth_Rnd" ID="{C9B8BCF2-195D-4546-8906-C9F527F0C5AB}" WorkUnitID="{8E652927-D516-4635-876B-900E473C687C}"/>
 								</Element>
 							</ElementList>
 						</Action>

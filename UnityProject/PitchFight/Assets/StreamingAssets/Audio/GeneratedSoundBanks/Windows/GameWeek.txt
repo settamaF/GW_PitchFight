@@ -1,5 +1,6 @@
 Event	ID	Name			Wwise Object Path	Notes
 	427335347	Play_Sfx_Secret_MSD			\GameWeekEvent\Play_Sfx_Secret_MSD	
+	1040261522	Play_Sfx_Gosth_Rnd			\GameWeekEvent\Play_Sfx_Gosth_Rnd	
 	1091716557	Play_Sfx_Pop_Up			\GameWeekEvent\Play_Sfx_Pop_Up	
 	1376640657	Play_Sfx_Hit			\GameWeekEvent\Play_Sfx_Hit	
 	1898665037	Play_Sfx_Death_MSD			\GameWeekEvent\Play_Sfx_Death_MSD	
@@ -20,8 +21,10 @@ Event	ID	Name			Wwise Object Path	Notes
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	780186	M_InGame_End	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\M_InGame_End_A57AE9F9.wem		\Interactive Music Hierarchy\Music_Ingame\Music_Ingame\End_Music\M_InGame_End\M_InGame_End		846788
+	25845975	Sfx_Gosth_Rnd_01	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Gosth_Rnd_01_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Gosth_Rnd\Sfx_Gosth_Rnd_01		882064
 	52057784	Sfx_Voice_GA_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GA_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_GA\Sfx_Voice_GA_Death		136654
 	139867223	Sfx_Death_All	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Death_All_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_All\Sfx_Death_All		176464
+	152155209	Sfx_Gosth_Rnd_03	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Gosth_Rnd_03_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Gosth_Rnd\Sfx_Gosth_Rnd_03		615998
 	232865724	Sfx_hit_01	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_01_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_01		65972
 	285461640	Sfx_Voice_MSD_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_MSD_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_MSD\Sfx_Voice_MSD_Death		155452
 	323840584	Sfx_hit_03	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_03_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_03		70632
@@ -34,11 +37,14 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	494394166	Sfx_hit_04	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_hit_04_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Hit\Sfx_hit_04		75116
 	509987132	Sfx_Voice_GD_Secret	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GD_Secret_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Secret_GD\Sfx_Voice_GD_Secret		155450
 	537381801	Sfx_Power_Up	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Power_Up_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Power_Up\Sfx_Power_Up		131322
+	549197334	Sfx_Gosth_Rnd_05	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Gosth_Rnd_05_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Gosth_Rnd\Sfx_Gosth_Rnd_05		705664
 	565271884	M_InGame_Start	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\M_InGame_Start_3DCBE93F.wem		\Interactive Music Hierarchy\Music_Ingame\Music_Ingame\Start_Music\M_InGame_Start\M_InGame_Start		1693508
+	579672488	Sfx_Gosth_Rnd_02	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Gosth_Rnd_02_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Gosth_Rnd\Sfx_Gosth_Rnd_02		615998
 	595430506	Sfx_Pop_Up	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Pop_Up_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Pop_Up\Sfx_Pop_Up		138242
 	672550198	Sfx_Skill_GP_End	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Skill_GP_End_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Skill_GP\Sfx_Skill_GP_End		133128
 	793945030	Sfx_Voice_GA_Secret	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GA_Secret_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Secret_GA\Sfx_Voice_GA_Secret		137906
 	795519610	Sfx_Skill_GP_Loop	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Skill_GP_Loop_9ED9C06E.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Skill_GP\Sfx_Skill_GP_Loop		352864
+	818813686	Sfx_Gosth_Rnd_04	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Gosth_Rnd_04_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Gosth_Rnd\Sfx_Gosth_Rnd_04		705664
 	861466350	Sfx_Voice_GD_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GD_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_GD\Sfx_Voice_GD_Death		119162
 	924694371	Sfx_Voice_GP_Death	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\Sfx_Voice_GP_Death_DDC98EF4.wem		\Actor-Mixer Hierarchy\InGame\Sfx_Death_GP\Sfx_Voice_GP_Death		87784
 	928734527	M_InGame_Loop	D:\Game_Project\GameWeek\GW_PitchFight\UnityProject\PitchFight\Assets\Wwise Project\Game Week\.cache\Windows\SFX\Audiosource\M_InGame_Loop_4F732371.wem		\Interactive Music Hierarchy\Music_Ingame\Music_Ingame\M_Ingame_Loop\M_InGame_Loop\M_InGame_Loop		32175428

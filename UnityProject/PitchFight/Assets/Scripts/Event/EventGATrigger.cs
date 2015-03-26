@@ -34,12 +34,17 @@ public class EventGATrigger : EventTrigger
 		ExecuteEvent();
 	}
 
+	protected virtual void Update()
+	{
+
+	}
 #endregion
 
 #region Methods
 	public override void ExecuteEvent()
 	{
 		Camera.main.SetReplacementShader(greyScale, "");
+		DeathBorderUIHandler.LaunchAnimation("Pedago3");
 	}
 
 	public override void EndEvent()

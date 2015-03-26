@@ -10,6 +10,7 @@
 						<ObjectRef Name="Play_Sfx_Skill_GP" ID="{A187BD11-7AB4-494E-8E69-D5C082BEBF4E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Secret_GD" ID="{B3920914-475E-4DAC-9EE1-E7959B06C331}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Death_GD" ID="{35D8B139-C604-4911-8FE4-97FBC68E1B7B}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
+						<ObjectRef Name="Play_Sfx_Gosth_Rnd" ID="{093ACF39-4644-4198-9E3F-66978A9EE08E}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Pop_Up" ID="{4CF5FA3D-FDCE-42F3-94E2-82DBC849C265}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Hit" ID="{E16D5D5D-C728-4E34-83C5-9871A647D268}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
 						<ObjectRef Name="Play_Sfx_Secret_GA" ID="{430BEE63-91D0-4FB4-ABE9-5C283DE8101A}" WorkUnitID="{25001928-B6D6-44F1-94A1-FC70BD2BD93A}" Filter="7" Origin="Manual"/>
