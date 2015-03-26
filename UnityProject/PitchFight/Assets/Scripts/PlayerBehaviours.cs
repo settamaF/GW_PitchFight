@@ -41,6 +41,7 @@ public class PlayerBehaviours : MonoBehaviour
 		{
 			this.StartCoroutine(this.Stuned());
 			this.currentAnimator.SetTrigger("Stunned");
+			FxManager.Get.Play(FX.HIT_PLAYER, this.transform.position, Quaternion.identity);
 		}
 	}
 

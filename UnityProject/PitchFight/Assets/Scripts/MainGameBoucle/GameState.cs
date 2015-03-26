@@ -17,6 +17,8 @@ public class GameState : MonoBehaviour
 	public float railsDefaultSpeed;
 	public float railsMaxSpeed;
 
+	public float delayBeforeStartControle;
+
 	#endregion
 
 	#region Propertys
@@ -47,6 +49,8 @@ public class GameState : MonoBehaviour
 	private List<bool> __isAlive;
 	private List<PersoChoice.ePlayerClass> __playerClassList;
 	private VictoryPanelHandler __victoryPanelHandler;
+	private float __currentDelay;
+	private bool __controleAlreadyActivate;
 
 	#endregion
 
@@ -63,6 +67,16 @@ public class GameState : MonoBehaviour
 		__victoryPanelHandler = victoryPanel.GetComponent<VictoryPanelHandler>();
 	}
 
+	private void	Update()
+	{
+		__currentDelay += Time.deltaTime;
+		if (__currentDelay > delayBeforeStartControle && !__controleAlreadyActivate)
+		{
+			ActiveControle();
+			__controleAlreadyActivate = true;
+		}
+	}
+
 	#endregion
 
 	#region Initialization
@@ -74,6 +88,7 @@ public class GameState : MonoBehaviour
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
 		InitRails();
+		DeactiveControle();
 		if (__currentEvent)
 			__currentEvent.EndEvent();
 		__currentEvent = null;
@@ -107,9 +122,23 @@ public class GameState : MonoBehaviour
 		}
 	}
 
-	private void	InitRails()
+	private void InitRails()
 	{
 		generateRailsScript.ActivateRail();
+	}
+
+	private void	DeactiveControle()
+	{
+		for (int i = 0; i < __players.Count; i++)
+			__players[i].GetComponent<PlayerBehaviours>().SetControls(false);
+		__currentDelay = 0.0f;
+		__controleAlreadyActivate = false;
+	}
+
+	private void	ActiveControle()
+	{
+		for (int i = 0; i < __players.Count; i++)
+			__players[i].GetComponent<PlayerBehaviours>().SetControls(true);
 		movingRail.PlayMoving(railsDefaultSpeed, railsMaxSpeed);
 	}
 
