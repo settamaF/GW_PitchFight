@@ -51,6 +51,13 @@ public class PlayerBehaviours : MonoBehaviour
 		this.currentAnimator.SetTrigger("Super");
 	}
 
+	public void TookDollarMalus()
+	{
+		this.dyingTimer = 500;
+		this.dyingSpeed = 25;
+		this.IsDead();
+	}
+
 	public void SetControls(bool b)
 	{
 		this.controllerComponent.enabled = b;

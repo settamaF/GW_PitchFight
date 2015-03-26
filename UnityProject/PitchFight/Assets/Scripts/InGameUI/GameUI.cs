@@ -16,6 +16,7 @@ public enum Pedago
 	GA,
 	MSD,
 	GOD,
+	ADMIN,
 	NONE
 }
 
@@ -87,7 +88,7 @@ public class GameUI : MonoBehaviour
 			DisableEvent();
 		if (pedago != Pedago.NONE)
 		{
-			if (pedago == Pedago.GOD)
+			if (pedago == Pedago.GOD || pedago == Pedago.ADMIN)
 			{
 				mActivePedago = null;
 			}
