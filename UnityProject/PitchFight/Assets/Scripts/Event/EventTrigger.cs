@@ -9,7 +9,8 @@ using System.Collections;
 public class EventTrigger : MonoBehaviour 
 {
 #region Script Parameters
-	public int Duration = 3;
+	public int		Duration = 3;
+	public float	Timer = 2;
 #endregion
 
 #region Static
@@ -19,14 +20,15 @@ public class EventTrigger : MonoBehaviour
 #endregion
 
 #region Fields
-	protected bool	Triggered = false;
-
+	protected bool		Triggered = false;
+	protected float		TimerLaunch;
 #endregion
 
 #region Unity Methods
 	void Awake()
 	{
 		Triggered = false;
+		TimerLaunch = -1;
 	}
 
 	protected virtual void	Start()
@@ -41,6 +43,20 @@ public class EventTrigger : MonoBehaviour
 		Triggered = true;
 		if (GameState.get)
 			GameState.get.currentEvent = this;
+		TimerLaunch = 0;
+	}
+
+	protected virtual void Update()
+	{
+		if (Triggered && TimerLaunch >= 0)
+		{
+			TimerLaunch += Time.deltaTime;
+			if (TimerLaunch >= Timer)
+			{
+				ExecuteEvent();
+				TimerLaunch = -1;
+			}
+		}
 	}
 #endregion
 
@@ -54,11 +70,13 @@ public class EventTrigger : MonoBehaviour
 	{
 		if (GameUI.Get)
 			GameUI.Get.DisableEvent();
+		TimerLaunch = -1;
 	}
 
 	public virtual void Reset()
 	{
 		Triggered = false;
+		TimerLaunch = -1;
 	}
 
 #endregion
