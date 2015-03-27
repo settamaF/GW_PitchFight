@@ -34,7 +34,7 @@ public class EventGATrigger : EventTrigger
 		ExecuteEvent();
 	}
 
-	protected virtual void Update()
+	protected override void Update()
 	{
 
 	}
