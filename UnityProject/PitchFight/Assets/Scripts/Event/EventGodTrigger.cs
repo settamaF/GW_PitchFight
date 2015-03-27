@@ -1,4 +1,4 @@
-﻿//******************************************************************************
+//******************************************************************************
 // Authors: Frederic SETTAMA  
 //******************************************************************************
 
@@ -31,7 +31,7 @@ public class EventGodTrigger : EventTrigger
 		if (Triggered || other.tag != "Player")
 			return;
 		base.OnTriggerEnter2D(other);
-		GameUI.Get.SetEvent("Elle est où la secréte sauce??", Pedago.GOD);
+		GameUI.Get.SetEvent("Elle est où la secret sauce??", Pedago.GOD);
 		ExecuteEvent();
 	}
 
@@ -46,7 +46,7 @@ public class EventGodTrigger : EventTrigger
 		if (SecretSauce)
 		{
 			mSecretSauce = Instantiate(SecretSauce) as GameObject;
-			mSecretSauce.GetComponent<SecretSauce>().Trigger = this;
+			mSecretSauce.GetComponent<DollarsMalus>().Trigger = this;
 		}
 	}
 
