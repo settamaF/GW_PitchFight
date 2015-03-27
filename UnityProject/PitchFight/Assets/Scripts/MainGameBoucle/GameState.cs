@@ -87,6 +87,7 @@ public class GameState : MonoBehaviour
 		InitAliveStates(pNumberOfPlayers);
 		InitAllPersos(pNumberOfPlayers);
 		victoryPanel.SetActive(false);
+		playersStateVisu.SetPlayerStateVisu(lPlayerClassList);
 		InitRails();
 		DeactiveControle();
 		if (__currentEvent)
@@ -171,7 +172,7 @@ public class GameState : MonoBehaviour
 		__isAlive[pPlayerIndex] = pValue;
 		if (!pValue)
 		{
-			SetVisu(pPlayerIndex);
+			SetDeathVisu(pPlayerIndex);
 			CheckVictoryCondition();
 		}
 	}
@@ -187,9 +188,9 @@ public class GameState : MonoBehaviour
 		return lNbPlayerIsAlive;
 	}
 
-	private void	SetVisu(int pPlayerIndex)
+	private void	SetDeathVisu(int pPlayerIndex)
 	{
-		playersStateVisu.SetPlayerStateVisu(pPlayerIndex);
+		playersStateVisu.SetPlayerStateDeathVisu(pPlayerIndex);
 	}
 
 	private void	CheckVictoryCondition()
@@ -223,7 +224,6 @@ public class GameState : MonoBehaviour
 		victoryPanel.SetActive(true);
 		victoryPanel.GetComponentInChildren<BackMenuButtonHandler>().ActiveUI();
 		__victoryPanelHandler.ActiveUI(pText, pPlayerClass);
-		playersStateVisu.ResetPlayerStateVisu();
 		ClearGame();
 	}
 
