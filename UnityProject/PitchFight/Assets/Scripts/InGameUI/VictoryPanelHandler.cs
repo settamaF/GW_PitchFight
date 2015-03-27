@@ -18,7 +18,7 @@ public class VictoryPanelHandler : MonoBehaviour
 
 	public void	ActiveUI(string pTxt, PersoChoice.ePlayerClass playerClass)
 	{
-		textObject.text = pTxt + "\n" + GetVictoryTxt(playerClass);
+		textObject.text = GetVictoryTxt(playerClass);
 		if (playerClass != PersoChoice.ePlayerClass.__NONE__)
 			persoPicture.sprite = playerPicturesList[(int)playerClass];
 		else

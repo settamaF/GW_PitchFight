@@ -9,6 +9,7 @@ public class GameState : MonoBehaviour
 	public PlayerStateVisu	playersStateVisu;
 
 	public List<GameObject>	playerPrefabList;
+	public List<Sprite> playerNbIcon;
 	public RectTransform deathBorder;
 
 	public GameObject victoryPanel;
@@ -115,7 +116,7 @@ public class GameState : MonoBehaviour
 		{
 			GameObject lPlayer = Instantiate(playerPrefabList[(int)__playerClassList[i]]);
 			lPlayer.GetComponent<UnityStandardAssets._2D.Platformer2DUserControl>().playerNumber = i + 1;
-			lPlayer.transform.FindChild("PlayerInfo").GetComponentInChildren<TextMesh>().text = "J" + (i + 1);
+			lPlayer.transform.FindChild("PlayerInfo").GetComponent<SpriteRenderer>().sprite = playerNbIcon[i];
 			PlayerDeath lPlayerDeathScript = lPlayer.GetComponent<PlayerDeath>();
 			lPlayerDeathScript.deathBorder = deathBorder;
 			lPlayerDeathScript.gameState = this;

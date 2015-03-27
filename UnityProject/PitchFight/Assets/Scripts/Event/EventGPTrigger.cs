@@ -41,7 +41,7 @@ public class EventGPTrigger : EventTrigger
 		ExecuteEvent();
 	}
 
-	protected virtual void Update()
+	protected override void Update()
 	{
 
 	}
