@@ -1,13 +1,11 @@
 fileFormatVersion: 2
-guid: 307f352f82960d0448f1806c8ca257a1
-timeCreated: 1427445701
+guid: 61185b2e169669c4e909827fc7c59dd4
+timeCreated: 1427447692
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: GA_run_0
-    21300002: GA_run_1
-    21300004: GA_run_2
-    21300006: GA_run_3
+    21300000: pigeon_0
+    21300002: pigeon_1
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -53,45 +51,25 @@ TextureImporter:
   buildTargetSettings: []
   spriteSheet:
     sprites:
-    - name: GA_run_0
+    - name: pigeon_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 400
-        height: 400
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GA_run_1
+    - name: pigeon_1
       rect:
         serializedVersion: 2
-        x: 400
+        x: 200
         y: 0
-        width: 400
-        height: 400
+        width: 200
+        height: 200
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GA_run_2
-      rect:
-        serializedVersion: 2
-        x: 800
-        y: 0
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-    - name: GA_run_3
-      rect:
-        serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 400
-        height: 400
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
