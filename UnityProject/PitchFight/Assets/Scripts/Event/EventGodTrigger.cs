@@ -46,7 +46,7 @@ public class EventGodTrigger : EventTrigger
 		if (SecretSauce)
 		{
 			mSecretSauce = Instantiate(SecretSauce) as GameObject;
-			mSecretSauce.GetComponent<DollarsMalus>().Trigger = this;
+			mSecretSauce.GetComponent<SecretSauce>().Trigger = this;
 		}
 	}
 
