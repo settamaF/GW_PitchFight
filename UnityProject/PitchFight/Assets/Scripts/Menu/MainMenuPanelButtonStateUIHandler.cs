@@ -52,7 +52,7 @@ public class MainMenuPanelButtonStateUIHandler : MonoBehaviour
 	{
 		if (Input.GetButtonDown("J1Jump"))
 		{
-			//transform.GetChild(__buttonIndex).GetComponent<Button>().OnPointerClick(new UnityEngine.EventSystems.PointerEventData(eventSys));
+			//transform.GetChild(__buttonIndex).GetComponent<Button>().OnSelect(null);
 			transform.GetChild(__buttonIndex).SendMessage("Click");
 		}
 	}
