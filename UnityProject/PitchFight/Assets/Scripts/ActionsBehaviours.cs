@@ -8,9 +8,11 @@ public class ActionsBehaviours : MonoBehaviour
 	public Animator		currentAnimator;
 	public GameObject	ProjectilePrefab;
 	public Transform	ProjectileDummy;
-	public float 		currentCoolDownTime;
+	public float 		currentActionCoolDownTime;
+	public float 		currentGrabCoolDownTime;
 	public float 		coolDownTimer;
 	public bool			ActionDone = false;
+	public bool			GrabDone = false;
 
 	public int 			playerNumber;
 	public float		pullingForce;
@@ -26,16 +28,26 @@ public class ActionsBehaviours : MonoBehaviour
 	{
 		if (this.ActionDone)
 		{
-			this.currentCoolDownTime++;
-			if (currentCoolDownTime > this.coolDownTimer)
+			this.currentActionCoolDownTime++;
+			if (this.currentActionCoolDownTime > this.coolDownTimer)
 			{
-				this.currentCoolDownTime = 0.0f;
+				this.currentActionCoolDownTime = 0.0f;
 				this.ActionDone = false;
 			}
 		}
-		if (Input.GetButtonDown("J" + playerNumber.ToString() + "Grab"))
+		if (this.GrabDone)
+		{
+			this.currentGrabCoolDownTime++;
+			if (currentGrabCoolDownTime > this.coolDownTimer)
+			{
+				this.currentGrabCoolDownTime = 0.0f;
+				this.GrabDone = false;
+			}
+		}
+		if (Input.GetButtonDown("J" + playerNumber.ToString() + "Grab") && !this.GrabDone)
 		{
 			this.currentAnimator.SetTrigger("Attack");
+			this.GrabDone = true;
 			if (this.inArea)
 				this.GrabAction();
 		}
