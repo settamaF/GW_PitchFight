@@ -17,7 +17,8 @@ public class ButtonHandlerScript : MonoBehaviour
 	public void	Click()
 	{
 		selectObject.SetActive(true);
-		deselectObject.SetActive(false);
+		if (deselectObject)
+			deselectObject.SetActive(false);
 	}
 
 	#endregion
