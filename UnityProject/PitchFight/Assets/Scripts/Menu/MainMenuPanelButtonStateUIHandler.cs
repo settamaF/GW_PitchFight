@@ -35,7 +35,7 @@ public class MainMenuPanelButtonStateUIHandler : MonoBehaviour
 
 	private void	GetInput()
 	{
-		int lInput = (int)Input.GetAxis("J1Horizontal");
+		int lInput = (int)-Input.GetAxis("J1Vertical");
 		if (!__inputLocked && lInput != 0)
 		{
 			transform.GetChild(__buttonIndex).GetComponent<Button>().OnPointerExit(null);
