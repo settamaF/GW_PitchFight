@@ -154,7 +154,7 @@ public class PersoChoice : MonoBehaviour
 
 	private void	SetPlayerMarker(int pPlayerIndex, bool pValue)
 	{
-		playerMarkerObject[((int)__playerMarker[pPlayerIndex].currentIndex)].transform.GetChild(pPlayerIndex).GetComponentInChildren<Text>().enabled = pValue;
+		playerMarkerObject[((int)__playerMarker[pPlayerIndex].currentIndex)].transform.GetChild(pPlayerIndex).GetComponentInChildren<Image>().enabled = pValue;
 	}
 
 	public void	UpdatePlayerMarker(int pPlayerIndex, int pInputValue)
