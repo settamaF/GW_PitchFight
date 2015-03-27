@@ -10,5 +10,10 @@ public class QuitButton : MonoBehaviour
 		Application.Quit();
 	}
 
+	public void Click()
+	{
+		Quit();
+	}
+
 	#endregion
 }
