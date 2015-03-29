@@ -12,7 +12,7 @@ public class EventAdminTrigger : EventTrigger
 		if (Triggered || other.tag != "Player")
 			return;
 		base.OnTriggerEnter2D(other);
-		GameUI.Get.SetEvent("Vous avez trois mois de payement en retard !!!", Pedago.ADMIN);
+		GameUI.Get.SetEvent("Vous avez six mois de paiement en retard !!!", Pedago.ADMIN);
 		ExecuteEvent();
 	}
 	
